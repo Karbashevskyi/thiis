@@ -16,7 +16,7 @@ export function NumericMethod(argument: any): boolean {
     return true;
   }
   if (isConfig.regex.bigint.test(argument)) {
-    return BigIntMethod(BigInt(argument.slice(0, -1)))
+    return BigIntMethod(BigInt(argument.slice(0, -1)));
   }
   return false;
 }

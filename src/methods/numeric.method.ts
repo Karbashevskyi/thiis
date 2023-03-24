@@ -12,7 +12,11 @@ export function NumericMethod(argument: any): boolean {
   if (EmptyMethod(argument)) {
     return false;
   }
-  return (
-    NumberMethod(+argument) || (isConfig.regex.bigint.test(argument) && BigIntMethod(BigInt(argument.slice(0, -1))))
-  );
+  if (NumberMethod(+argument)) {
+    return true;
+  }
+  if (isConfig.regex.bigint.test(argument)) {
+    return BigIntMethod(BigInt(argument.slice(0, -1)))
+  }
+  return false;
 }

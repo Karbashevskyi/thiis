@@ -33,6 +33,9 @@ export const dataForGoodTesting: { value: any }[] = [
         value: '-5n'
     },
     {
+        value: '+4n'
+    },
+    {
         value: BigInt(1)
     },
 ];
@@ -43,6 +46,9 @@ export const dataForBadTesting: { value: any }[] = [
     },
     {
         value: 'null'
+    },
+    {
+        value: 'a1n'
     },
     {
         value: Symbol()

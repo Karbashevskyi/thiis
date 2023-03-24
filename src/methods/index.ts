@@ -38,6 +38,7 @@ import { KebabCaseMethod } from './kebab-case.method';
 import { CamelCaseMethod } from './camel-case.method';
 import { SnakeCaseMethod } from './snake-case.method';
 import { UpperCaseMethod } from './upper-case.method';
+import {LowerCaseMethod} from './lower-case.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -56,6 +57,7 @@ type LengthMethodType = typeof LenMethod;
 
 export const predefinedMethods = {
   len: LenMethod,
+  lowerCase: LowerCaseMethod,
   array: ArrayMethod,
   asyncFunction: AsyncFunctionMethod,
   bigInt: BigIntMethod,

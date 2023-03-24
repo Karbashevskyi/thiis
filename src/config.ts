@@ -14,5 +14,6 @@ export const isConfig = {
     camelCase: /^[a-z][a-zA-Z0-9]*([A-Z][a-zA-Z0-9]*)*$/,
     snakeCase: /^(?!^[0-9]+$)[a-z0-9]+(_[a-z0-9]+)*$/,
     lowerCase: /[a-z]/, // Example how to use: !isConfig.regex.lowerCase.text('HELO WORLd') => false
+    upperCase: /[A-Z]/, // Example how to use: !isConfig.regex.upperCase.text('hello worlD') => false
   },
 };

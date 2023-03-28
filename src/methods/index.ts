@@ -39,6 +39,7 @@ import { CamelCaseMethod } from './camel-case.method';
 import { SnakeCaseMethod } from './snake-case.method';
 import { UpperCaseMethod } from './upper-case.method';
 import {LowerCaseMethod} from './lower-case.method';
+import {SafariMethod} from './safari.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -90,6 +91,7 @@ export const predefinedMethods = {
   snakeCase: SnakeCaseMethod,
   primitive: PrimitiveMethod,
   promise: PromiseMethod,
+  safari: SafariMethod,
   string: StringMethod,
   symbol: SymbolMethod,
   true: TrueMethod,

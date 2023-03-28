@@ -40,6 +40,7 @@ import { SnakeCaseMethod } from './snake-case.method';
 import { UpperCaseMethod } from './upper-case.method';
 import {LowerCaseMethod} from './lower-case.method';
 import {SafariMethod} from './safari.method';
+import {FirefoxMethod} from './firefox.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -70,6 +71,7 @@ export const predefinedMethods = {
   even: EvenMethod,
   false: FalseMethod,
   falsy: FalsyMethod,
+  firefox: FirefoxMethod,
   function: FunctionMethod,
   generatorFunction: GeneratorFunctionMethod,
   infinity: InfinityMethod,

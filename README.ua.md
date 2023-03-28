@@ -471,7 +471,8 @@ stream$.next('false'); // Bad
 | empty             | ✅     |||
 | even              | ✅🆕   |          |          |
 | false             | ✅     |||
-| falsy             | ✅     |||
+| falsy             | ✅     |||                                                                                                              |
+| firefox           | ✅🆕   |          |          |
 | function          | ✅     | RETURNED |          | якщо потрібно перевірити, чи є щось із пакета функцією, використовуйте is.Function замість is.function |
 | asyncFunction     | ➖     ||
 | generatorFunction | ➖     ||
@@ -498,7 +499,8 @@ stream$.next('false'); // Bad
 | pascalMethod      | ✅🆕   |          |          |                                                                                                        |
 | snakeCase         | ✅🆕   |          |          |
 | string            | ✅     |||
-| symbol            | ✅     |||
+| symbol            | ✅     |||                                                                                                              |
+| safari            | ✅🆕   |          |          |
 | infinity          | ✅     |||
 | true              | ✅     |||
 | truthy            | ✅     |||

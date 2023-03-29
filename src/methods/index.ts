@@ -42,6 +42,7 @@ import {LowerCaseMethod} from './string/register/lower-case.method';
 import {SafariMethod} from './browser/safari.method';
 import {FirefoxMethod} from './browser/firefox.method';
 import {AndroidMethod} from './system/android.method';
+import {PhoneMethod} from './hardware/phone.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -90,6 +91,7 @@ export const predefinedMethods = {
   object: ObjectMethod,
   odd: OddMethod,
   pascalCase: PascalCaseMethod,
+  phone: PhoneMethod,
   upperCase: UpperCaseMethod,
   positive: PositiveMethod,
   snakeCase: SnakeCaseMethod,

@@ -466,6 +466,7 @@ stream$.next('false'); // Bad
 | generatorFunction | ➖     |          |          |                                                                                                                      |
 | instanceof        | ✅     |          |          |                                                                                                                      |
 | int               | ✅🆕   |          |          |                                                                                                                      |
+| opera             | ✅🆕   |          |          |                                                                                                                      |
 | ipv4              | ✅🆕   |          |          |                                                                                                                      |
 | ipv6              | ✅🆕   |          |          |                                                                                                                      |
 | kebabCase         | ✅🆕   |          |          |                                                                                                                      |

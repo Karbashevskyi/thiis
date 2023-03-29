@@ -1,5 +1,5 @@
-import { isConfig } from '../config';
-import { StringMethod } from './string.method';
+import { isConfig } from '../../../config';
+import { StringMethod } from '../string.method';
 
 export function KebabCaseMethod(argument: unknown): argument is string {
   if (StringMethod(argument)) {

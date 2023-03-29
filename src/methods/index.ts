@@ -1,46 +1,47 @@
 import { ArrayMethod } from './array.method';
-import { BigIntMethod } from './bigInt.method';
-import { BooleanMethod } from './boolean.method';
+import { BigIntMethod } from './number/bigInt.method';
+import { BooleanMethod } from './boolean/boolean.method';
 import { CompareMethod } from './compare.method';
 import { EmptyMethod } from './empty.method';
-import { FalseMethod } from './false.method';
-import { FalsyMethod } from './falsy.method';
+import { FalseMethod } from './boolean/false.method';
+import { FalsyMethod } from './boolean/falsy.method';
 import { InstanceofMethod } from './instanceof.method';
 import { NullMethod } from './null.method';
-import { NumberMethod } from './number.method';
+import { NumberMethod } from './number/number.method';
 import { ObjectMethod } from './object.method';
-import { StringMethod } from './string.method';
+import { StringMethod } from './string/string.method';
 import { SymbolMethod } from './symbol.method';
-import { TrueMethod } from './true.method';
-import { TruthyMethod } from './truthy.method';
+import { TrueMethod } from './boolean/true.method';
+import { TruthyMethod } from './boolean/truthy.method';
 import { UndefinedMethod } from './undefined.method';
-import { ZeroMethod } from './zero.method';
+import { ZeroMethod } from './number/zero.method';
 import { PrimitiveMethod } from './primitive.method';
 import { PromiseMethod } from './promise.method';
 import { AsyncFunctionMethod, FunctionMethod, GeneratorFunctionMethod } from './function.method';
-import { PositiveMethod } from './positive.method';
-import { NegativeMethod } from './negative.method';
-import { InfinityMethod } from './infinity.method';
+import { PositiveMethod } from './number/positive.method';
+import { NegativeMethod } from './number/negative.method';
+import { InfinityMethod } from './number/infinity.method';
 import { HTMLElementsMethodsInterface } from '../interfaces/methods/HTML-elements.methods.interface';
 import { ExternalMethodsInterface } from '../interfaces/methods/external.methods.interface';
-import { Ipv6Method } from './ipv6.method';
-import { Ipv4Method } from './ipv4.method';
-import { MacAddressMethod } from './mac-address.method';
-import { WordMethod } from './word.method';
-import { OddMethod } from './odd.method';
+import { Ipv6Method } from './string/ipv6.method';
+import { Ipv4Method } from './string/ipv4.method';
+import { MacAddressMethod } from './string/mac-address.method';
+import { WordMethod } from './string/word.method';
+import { OddMethod } from './number/odd.method';
 import { EvenMethod } from './even.method';
 import { LenMethod } from './len.method';
-import { NumericMethod } from './numeric.method';
-import { IntMethod } from './int.method';
-import { CharMethod } from './char.method';
-import { PascalCaseMethod } from './pascal-case.method';
-import { KebabCaseMethod } from './kebab-case.method';
-import { CamelCaseMethod } from './camel-case.method';
-import { SnakeCaseMethod } from './snake-case.method';
-import { UpperCaseMethod } from './upper-case.method';
-import {LowerCaseMethod} from './lower-case.method';
-import {SafariMethod} from './safari.method';
-import {FirefoxMethod} from './firefox.method';
+import { NumericMethod } from './number/numeric.method';
+import { IntMethod } from './number/int.method';
+import { CharMethod } from './string/char.method';
+import { PascalCaseMethod } from './string/register/pascal-case.method';
+import { KebabCaseMethod } from './string/register/kebab-case.method';
+import { CamelCaseMethod } from './string/register/camel-case.method';
+import { SnakeCaseMethod } from './string/register/snake-case.method';
+import { UpperCaseMethod } from './string/register/upper-case.method';
+import {LowerCaseMethod} from './string/register/lower-case.method';
+import {SafariMethod} from './browser/safari.method';
+import {FirefoxMethod} from './browser/firefox.method';
+import {AndroidMethod} from './system/android.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -58,6 +59,7 @@ export type ConvertTypeToGenericInstanceOf<T> = {
 type LengthMethodType = typeof LenMethod;
 
 export const predefinedMethods = {
+  android: AndroidMethod,
   len: LenMethod,
   lowerCase: LowerCaseMethod,
   array: ArrayMethod,

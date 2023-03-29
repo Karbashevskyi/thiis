@@ -4,8 +4,14 @@ export const isConfig = {
   error: {
     enabled: true,
   },
+  definition: {
+    phone: 768
+  },
   state: {
     userAgent: window?.navigator?.userAgent ?? '',
+    screen: {
+      width: window?.screen?.width ?? ''
+    }
   },
   regex: {
     bigint: /^([-+])?(\d+)n/,

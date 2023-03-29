@@ -498,6 +498,7 @@ stream$.next('false'); // Bad
 | object            | ✅     |||
 | odd               | ✅🆕   |          |          |
 | pascalMethod      | ✅🆕   |          |          |                                                                                                        |
+| phone             | ✅🆕   |          |          |                                                                                                        |
 | snakeCase         | ✅🆕   |          |          |
 | string            | ✅     |||
 | symbol            | ✅     |||          |

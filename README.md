@@ -485,6 +485,7 @@ stream$.next('false'); // Bad
 | object            | ✅     |          |          |                                                                                                                      |
 | odd               | ✅🆕   |          |          |                                                                                                                      |
 | pascalMethod      | ✅🆕   |          |          |                                                                                                                      |
+| phone             | ✅🆕   |          |          |                                                                                                                      |
 | safari            | ✅🆕   |          |          |                                                                                                                      |
 | snakeCase         | ✅🆕   |          |          |                                                                                                                      |
 | string            | ✅     |          |          |                                                                                                                      |

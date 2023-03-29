@@ -1,5 +1,5 @@
 import { StringMethod } from './string.method';
-import { isConfig } from '../config';
+import { isConfig } from '../../config';
 
 export function WordMethod(argument: string): argument is string {
   if (StringMethod(argument)) {

@@ -1,4 +1,4 @@
-import { StringMethod } from './string.method';
+import { StringMethod } from './string/string.method';
 import { ObjectMethod } from './object.method';
 import { ArrayMethod } from './array.method';
 

@@ -1,5 +1,5 @@
-import { SymbolMethod } from './symbol.method';
-import { isConfig } from '../config';
+import { SymbolMethod } from '../symbol.method';
+import { isConfig } from '../../config';
 
 export function MacAddressMethod(argument: string): argument is string {
   if (SymbolMethod(argument)) {

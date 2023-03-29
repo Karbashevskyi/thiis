@@ -450,6 +450,7 @@ stream$.next('false'); // Bad
 | Name              | Tests | Status   | New name | Comment                                                                                                              |
 |-------------------|-------|----------|----------|----------------------------------------------------------------------------------------------------------------------|
 | array             | ✅     |          |          |                                                                                                                      |
+| android           | ✅🆕   |          |          |                                                                                                                      |
 | bigInt            | ✅     |          |          |                                                                                                                      |
 | boolean           | ✅     |          |          |                                                                                                                      |
 | camelCase         | ✅🆕   |          |          |                                                                                                                      |
@@ -459,6 +460,7 @@ stream$.next('false'); // Bad
 | even              | ✅🆕   |          |          |                                                                                                                      |
 | false             | ✅     |          |          |                                                                                                                      |
 | falsy             | ✅     |          |          |                                                                                                                      |
+| firefox           | ✅🆕   |          |          |                                                                                                                      |
 | function          | ✅     | RETURNED |          | if there is a need to check whether something from the package is a function, use is.Function instead of is.function |
 | asyncFunction     | ➖     |          |          |                                                                                                                      |
 | generatorFunction | ➖     |          |          |                                                                                                                      |
@@ -483,6 +485,7 @@ stream$.next('false'); // Bad
 | object            | ✅     |          |          |                                                                                                                      |
 | odd               | ✅🆕   |          |          |                                                                                                                      |
 | pascalMethod      | ✅🆕   |          |          |                                                                                                                      |
+| safari            | ✅🆕   |          |          |                                                                                                                      |
 | snakeCase         | ✅🆕   |          |          |                                                                                                                      |
 | string            | ✅     |          |          |                                                                                                                      |
 | symbol            | ✅     |          |          |                                                                                                                      |

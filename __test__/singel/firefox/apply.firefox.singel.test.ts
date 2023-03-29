@@ -1,7 +1,8 @@
 import {is, IsConfig} from '../../../dist';
 import {dataForBadTesting, dataForGoodTesting} from './fixtures';
 
-describe('safari singel', () => {
+
+describe('firefox singel: apply', () => {
 
     // const navigator =  {
     //     userAgent: '[DEFAULT]'
@@ -11,29 +12,28 @@ describe('safari singel', () => {
     //     Object.defineProperty(window, 'navigator', {value: navigator});
     // });
 
-    it.each(dataForGoodTesting)('is.safari: Should true for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.firefox: Should true for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.safari()).toBe(true);
+        expect(is.firefox.apply({}, [])).toBe(true);
     });
 
-    it.each(dataForBadTesting)('is.safari: Should false for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.firefox: Should false for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.safari()).toBe(false);
+        expect(is.firefox.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.safari: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not.firefox: Should false for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.not.safari()).toBe(false);
+        expect(is.not.firefox.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.safari: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not.firefox: Should true for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.not.safari()).toBe(true);
+        expect(is.not.firefox.apply({}, [])).toBe(true);
     });
 
 });
-

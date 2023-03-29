@@ -1,5 +1,5 @@
-import { NumberMethod } from './number.method';
-import { BigIntMethod } from './bigInt.method';
+import { NumberMethod } from './number/number.method';
+import { BigIntMethod } from './number/bigInt.method';
 
 export function EvenMethod(argument: unknown): argument is number {
   if (NumberMethod(argument)) {

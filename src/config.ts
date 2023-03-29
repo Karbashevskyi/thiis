@@ -1,4 +1,5 @@
 export const isConfig = {
+  packageName: 'thiis',
   useGlobalContext: true,
   error: {
     enabled: true,

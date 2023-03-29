@@ -458,6 +458,10 @@ stream$.next('false'); // Bad
 | compare           | ✅     |          |          |                                                                                                                      |
 | empty             | ✅     |          |          |                                                                                                                      |
 | even              | ✅🆕   |          |          |                                                                                                                      |
+| ios               | ✅🆕   |          |          |                                                                                                                      |
+| ipod              | ✅🆕   |          |          |                                                                                                                      |
+| ipad              | ✅🆕   |          |          |                                                                                                                      |
+| iphone            | ✅🆕   |          |          |                                                                                                                      |
 | false             | ✅     |          |          |                                                                                                                      |
 | falsy             | ✅     |          |          |                                                                                                                      |
 | firefox           | ✅🆕   |          |          |                                                                                                                      |

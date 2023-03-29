@@ -478,7 +478,8 @@ stream$.next('false'); // Bad
 | asyncFunction     | ➖     ||
 | generatorFunction | ➖     ||
 | instanceof        | ✅     |||          |
-| int               | ✅🆕   |          |          |
+| int               | ✅🆕   |          |          |                                                                                                        |
+| opera             | ✅🆕   |          |          |
 | ipv4              | ✅🆕   |          |          |
 | ipv6              | ✅🆕   |          |          |                                                                                                        |
 | kebabCase         | ✅🆕   |          |          |

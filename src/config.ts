@@ -31,5 +31,6 @@ export const isConfig = {
         firefox: /firefox|fxios/i,
         android: /android/i,
         windows: /windows|^win/i,
+        opera: /OPR|Opera/i
     },
 };

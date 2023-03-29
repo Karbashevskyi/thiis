@@ -43,6 +43,7 @@ import {SafariMethod} from './browser/safari.method';
 import {FirefoxMethod} from './browser/firefox.method';
 import {AndroidMethod} from './system/android.method';
 import {PhoneMethod} from './hardware/phone.method';
+import {WindowsMethod} from './system/windows.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -104,6 +105,7 @@ export const predefinedMethods = {
   truthy: TruthyMethod,
   undefined: UndefinedMethod,
   word: WordMethod,
+  windows: WindowsMethod,
   zero: ZeroMethod,
 };
 

@@ -509,6 +509,7 @@ stream$.next('false'); // Bad
 | undefined         | ✅     |||
 | NaN               | ➖     | DELETED  | isNaN()  |
 | zero              | ✅     |||
+| windows           | ✅🆕   |          |          |                                                                                                        |
 | word              | ✅     |          |          |
 | upperCase         | ✅🆕   |          |          |                                                                                                        |
 | positive          | ✅     |          |          | Перевірте, якщо число більше 0                                                                         |

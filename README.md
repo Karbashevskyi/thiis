@@ -496,6 +496,7 @@ stream$.next('false'); // Bad
 | undefined         | ✅     |          |          |                                                                                                                      |
 | NaN               | ➖     | DELETED  | isNaN()  |                                                                                                                      |
 | upperCase         | ✅🆕   |          |          |                                                                                                                      |
+| windows           | ✅🆕   |          |          |                                                                                                                      |
 | word              | ✅     |          |          |                                                                                                                      |
 | zero              | ✅     |          |          |                                                                                                                      |
 | positive          | ✅     |          |          | Validate if number is more than 0                                                                                    |

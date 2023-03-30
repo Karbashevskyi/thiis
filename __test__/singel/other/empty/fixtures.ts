@@ -19,6 +19,9 @@ export const dataForGoodTesting: {value: any}[] = [
     {
         value: new Map()
     },
+    {
+        value: new Set()
+    },
 ];
 
 export const dataForBadTesting: {value: any}[] = [

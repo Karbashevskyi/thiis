@@ -28,7 +28,7 @@ import {Ipv4Method} from './string/ipv4.method';
 import {MacAddressMethod} from './string/mac-address.method';
 import {WordMethod} from './string/word.method';
 import {OddMethod} from './number/odd.method';
-import {EvenMethod} from './even.method';
+import {EvenMethod} from './number/even.method';
 import {LenMethod} from './len.method';
 import {NumericMethod} from './number/numeric.method';
 import {IntMethod} from './number/int.method';

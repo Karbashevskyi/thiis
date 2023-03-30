@@ -4,32 +4,32 @@ export enum TypeOfValueEnum {
   object = 'object',
 }
 
-export function CompareMethod<T>(objectOne: T, objectTwo: T): boolean {
+export function CompareMethod<T>(target: T, source: T): boolean {
   try {
-    const keysOfObjectOne: string[] = Object.keys(objectOne ?? {}) ?? [];
-    const keysOfObjectTwo: string[] = Object.keys(objectTwo ?? {}) ?? [];
+    const keysOfTarget: string[] = Object.keys(target ?? {}) ?? [];
+    const keysOfSource: string[] = Object.keys(source ?? {}) ?? [];
 
-    if (!ArrayMethod(keysOfObjectOne) || !ArrayMethod(keysOfObjectTwo)) {
+    if (!ArrayMethod(keysOfTarget) || !ArrayMethod(keysOfSource)) {
       return false;
     }
 
-    if (keysOfObjectOne.length !== keysOfObjectTwo.length) {
+    if (keysOfTarget.length !== keysOfSource.length) {
       return false;
     }
 
-    if (!keysOfObjectOne.length && !keysOfObjectTwo.length) {
+    if (!keysOfTarget.length && !keysOfSource.length) {
       return true;
     }
 
-    for (const keyOfObjectOne of keysOfObjectTwo) {
-      switch (typeof (objectOne as any)[keyOfObjectOne]) {
+    for (const keyOfObjectTwo of keysOfSource) {
+      switch (typeof (target as any)[keyOfObjectTwo]) {
         case TypeOfValueEnum.object:
-          if (!CompareMethod((objectOne as any)[keyOfObjectOne], (objectTwo as any)[keyOfObjectOne])) {
+          if (!CompareMethod((target as any)[keyOfObjectTwo], (source as any)[keyOfObjectTwo])) {
             return false;
           }
           break;
         default:
-          if ((objectOne as any)[keyOfObjectOne] !== (objectTwo as any)[keyOfObjectOne]) {
+          if ((target as any)[keyOfObjectTwo] !== (source as any)[keyOfObjectTwo]) {
             return false;
           }
           break;

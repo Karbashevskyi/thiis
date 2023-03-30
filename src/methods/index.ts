@@ -49,6 +49,7 @@ import {IpodMethod} from './hardware/ipod.method';
 import {IphoneMethod} from './hardware/iphone.method';
 import {IpadMethod} from './hardware/ipad.method';
 import {IosMethod} from './system/ios.method';
+import {IeMethod} from './browser/ie.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -69,6 +70,7 @@ export const predefinedMethods = {
     // Browser
     firefox: FirefoxMethod,
     opera: OperaMethod,
+    ie: IeMethod,
     safari: SafariMethod,
     // System
     ios: IosMethod,

@@ -455,6 +455,7 @@ stream$.next('false'); // Bad
 | boolean           | ✅     |          |          |                                                                                                                      |
 | camelCase         | ✅🆕   |          |          |                                                                                                                      |
 | char              | ✅🆕   |          |          |                                                                                                                      |
+| ie                | ✅🆕   |          |          |                                                                                                                      |
 | compare           | ✅     |          |          |                                                                                                                      |
 | empty             | ✅     |          |          |                                                                                                                      |
 | even              | ✅🆕   |          |          |                                                                                                                      |

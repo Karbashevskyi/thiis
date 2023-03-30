@@ -34,6 +34,7 @@ export const isConfig = {
         opera: /OPR|Opera/i,
         iphone: /(iPhone)/i,
         ipad: /(iPad)/i,
-        ipod: /(iPod)/i
+        ipod: /(iPod)/i,
+        ie: /(Trident\/|MSIE\s)([\d.]+)/
     },
 };

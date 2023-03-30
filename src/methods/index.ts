@@ -51,6 +51,7 @@ import {IpadMethod} from './hardware/ipad.method';
 import {IosMethod} from './system/ios.method';
 import {IeMethod} from './browser/ie.method';
 import {EdgeMethod} from './browser/edge.method';
+import {BrowserMethod} from './browser/browser.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -74,6 +75,7 @@ export const predefinedMethods = {
     ie: IeMethod,
     edge: EdgeMethod,
     safari: SafariMethod,
+    browser: BrowserMethod,
     // System
     ios: IosMethod,
     android: AndroidMethod,

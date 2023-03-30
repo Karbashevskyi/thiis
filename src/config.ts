@@ -8,6 +8,7 @@ export const isConfig = {
         phone: 768
     },
     state: {
+        navigator: window?.navigator ?? '',
         userAgent: window?.navigator?.userAgent ?? '',
         // @ts-ignore
         platform: window?.navigator?.platform ?? window?.navigator?.userAgentData?.platform ?? process?.platform ?? '',

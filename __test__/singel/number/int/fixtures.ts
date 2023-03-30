@@ -2,9 +2,15 @@ export const dataForGoodTesting: { value: any }[] = [
     {
         value: 0
     },
+    {
+        value: 123
+    },
 ];
 
 export const dataForBadTesting: { value: any }[] = [
+    {
+        value: 123.123
+    },
     {
         value: '0'
     },
@@ -97,9 +103,9 @@ export const dataForBadTesting: { value: any }[] = [
         value: -Infinity
     },
     {
-        value: Number.POSITIVE_INFINITY,
+        value: Number.POSITIVE_INFINITY
     },
     {
-        value: Number.NEGATIVE_INFINITY,
+        value: Number.NEGATIVE_INFINITY
     },
 ];

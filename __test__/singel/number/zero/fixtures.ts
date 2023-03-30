@@ -53,6 +53,9 @@ export const dataForBadTesting: {value: any}[] = [
         value: BigInt(1)
     },
     {
+        value: BigInt(0)
+    },
+    {
         value: ""
     },
     {

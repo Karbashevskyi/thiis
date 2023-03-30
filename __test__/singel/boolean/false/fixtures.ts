@@ -7,6 +7,9 @@ export const dataForGoodTesting: {value: any}[] = [
     {
         value: Boolean(0)
     },
+    {
+        value: Boolean()
+    },
 ];
 
 export const dataForBadTesting: {value: any}[] = [

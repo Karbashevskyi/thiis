@@ -1,4 +1,4 @@
-import {is, IsConfig} from '../../src';
+import {is, IsConfig} from '../../dist';
 
 
 describe('phone singel', () => {

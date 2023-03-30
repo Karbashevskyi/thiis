@@ -233,6 +233,9 @@ is.edge('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, li
 isConfig.state.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36 Edg/93.0.961.38';
 is.edge() // true
 
+// Recomendation
+is.browser.edge();
+
 is.edge(false) // false
 is.edge(new Boolean(0)) // false
 is.edge(new Boolean()) // false
@@ -255,6 +258,9 @@ is.firefox('Mozilla/5.0 (Android; Mobile; rv:68.0) Gecko/68.0 Firefox/68.0') // 
 // Alternative
 isConfig.state.userAgent = 'Mozilla/5.0 (Android; Mobile; rv:68.0) Gecko/68.0 Firefox/68.0';
 is.firefox() // true
+
+// Recomendation
+is.browser.firefox();
 
 is.firefox(false) // false
 is.firefox(new Boolean(0)) // false
@@ -279,6 +285,9 @@ is.ie('Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)') // tru
 isConfig.state.userAgent = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)';
 is.ie() // true
 
+// Recomendation
+is.browser.ie();
+
 is.ie(false) // false
 is.ie(new Boolean(0)) // false
 is.ie(new Boolean()) // false
@@ -302,6 +311,9 @@ is.opera('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, l
 isConfig.state.userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 OPR/74.0.3911.218';
 is.opera() // true
 
+// Recomendation
+is.browser.opera();
+
 is.opera(false) // false
 is.opera(new Boolean(0)) // false
 is.opera(new Boolean()) // false
@@ -324,6 +336,10 @@ is.safari('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (K
 // Alternative
 isConfig.state.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36';
 is.safari() // true
+
+
+// Recomendation
+is.browser.safari();
 
 is.safari(false) // false
 is.safari(new Boolean(0)) // false

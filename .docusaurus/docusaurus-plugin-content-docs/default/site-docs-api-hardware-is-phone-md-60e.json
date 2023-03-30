@@ -1,0 +1,24 @@
+{
+  "unversionedId": "API/Hardware/is.phone",
+  "id": "API/Hardware/is.phone",
+  "title": "is.phone",
+  "description": "is.phone(target: unknown)",
+  "source": "@site/docs/API/Hardware/is.phone.md",
+  "sourceDirName": "API/Hardware",
+  "slug": "/API/Hardware/is.phone",
+  "permalink": "/docs/API/Hardware/is.phone",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.phone.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "documentationSidebar",
+  "previous": {
+    "title": "is.ipod",
+    "permalink": "/docs/API/Hardware/is.ipod"
+  },
+  "next": {
+    "title": "is.windowsPhone",
+    "permalink": "/docs/API/Hardware/is.windowsPhone"
+  }
+}

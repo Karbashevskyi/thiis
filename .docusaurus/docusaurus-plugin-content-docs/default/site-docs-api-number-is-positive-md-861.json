@@ -1,0 +1,24 @@
+{
+  "unversionedId": "API/Number/is.positive",
+  "id": "API/Number/is.positive",
+  "title": "is.positive",
+  "description": "is.positive(target: unknown)",
+  "source": "@site/docs/API/Number/is.positive.md",
+  "sourceDirName": "API/Number",
+  "slug": "/API/Number/is.positive",
+  "permalink": "/docs/API/Number/is.positive",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.positive.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "documentationSidebar",
+  "previous": {
+    "title": "is.odd",
+    "permalink": "/docs/API/Number/is.odd"
+  },
+  "next": {
+    "title": "is.zero",
+    "permalink": "/docs/API/Number/is.zero"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "unversionedId": "API/Hardware/is.windowsPhone",
+  "id": "API/Hardware/is.windowsPhone",
+  "title": "is.windowsPhone",
+  "description": "is.windowsPhone(target: unknown)",
+  "source": "@site/docs/API/Hardware/is.windowsPhone.md",
+  "sourceDirName": "API/Hardware",
+  "slug": "/API/Hardware/is.windowsPhone",
+  "permalink": "/docs/API/Hardware/is.windowsPhone",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.windowsPhone.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "documentationSidebar",
+  "previous": {
+    "title": "is.phone",
+    "permalink": "/docs/API/Hardware/is.phone"
+  },
+  "next": {
+    "title": "is.bigInt",
+    "permalink": "/docs/API/Number/is.bigInt"
+  }
+}

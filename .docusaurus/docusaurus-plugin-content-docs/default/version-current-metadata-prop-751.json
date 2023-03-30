@@ -1,0 +1,782 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "documentationSidebar": [
+      {
+        "type": "category",
+        "label": "Documentation - Basics",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Create a Page",
+            "href": "/docs/tutorial-basics/create-a-page",
+            "docId": "tutorial-basics/create-a-page"
+          },
+          {
+            "type": "link",
+            "label": "Create a Document",
+            "href": "/docs/tutorial-basics/create-a-document",
+            "docId": "tutorial-basics/create-a-document"
+          },
+          {
+            "type": "link",
+            "label": "Markdown Features",
+            "href": "/docs/tutorial-basics/markdown-features",
+            "docId": "tutorial-basics/markdown-features"
+          },
+          {
+            "type": "link",
+            "label": "Deploy your site",
+            "href": "/docs/tutorial-basics/deploy-your-site",
+            "docId": "tutorial-basics/deploy-your-site"
+          },
+          {
+            "type": "link",
+            "label": "Congratulations!",
+            "href": "/docs/tutorial-basics/congratulations",
+            "docId": "tutorial-basics/congratulations"
+          }
+        ],
+        "href": "/docs/category/documentation---basics"
+      },
+      {
+        "type": "category",
+        "label": "Documentation - Extras",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "Manage Docs Versions",
+            "href": "/docs/tutorial-extras/manage-docs-versions",
+            "docId": "tutorial-extras/manage-docs-versions"
+          },
+          {
+            "type": "link",
+            "label": "Translate your site",
+            "href": "/docs/tutorial-extras/translate-your-site",
+            "docId": "tutorial-extras/translate-your-site"
+          }
+        ],
+        "href": "/docs/category/documentation---extras"
+      },
+      {
+        "type": "category",
+        "label": "API",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "category",
+            "label": "Boolean",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "is.boolean",
+                "href": "/docs/API/Boolean/is.boolean",
+                "docId": "API/Boolean/is.boolean"
+              },
+              {
+                "type": "link",
+                "label": "is.false",
+                "href": "/docs/API/Boolean/is.false",
+                "docId": "API/Boolean/is.false"
+              },
+              {
+                "type": "link",
+                "label": "is.falsy",
+                "href": "/docs/API/Boolean/is.falsy",
+                "docId": "API/Boolean/is.falsy"
+              },
+              {
+                "type": "link",
+                "label": "is.true",
+                "href": "/docs/API/Boolean/is.true",
+                "docId": "API/Boolean/is.true"
+              },
+              {
+                "type": "link",
+                "label": "is.truthy",
+                "href": "/docs/API/Boolean/is.truthy",
+                "docId": "API/Boolean/is.truthy"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Browser",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "is.browser",
+                "href": "/docs/API/Browser/is.browser",
+                "docId": "API/Browser/is.browser"
+              },
+              {
+                "type": "link",
+                "label": "is.chrome",
+                "href": "/docs/API/Browser/is.chrome",
+                "docId": "API/Browser/is.chrome"
+              },
+              {
+                "type": "link",
+                "label": "is.edge",
+                "href": "/docs/API/Browser/is.edge",
+                "docId": "API/Browser/is.edge"
+              },
+              {
+                "type": "link",
+                "label": "is.firefox",
+                "href": "/docs/API/Browser/is.firefox",
+                "docId": "API/Browser/is.firefox"
+              },
+              {
+                "type": "link",
+                "label": "is.ie",
+                "href": "/docs/API/Browser/is.ie",
+                "docId": "API/Browser/is.ie"
+              },
+              {
+                "type": "link",
+                "label": "is.opera",
+                "href": "/docs/API/Browser/is.opera",
+                "docId": "API/Browser/is.opera"
+              },
+              {
+                "type": "link",
+                "label": "is.safari",
+                "href": "/docs/API/Browser/is.safari",
+                "docId": "API/Browser/is.safari"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Hardware",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "is.ipad",
+                "href": "/docs/API/Hardware/is.ipad",
+                "docId": "API/Hardware/is.ipad"
+              },
+              {
+                "type": "link",
+                "label": "is.iphone",
+                "href": "/docs/API/Hardware/is.iphone",
+                "docId": "API/Hardware/is.iphone"
+              },
+              {
+                "type": "link",
+                "label": "is.ipod",
+                "href": "/docs/API/Hardware/is.ipod",
+                "docId": "API/Hardware/is.ipod"
+              },
+              {
+                "type": "link",
+                "label": "is.phone",
+                "href": "/docs/API/Hardware/is.phone",
+                "docId": "API/Hardware/is.phone"
+              },
+              {
+                "type": "link",
+                "label": "is.windowsPhone",
+                "href": "/docs/API/Hardware/is.windowsPhone",
+                "docId": "API/Hardware/is.windowsPhone"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "Number",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "is.bigInt",
+                "href": "/docs/API/Number/is.bigInt",
+                "docId": "API/Number/is.bigInt"
+              },
+              {
+                "type": "link",
+                "label": "is.even",
+                "href": "/docs/API/Number/is.even",
+                "docId": "API/Number/is.even"
+              },
+              {
+                "type": "link",
+                "label": "is.infinity",
+                "href": "/docs/API/Number/is.infinity",
+                "docId": "API/Number/is.infinity"
+              },
+              {
+                "type": "link",
+                "label": "is.int",
+                "href": "/docs/API/Number/is.int",
+                "docId": "API/Number/is.int"
+              },
+              {
+                "type": "link",
+                "label": "is.negative",
+                "href": "/docs/API/Number/is.negative",
+                "docId": "API/Number/is.negative"
+              },
+              {
+                "type": "link",
+                "label": "is.number",
+                "href": "/docs/API/Number/is.number",
+                "docId": "API/Number/is.number"
+              },
+              {
+                "type": "link",
+                "label": "is.numeric",
+                "href": "/docs/API/Number/is.numeric",
+                "docId": "API/Number/is.numeric"
+              },
+              {
+                "type": "link",
+                "label": "is.odd",
+                "href": "/docs/API/Number/is.odd",
+                "docId": "API/Number/is.odd"
+              },
+              {
+                "type": "link",
+                "label": "is.positive",
+                "href": "/docs/API/Number/is.positive",
+                "docId": "API/Number/is.positive"
+              },
+              {
+                "type": "link",
+                "label": "is.zero",
+                "href": "/docs/API/Number/is.zero",
+                "docId": "API/Number/is.zero"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "String",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "is.camelCase",
+                "href": "/docs/API/String/is.camelCase",
+                "docId": "API/String/is.camelCase"
+              },
+              {
+                "type": "link",
+                "label": "is.char",
+                "href": "/docs/API/String/is.char",
+                "docId": "API/String/is.char"
+              },
+              {
+                "type": "link",
+                "label": "is.ipv4",
+                "href": "/docs/API/String/is.ipv4",
+                "docId": "API/String/is.ipv4"
+              },
+              {
+                "type": "link",
+                "label": "is.ipv6",
+                "href": "/docs/API/String/is.ipv6",
+                "docId": "API/String/is.ipv6"
+              },
+              {
+                "type": "link",
+                "label": "is.kebabCase",
+                "href": "/docs/API/String/is.kebabCase",
+                "docId": "API/String/is.kebabCase"
+              },
+              {
+                "type": "link",
+                "label": "is.lowerCase",
+                "href": "/docs/API/String/is.lowerCase",
+                "docId": "API/String/is.lowerCase"
+              },
+              {
+                "type": "link",
+                "label": "is.macAddress",
+                "href": "/docs/API/String/is.macAddress",
+                "docId": "API/String/is.macAddress"
+              },
+              {
+                "type": "link",
+                "label": "is.pascalCase",
+                "href": "/docs/API/String/is.pascalCase",
+                "docId": "API/String/is.pascalCase"
+              },
+              {
+                "type": "link",
+                "label": "is.snakeCase",
+                "href": "/docs/API/String/is.snakeCase",
+                "docId": "API/String/is.snakeCase"
+              },
+              {
+                "type": "link",
+                "label": "is.string",
+                "href": "/docs/API/String/is.string",
+                "docId": "API/String/is.string"
+              },
+              {
+                "type": "link",
+                "label": "is.upperCase",
+                "href": "/docs/API/String/is.upperCase",
+                "docId": "API/String/is.upperCase"
+              },
+              {
+                "type": "link",
+                "label": "is.word",
+                "href": "/docs/API/String/is.word",
+                "docId": "API/String/is.word"
+              }
+            ]
+          },
+          {
+            "type": "category",
+            "label": "System",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "is.android",
+                "href": "/docs/API/System/is.android",
+                "docId": "API/System/is.android"
+              },
+              {
+                "type": "link",
+                "label": "is.ios",
+                "href": "/docs/API/System/is.ios",
+                "docId": "API/System/is.ios"
+              },
+              {
+                "type": "link",
+                "label": "is.mac",
+                "href": "/docs/API/System/is.mac",
+                "docId": "API/System/is.mac"
+              },
+              {
+                "type": "link",
+                "label": "is.windows",
+                "href": "/docs/API/System/is.windows",
+                "docId": "API/System/is.windows"
+              }
+            ]
+          },
+          {
+            "type": "link",
+            "label": "global",
+            "href": "/docs/API/global",
+            "docId": "API/global"
+          },
+          {
+            "type": "link",
+            "label": "html",
+            "href": "/docs/API/html",
+            "docId": "API/html"
+          },
+          {
+            "type": "link",
+            "label": "rest",
+            "href": "/docs/API/rest",
+            "docId": "API/rest"
+          }
+        ]
+      },
+      {
+        "type": "category",
+        "label": "Getting started",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "link",
+            "label": "🔗 CDN",
+            "href": "/docs/Getting started/CDN",
+            "docId": "Getting started/CDN"
+          },
+          {
+            "type": "link",
+            "label": "💡 Introduction",
+            "href": "/docs/Getting started/Introduction",
+            "docId": "Getting started/Introduction"
+          },
+          {
+            "type": "link",
+            "label": "🙌 Import",
+            "href": "/docs/Getting started/import",
+            "docId": "Getting started/import"
+          },
+          {
+            "type": "link",
+            "label": "💿 Installation",
+            "href": "/docs/Getting started/install",
+            "docId": "Getting started/install"
+          }
+        ]
+      }
+    ]
+  },
+  "docs": {
+    "API/Boolean/is.boolean": {
+      "id": "API/Boolean/is.boolean",
+      "title": "is.boolean",
+      "description": "is.boolean(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Boolean/is.false": {
+      "id": "API/Boolean/is.false",
+      "title": "is.false",
+      "description": "is.false(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Boolean/is.falsy": {
+      "id": "API/Boolean/is.falsy",
+      "title": "is.falsy",
+      "description": "is.falsy(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Boolean/is.true": {
+      "id": "API/Boolean/is.true",
+      "title": "is.true",
+      "description": "is.true(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Boolean/is.truthy": {
+      "id": "API/Boolean/is.truthy",
+      "title": "is.truthy",
+      "description": "is.truthy(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Browser/is.browser": {
+      "id": "API/Browser/is.browser",
+      "title": "is.browser",
+      "description": "is.browser(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Browser/is.chrome": {
+      "id": "API/Browser/is.chrome",
+      "title": "is.chrome",
+      "description": "is.chrome(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Browser/is.edge": {
+      "id": "API/Browser/is.edge",
+      "title": "is.edge",
+      "description": "is.edge(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Browser/is.firefox": {
+      "id": "API/Browser/is.firefox",
+      "title": "is.firefox",
+      "description": "is.firefox(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Browser/is.ie": {
+      "id": "API/Browser/is.ie",
+      "title": "is.ie",
+      "description": "is.ie(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Browser/is.opera": {
+      "id": "API/Browser/is.opera",
+      "title": "is.opera",
+      "description": "is.opera(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Browser/is.safari": {
+      "id": "API/Browser/is.safari",
+      "title": "is.safari",
+      "description": "is.safari(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/global": {
+      "id": "API/global",
+      "title": "global",
+      "description": "External",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Hardware/is.ipad": {
+      "id": "API/Hardware/is.ipad",
+      "title": "is.ipad",
+      "description": "is.ipad(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Hardware/is.iphone": {
+      "id": "API/Hardware/is.iphone",
+      "title": "is.iphone",
+      "description": "is.iphone(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Hardware/is.ipod": {
+      "id": "API/Hardware/is.ipod",
+      "title": "is.ipod",
+      "description": "is.ipod(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Hardware/is.phone": {
+      "id": "API/Hardware/is.phone",
+      "title": "is.phone",
+      "description": "is.phone(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Hardware/is.windowsPhone": {
+      "id": "API/Hardware/is.windowsPhone",
+      "title": "is.windowsPhone",
+      "description": "is.windowsPhone(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/html": {
+      "id": "API/html",
+      "title": "html",
+      "description": "HTML",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.bigInt": {
+      "id": "API/Number/is.bigInt",
+      "title": "is.bigInt",
+      "description": "is.bigInt(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.even": {
+      "id": "API/Number/is.even",
+      "title": "is.even",
+      "description": "is.even(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.infinity": {
+      "id": "API/Number/is.infinity",
+      "title": "is.infinity",
+      "description": "is.infinity(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.int": {
+      "id": "API/Number/is.int",
+      "title": "is.int",
+      "description": "is.int(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.negative": {
+      "id": "API/Number/is.negative",
+      "title": "is.negative",
+      "description": "is.negative(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.number": {
+      "id": "API/Number/is.number",
+      "title": "is.number",
+      "description": "is.number(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.numeric": {
+      "id": "API/Number/is.numeric",
+      "title": "is.numeric",
+      "description": "is.numeric(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.odd": {
+      "id": "API/Number/is.odd",
+      "title": "is.odd",
+      "description": "is.odd(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.positive": {
+      "id": "API/Number/is.positive",
+      "title": "is.positive",
+      "description": "is.positive(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/Number/is.zero": {
+      "id": "API/Number/is.zero",
+      "title": "is.zero",
+      "description": "is.zero(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/rest": {
+      "id": "API/rest",
+      "title": "rest",
+      "description": "Rest",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.camelCase": {
+      "id": "API/String/is.camelCase",
+      "title": "is.camelCase",
+      "description": "is.camelCase(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.char": {
+      "id": "API/String/is.char",
+      "title": "is.char",
+      "description": "is.char(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.ipv4": {
+      "id": "API/String/is.ipv4",
+      "title": "is.ipv4",
+      "description": "is.ipv4(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.ipv6": {
+      "id": "API/String/is.ipv6",
+      "title": "is.ipv6",
+      "description": "is.ipv6(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.kebabCase": {
+      "id": "API/String/is.kebabCase",
+      "title": "is.kebabCase",
+      "description": "is.kebabCase(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.lowerCase": {
+      "id": "API/String/is.lowerCase",
+      "title": "is.lowerCase",
+      "description": "is.lowerCase(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.macAddress": {
+      "id": "API/String/is.macAddress",
+      "title": "is.macAddress",
+      "description": "is.macAddress(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.pascalCase": {
+      "id": "API/String/is.pascalCase",
+      "title": "is.pascalCase",
+      "description": "is.pascalCase(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.snakeCase": {
+      "id": "API/String/is.snakeCase",
+      "title": "is.snakeCase",
+      "description": "is.snakeCase(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.string": {
+      "id": "API/String/is.string",
+      "title": "is.string",
+      "description": "is.string(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.upperCase": {
+      "id": "API/String/is.upperCase",
+      "title": "is.upperCase",
+      "description": "is.upperCase(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/String/is.word": {
+      "id": "API/String/is.word",
+      "title": "is.word",
+      "description": "is.word(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/System/is.android": {
+      "id": "API/System/is.android",
+      "title": "is.android",
+      "description": "is.android(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/System/is.ios": {
+      "id": "API/System/is.ios",
+      "title": "is.ios",
+      "description": "is.ios(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/System/is.mac": {
+      "id": "API/System/is.mac",
+      "title": "is.mac",
+      "description": "is.mac(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "API/System/is.windows": {
+      "id": "API/System/is.windows",
+      "title": "is.windows",
+      "description": "is.windows(target: unknown)",
+      "sidebar": "documentationSidebar"
+    },
+    "Getting started/CDN": {
+      "id": "Getting started/CDN",
+      "title": "🔗 CDN",
+      "description": "",
+      "sidebar": "documentationSidebar"
+    },
+    "Getting started/import": {
+      "id": "Getting started/import",
+      "title": "🙌 Import",
+      "description": "",
+      "sidebar": "documentationSidebar"
+    },
+    "Getting started/install": {
+      "id": "Getting started/install",
+      "title": "💿 Installation",
+      "description": "",
+      "sidebar": "documentationSidebar"
+    },
+    "Getting started/Introduction": {
+      "id": "Getting started/Introduction",
+      "title": "💡 Introduction",
+      "description": "NPM Latest Version",
+      "sidebar": "documentationSidebar"
+    },
+    "tutorial-basics/congratulations": {
+      "id": "tutorial-basics/congratulations",
+      "title": "Congratulations!",
+      "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
+      "sidebar": "documentationSidebar"
+    },
+    "tutorial-basics/create-a-document": {
+      "id": "tutorial-basics/create-a-document",
+      "title": "Create a Document",
+      "description": "Documents are groups of pages connected through:",
+      "sidebar": "documentationSidebar"
+    },
+    "tutorial-basics/create-a-page": {
+      "id": "tutorial-basics/create-a-page",
+      "title": "Create a Page",
+      "description": "Add Markdown or React files to src/pages to create a standalone page:",
+      "sidebar": "documentationSidebar"
+    },
+    "tutorial-basics/deploy-your-site": {
+      "id": "tutorial-basics/deploy-your-site",
+      "title": "Deploy your site",
+      "description": "Docusaurus is a static-site-generator (also called Jamstack).",
+      "sidebar": "documentationSidebar"
+    },
+    "tutorial-basics/markdown-features": {
+      "id": "tutorial-basics/markdown-features",
+      "title": "Markdown Features",
+      "description": "Docusaurus supports Markdown and a few additional features.",
+      "sidebar": "documentationSidebar"
+    },
+    "tutorial-extras/manage-docs-versions": {
+      "id": "tutorial-extras/manage-docs-versions",
+      "title": "Manage Docs Versions",
+      "description": "Docusaurus can manage multiple versions of your docs.",
+      "sidebar": "documentationSidebar"
+    },
+    "tutorial-extras/translate-your-site": {
+      "id": "tutorial-extras/translate-your-site",
+      "title": "Translate your site",
+      "description": "Let's translate docs/intro.md to French.",
+      "sidebar": "documentationSidebar"
+    }
+  }
+}

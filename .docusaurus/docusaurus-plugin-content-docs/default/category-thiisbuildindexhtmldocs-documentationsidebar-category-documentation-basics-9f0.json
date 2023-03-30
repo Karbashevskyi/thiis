@@ -1,0 +1,12 @@
+{
+  "title": "Documentation - Basics",
+  "description": "5 minutes to learn the most important Docusaurus concepts.",
+  "slug": "/category/documentation---basics",
+  "permalink": "/thiis/build/index.html/docs/category/documentation---basics",
+  "navigation": {
+    "next": {
+      "title": "Create a Page",
+      "permalink": "/thiis/build/index.html/docs/tutorial-basics/create-a-page"
+    }
+  }
+}

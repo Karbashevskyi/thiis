@@ -1,0 +1,24 @@
+{
+  "unversionedId": "API/System/is.android",
+  "id": "API/System/is.android",
+  "title": "is.android",
+  "description": "is.android(target: unknown)",
+  "source": "@site/docs/API/System/is.android.md",
+  "sourceDirName": "API/System",
+  "slug": "/API/System/is.android",
+  "permalink": "/docs/API/System/is.android",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/System/is.android.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "documentationSidebar",
+  "previous": {
+    "title": "is.word",
+    "permalink": "/docs/API/String/is.word"
+  },
+  "next": {
+    "title": "is.ios",
+    "permalink": "/docs/API/System/is.ios"
+  }
+}

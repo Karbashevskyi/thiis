@@ -1,0 +1,20 @@
+{
+  "unversionedId": "Getting started/install",
+  "id": "Getting started/install",
+  "title": "💿 Installation",
+  "description": "",
+  "source": "@site/docs/Getting started/install.md",
+  "sourceDirName": "Getting started",
+  "slug": "/Getting started/install",
+  "permalink": "/docs/Getting started/install",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Getting started/install.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "documentationSidebar",
+  "previous": {
+    "title": "🙌 Import",
+    "permalink": "/docs/Getting started/import"
+  }
+}

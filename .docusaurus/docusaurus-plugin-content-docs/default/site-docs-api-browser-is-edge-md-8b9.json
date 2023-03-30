@@ -1,0 +1,24 @@
+{
+  "unversionedId": "API/Browser/is.edge",
+  "id": "API/Browser/is.edge",
+  "title": "is.edge",
+  "description": "is.edge(target: unknown)",
+  "source": "@site/docs/API/Browser/is.edge.md",
+  "sourceDirName": "API/Browser",
+  "slug": "/API/Browser/is.edge",
+  "permalink": "/docs/API/Browser/is.edge",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.edge.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "documentationSidebar",
+  "previous": {
+    "title": "is.chrome",
+    "permalink": "/docs/API/Browser/is.chrome"
+  },
+  "next": {
+    "title": "is.firefox",
+    "permalink": "/docs/API/Browser/is.firefox"
+  }
+}

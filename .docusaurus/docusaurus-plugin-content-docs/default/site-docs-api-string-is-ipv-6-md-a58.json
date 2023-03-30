@@ -1,0 +1,24 @@
+{
+  "unversionedId": "API/String/is.ipv6",
+  "id": "API/String/is.ipv6",
+  "title": "is.ipv6",
+  "description": "is.ipv6(target: unknown)",
+  "source": "@site/docs/API/String/is.ipv6.md",
+  "sourceDirName": "API/String",
+  "slug": "/API/String/is.ipv6",
+  "permalink": "/docs/API/String/is.ipv6",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.ipv6.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "documentationSidebar",
+  "previous": {
+    "title": "is.ipv4",
+    "permalink": "/docs/API/String/is.ipv4"
+  },
+  "next": {
+    "title": "is.kebabCase",
+    "permalink": "/docs/API/String/is.kebabCase"
+  }
+}

@@ -6,7 +6,7 @@
   "source": "@site/docs/Getting started/CDN.md",
   "sourceDirName": "Getting started",
   "slug": "/Getting started/CDN",
-  "permalink": "/docs/Getting started/CDN",
+  "permalink": "/thiis/docs/Getting started/CDN",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Getting started/CDN.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "rest",
-    "permalink": "/docs/API/rest"
+    "permalink": "/thiis/docs/API/rest"
   },
   "next": {
     "title": "💡 Introduction",
-    "permalink": "/docs/Getting started/Introduction"
+    "permalink": "/thiis/docs/Getting started/Introduction"
   }
 }

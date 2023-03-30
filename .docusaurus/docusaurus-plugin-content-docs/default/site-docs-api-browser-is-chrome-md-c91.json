@@ -6,7 +6,7 @@
   "source": "@site/docs/API/Browser/is.chrome.md",
   "sourceDirName": "API/Browser",
   "slug": "/API/Browser/is.chrome",
-  "permalink": "/docs/API/Browser/is.chrome",
+  "permalink": "/thiis/docs/API/Browser/is.chrome",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.chrome.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.browser",
-    "permalink": "/docs/API/Browser/is.browser"
+    "permalink": "/thiis/docs/API/Browser/is.browser"
   },
   "next": {
     "title": "is.edge",
-    "permalink": "/docs/API/Browser/is.edge"
+    "permalink": "/thiis/docs/API/Browser/is.edge"
   }
 }

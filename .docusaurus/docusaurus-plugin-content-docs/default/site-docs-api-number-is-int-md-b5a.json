@@ -6,7 +6,7 @@
   "source": "@site/docs/API/Number/is.int.md",
   "sourceDirName": "API/Number",
   "slug": "/API/Number/is.int",
-  "permalink": "/docs/API/Number/is.int",
+  "permalink": "/thiis/docs/API/Number/is.int",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.int.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.infinity",
-    "permalink": "/docs/API/Number/is.infinity"
+    "permalink": "/thiis/docs/API/Number/is.infinity"
   },
   "next": {
     "title": "is.negative",
-    "permalink": "/docs/API/Number/is.negative"
+    "permalink": "/thiis/docs/API/Number/is.negative"
   }
 }

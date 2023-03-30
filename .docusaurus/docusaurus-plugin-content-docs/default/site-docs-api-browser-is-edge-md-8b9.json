@@ -6,7 +6,7 @@
   "source": "@site/docs/API/Browser/is.edge.md",
   "sourceDirName": "API/Browser",
   "slug": "/API/Browser/is.edge",
-  "permalink": "/docs/API/Browser/is.edge",
+  "permalink": "/thiis/docs/API/Browser/is.edge",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.edge.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.chrome",
-    "permalink": "/docs/API/Browser/is.chrome"
+    "permalink": "/thiis/docs/API/Browser/is.chrome"
   },
   "next": {
     "title": "is.firefox",
-    "permalink": "/docs/API/Browser/is.firefox"
+    "permalink": "/thiis/docs/API/Browser/is.firefox"
   }
 }

@@ -6,7 +6,7 @@
   "source": "@site/docs/API/rest.md",
   "sourceDirName": "API",
   "slug": "/API/rest",
-  "permalink": "/docs/API/rest",
+  "permalink": "/thiis/docs/API/rest",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/rest.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "html",
-    "permalink": "/docs/API/html"
+    "permalink": "/thiis/docs/API/html"
   },
   "next": {
     "title": "🔗 CDN",
-    "permalink": "/docs/Getting started/CDN"
+    "permalink": "/thiis/docs/Getting started/CDN"
   }
 }

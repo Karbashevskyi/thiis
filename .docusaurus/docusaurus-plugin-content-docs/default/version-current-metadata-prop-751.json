@@ -18,35 +18,35 @@
           {
             "type": "link",
             "label": "Create a Page",
-            "href": "/docs/tutorial-basics/create-a-page",
+            "href": "/thiis/docs/tutorial-basics/create-a-page",
             "docId": "tutorial-basics/create-a-page"
           },
           {
             "type": "link",
             "label": "Create a Document",
-            "href": "/docs/tutorial-basics/create-a-document",
+            "href": "/thiis/docs/tutorial-basics/create-a-document",
             "docId": "tutorial-basics/create-a-document"
           },
           {
             "type": "link",
             "label": "Markdown Features",
-            "href": "/docs/tutorial-basics/markdown-features",
+            "href": "/thiis/docs/tutorial-basics/markdown-features",
             "docId": "tutorial-basics/markdown-features"
           },
           {
             "type": "link",
             "label": "Deploy your site",
-            "href": "/docs/tutorial-basics/deploy-your-site",
+            "href": "/thiis/docs/tutorial-basics/deploy-your-site",
             "docId": "tutorial-basics/deploy-your-site"
           },
           {
             "type": "link",
             "label": "Congratulations!",
-            "href": "/docs/tutorial-basics/congratulations",
+            "href": "/thiis/docs/tutorial-basics/congratulations",
             "docId": "tutorial-basics/congratulations"
           }
         ],
-        "href": "/docs/category/documentation---basics"
+        "href": "/thiis/docs/category/documentation---basics"
       },
       {
         "type": "category",
@@ -57,17 +57,17 @@
           {
             "type": "link",
             "label": "Manage Docs Versions",
-            "href": "/docs/tutorial-extras/manage-docs-versions",
+            "href": "/thiis/docs/tutorial-extras/manage-docs-versions",
             "docId": "tutorial-extras/manage-docs-versions"
           },
           {
             "type": "link",
             "label": "Translate your site",
-            "href": "/docs/tutorial-extras/translate-your-site",
+            "href": "/thiis/docs/tutorial-extras/translate-your-site",
             "docId": "tutorial-extras/translate-your-site"
           }
         ],
-        "href": "/docs/category/documentation---extras"
+        "href": "/thiis/docs/category/documentation---extras"
       },
       {
         "type": "category",
@@ -84,31 +84,31 @@
               {
                 "type": "link",
                 "label": "is.boolean",
-                "href": "/docs/API/Boolean/is.boolean",
+                "href": "/thiis/docs/API/Boolean/is.boolean",
                 "docId": "API/Boolean/is.boolean"
               },
               {
                 "type": "link",
                 "label": "is.false",
-                "href": "/docs/API/Boolean/is.false",
+                "href": "/thiis/docs/API/Boolean/is.false",
                 "docId": "API/Boolean/is.false"
               },
               {
                 "type": "link",
                 "label": "is.falsy",
-                "href": "/docs/API/Boolean/is.falsy",
+                "href": "/thiis/docs/API/Boolean/is.falsy",
                 "docId": "API/Boolean/is.falsy"
               },
               {
                 "type": "link",
                 "label": "is.true",
-                "href": "/docs/API/Boolean/is.true",
+                "href": "/thiis/docs/API/Boolean/is.true",
                 "docId": "API/Boolean/is.true"
               },
               {
                 "type": "link",
                 "label": "is.truthy",
-                "href": "/docs/API/Boolean/is.truthy",
+                "href": "/thiis/docs/API/Boolean/is.truthy",
                 "docId": "API/Boolean/is.truthy"
               }
             ]
@@ -122,43 +122,43 @@
               {
                 "type": "link",
                 "label": "is.browser",
-                "href": "/docs/API/Browser/is.browser",
+                "href": "/thiis/docs/API/Browser/is.browser",
                 "docId": "API/Browser/is.browser"
               },
               {
                 "type": "link",
                 "label": "is.chrome",
-                "href": "/docs/API/Browser/is.chrome",
+                "href": "/thiis/docs/API/Browser/is.chrome",
                 "docId": "API/Browser/is.chrome"
               },
               {
                 "type": "link",
                 "label": "is.edge",
-                "href": "/docs/API/Browser/is.edge",
+                "href": "/thiis/docs/API/Browser/is.edge",
                 "docId": "API/Browser/is.edge"
               },
               {
                 "type": "link",
                 "label": "is.firefox",
-                "href": "/docs/API/Browser/is.firefox",
+                "href": "/thiis/docs/API/Browser/is.firefox",
                 "docId": "API/Browser/is.firefox"
               },
               {
                 "type": "link",
                 "label": "is.ie",
-                "href": "/docs/API/Browser/is.ie",
+                "href": "/thiis/docs/API/Browser/is.ie",
                 "docId": "API/Browser/is.ie"
               },
               {
                 "type": "link",
                 "label": "is.opera",
-                "href": "/docs/API/Browser/is.opera",
+                "href": "/thiis/docs/API/Browser/is.opera",
                 "docId": "API/Browser/is.opera"
               },
               {
                 "type": "link",
                 "label": "is.safari",
-                "href": "/docs/API/Browser/is.safari",
+                "href": "/thiis/docs/API/Browser/is.safari",
                 "docId": "API/Browser/is.safari"
               }
             ]
@@ -172,31 +172,31 @@
               {
                 "type": "link",
                 "label": "is.ipad",
-                "href": "/docs/API/Hardware/is.ipad",
+                "href": "/thiis/docs/API/Hardware/is.ipad",
                 "docId": "API/Hardware/is.ipad"
               },
               {
                 "type": "link",
                 "label": "is.iphone",
-                "href": "/docs/API/Hardware/is.iphone",
+                "href": "/thiis/docs/API/Hardware/is.iphone",
                 "docId": "API/Hardware/is.iphone"
               },
               {
                 "type": "link",
                 "label": "is.ipod",
-                "href": "/docs/API/Hardware/is.ipod",
+                "href": "/thiis/docs/API/Hardware/is.ipod",
                 "docId": "API/Hardware/is.ipod"
               },
               {
                 "type": "link",
                 "label": "is.phone",
-                "href": "/docs/API/Hardware/is.phone",
+                "href": "/thiis/docs/API/Hardware/is.phone",
                 "docId": "API/Hardware/is.phone"
               },
               {
                 "type": "link",
                 "label": "is.windowsPhone",
-                "href": "/docs/API/Hardware/is.windowsPhone",
+                "href": "/thiis/docs/API/Hardware/is.windowsPhone",
                 "docId": "API/Hardware/is.windowsPhone"
               }
             ]
@@ -210,61 +210,61 @@
               {
                 "type": "link",
                 "label": "is.bigInt",
-                "href": "/docs/API/Number/is.bigInt",
+                "href": "/thiis/docs/API/Number/is.bigInt",
                 "docId": "API/Number/is.bigInt"
               },
               {
                 "type": "link",
                 "label": "is.even",
-                "href": "/docs/API/Number/is.even",
+                "href": "/thiis/docs/API/Number/is.even",
                 "docId": "API/Number/is.even"
               },
               {
                 "type": "link",
                 "label": "is.infinity",
-                "href": "/docs/API/Number/is.infinity",
+                "href": "/thiis/docs/API/Number/is.infinity",
                 "docId": "API/Number/is.infinity"
               },
               {
                 "type": "link",
                 "label": "is.int",
-                "href": "/docs/API/Number/is.int",
+                "href": "/thiis/docs/API/Number/is.int",
                 "docId": "API/Number/is.int"
               },
               {
                 "type": "link",
                 "label": "is.negative",
-                "href": "/docs/API/Number/is.negative",
+                "href": "/thiis/docs/API/Number/is.negative",
                 "docId": "API/Number/is.negative"
               },
               {
                 "type": "link",
                 "label": "is.number",
-                "href": "/docs/API/Number/is.number",
+                "href": "/thiis/docs/API/Number/is.number",
                 "docId": "API/Number/is.number"
               },
               {
                 "type": "link",
                 "label": "is.numeric",
-                "href": "/docs/API/Number/is.numeric",
+                "href": "/thiis/docs/API/Number/is.numeric",
                 "docId": "API/Number/is.numeric"
               },
               {
                 "type": "link",
                 "label": "is.odd",
-                "href": "/docs/API/Number/is.odd",
+                "href": "/thiis/docs/API/Number/is.odd",
                 "docId": "API/Number/is.odd"
               },
               {
                 "type": "link",
                 "label": "is.positive",
-                "href": "/docs/API/Number/is.positive",
+                "href": "/thiis/docs/API/Number/is.positive",
                 "docId": "API/Number/is.positive"
               },
               {
                 "type": "link",
                 "label": "is.zero",
-                "href": "/docs/API/Number/is.zero",
+                "href": "/thiis/docs/API/Number/is.zero",
                 "docId": "API/Number/is.zero"
               }
             ]
@@ -278,73 +278,73 @@
               {
                 "type": "link",
                 "label": "is.camelCase",
-                "href": "/docs/API/String/is.camelCase",
+                "href": "/thiis/docs/API/String/is.camelCase",
                 "docId": "API/String/is.camelCase"
               },
               {
                 "type": "link",
                 "label": "is.char",
-                "href": "/docs/API/String/is.char",
+                "href": "/thiis/docs/API/String/is.char",
                 "docId": "API/String/is.char"
               },
               {
                 "type": "link",
                 "label": "is.ipv4",
-                "href": "/docs/API/String/is.ipv4",
+                "href": "/thiis/docs/API/String/is.ipv4",
                 "docId": "API/String/is.ipv4"
               },
               {
                 "type": "link",
                 "label": "is.ipv6",
-                "href": "/docs/API/String/is.ipv6",
+                "href": "/thiis/docs/API/String/is.ipv6",
                 "docId": "API/String/is.ipv6"
               },
               {
                 "type": "link",
                 "label": "is.kebabCase",
-                "href": "/docs/API/String/is.kebabCase",
+                "href": "/thiis/docs/API/String/is.kebabCase",
                 "docId": "API/String/is.kebabCase"
               },
               {
                 "type": "link",
                 "label": "is.lowerCase",
-                "href": "/docs/API/String/is.lowerCase",
+                "href": "/thiis/docs/API/String/is.lowerCase",
                 "docId": "API/String/is.lowerCase"
               },
               {
                 "type": "link",
                 "label": "is.macAddress",
-                "href": "/docs/API/String/is.macAddress",
+                "href": "/thiis/docs/API/String/is.macAddress",
                 "docId": "API/String/is.macAddress"
               },
               {
                 "type": "link",
                 "label": "is.pascalCase",
-                "href": "/docs/API/String/is.pascalCase",
+                "href": "/thiis/docs/API/String/is.pascalCase",
                 "docId": "API/String/is.pascalCase"
               },
               {
                 "type": "link",
                 "label": "is.snakeCase",
-                "href": "/docs/API/String/is.snakeCase",
+                "href": "/thiis/docs/API/String/is.snakeCase",
                 "docId": "API/String/is.snakeCase"
               },
               {
                 "type": "link",
                 "label": "is.string",
-                "href": "/docs/API/String/is.string",
+                "href": "/thiis/docs/API/String/is.string",
                 "docId": "API/String/is.string"
               },
               {
                 "type": "link",
                 "label": "is.upperCase",
-                "href": "/docs/API/String/is.upperCase",
+                "href": "/thiis/docs/API/String/is.upperCase",
                 "docId": "API/String/is.upperCase"
               },
               {
                 "type": "link",
                 "label": "is.word",
-                "href": "/docs/API/String/is.word",
+                "href": "/thiis/docs/API/String/is.word",
                 "docId": "API/String/is.word"
               }
             ]
@@ -358,25 +358,25 @@
               {
                 "type": "link",
                 "label": "is.android",
-                "href": "/docs/API/System/is.android",
+                "href": "/thiis/docs/API/System/is.android",
                 "docId": "API/System/is.android"
               },
               {
                 "type": "link",
                 "label": "is.ios",
-                "href": "/docs/API/System/is.ios",
+                "href": "/thiis/docs/API/System/is.ios",
                 "docId": "API/System/is.ios"
               },
               {
                 "type": "link",
                 "label": "is.mac",
-                "href": "/docs/API/System/is.mac",
+                "href": "/thiis/docs/API/System/is.mac",
                 "docId": "API/System/is.mac"
               },
               {
                 "type": "link",
                 "label": "is.windows",
-                "href": "/docs/API/System/is.windows",
+                "href": "/thiis/docs/API/System/is.windows",
                 "docId": "API/System/is.windows"
               }
             ]
@@ -384,19 +384,19 @@
           {
             "type": "link",
             "label": "global",
-            "href": "/docs/API/global",
+            "href": "/thiis/docs/API/global",
             "docId": "API/global"
           },
           {
             "type": "link",
             "label": "html",
-            "href": "/docs/API/html",
+            "href": "/thiis/docs/API/html",
             "docId": "API/html"
           },
           {
             "type": "link",
             "label": "rest",
-            "href": "/docs/API/rest",
+            "href": "/thiis/docs/API/rest",
             "docId": "API/rest"
           }
         ]
@@ -410,25 +410,25 @@
           {
             "type": "link",
             "label": "🔗 CDN",
-            "href": "/docs/Getting started/CDN",
+            "href": "/thiis/docs/Getting started/CDN",
             "docId": "Getting started/CDN"
           },
           {
             "type": "link",
             "label": "💡 Introduction",
-            "href": "/docs/Getting started/Introduction",
+            "href": "/thiis/docs/Getting started/Introduction",
             "docId": "Getting started/Introduction"
           },
           {
             "type": "link",
             "label": "🙌 Import",
-            "href": "/docs/Getting started/import",
+            "href": "/thiis/docs/Getting started/import",
             "docId": "Getting started/import"
           },
           {
             "type": "link",
             "label": "💿 Installation",
-            "href": "/docs/Getting started/install",
+            "href": "/thiis/docs/Getting started/install",
             "docId": "Getting started/install"
           }
         ]

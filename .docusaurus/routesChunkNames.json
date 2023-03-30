@@ -1,255 +1,255 @@
 {
-  "/markdown-page-155": {
+  "/thiis/markdown-page-8f0": {
     "__comp": "1f391b9e",
     "__context": {
       "plugin": "9f596e6d"
     },
     "content": "393be207"
   },
-  "/docs-f9b": {
+  "/thiis/docs-4c3": {
     "__comp": "1be78505",
     "__context": {
       "plugin": "03042d03"
     },
     "versionMetadata": "935f2afb"
   },
-  "/docs/API/Boolean/is.boolean-849": {
+  "/thiis/docs/API/Boolean/is.boolean-84f": {
     "__comp": "17896441",
     "content": "c710806c"
   },
-  "/docs/API/Boolean/is.false-219": {
+  "/thiis/docs/API/Boolean/is.false-ea0": {
     "__comp": "17896441",
     "content": "37a6aeb6"
   },
-  "/docs/API/Boolean/is.falsy-544": {
+  "/thiis/docs/API/Boolean/is.falsy-7de": {
     "__comp": "17896441",
     "content": "3b1e734d"
   },
-  "/docs/API/Boolean/is.true-ab9": {
+  "/thiis/docs/API/Boolean/is.true-e3d": {
     "__comp": "17896441",
     "content": "18248f9f"
   },
-  "/docs/API/Boolean/is.truthy-628": {
+  "/thiis/docs/API/Boolean/is.truthy-654": {
     "__comp": "17896441",
     "content": "486b6d93"
   },
-  "/docs/API/Browser/is.browser-791": {
+  "/thiis/docs/API/Browser/is.browser-71b": {
     "__comp": "17896441",
     "content": "4a73986c"
   },
-  "/docs/API/Browser/is.chrome-749": {
+  "/thiis/docs/API/Browser/is.chrome-227": {
     "__comp": "17896441",
     "content": "c911ce8f"
   },
-  "/docs/API/Browser/is.edge-ab2": {
+  "/thiis/docs/API/Browser/is.edge-fcb": {
     "__comp": "17896441",
     "content": "8b946549"
   },
-  "/docs/API/Browser/is.firefox-589": {
+  "/thiis/docs/API/Browser/is.firefox-dbf": {
     "__comp": "17896441",
     "content": "8ea5a03c"
   },
-  "/docs/API/Browser/is.ie-ec2": {
+  "/thiis/docs/API/Browser/is.ie-57c": {
     "__comp": "17896441",
     "content": "0cceef8f"
   },
-  "/docs/API/Browser/is.opera-317": {
+  "/thiis/docs/API/Browser/is.opera-c75": {
     "__comp": "17896441",
     "content": "1ab7636d"
   },
-  "/docs/API/Browser/is.safari-df2": {
+  "/thiis/docs/API/Browser/is.safari-9bd": {
     "__comp": "17896441",
     "content": "132f3187"
   },
-  "/docs/API/global-ed3": {
+  "/thiis/docs/API/global-1c6": {
     "__comp": "17896441",
     "content": "f7ae576c"
   },
-  "/docs/API/Hardware/is.ipad-072": {
+  "/thiis/docs/API/Hardware/is.ipad-9cb": {
     "__comp": "17896441",
     "content": "606db628"
   },
-  "/docs/API/Hardware/is.iphone-e06": {
+  "/thiis/docs/API/Hardware/is.iphone-39a": {
     "__comp": "17896441",
     "content": "8351a809"
   },
-  "/docs/API/Hardware/is.ipod-fec": {
+  "/thiis/docs/API/Hardware/is.ipod-01d": {
     "__comp": "17896441",
     "content": "f16f1421"
   },
-  "/docs/API/Hardware/is.phone-7b4": {
+  "/thiis/docs/API/Hardware/is.phone-1cf": {
     "__comp": "17896441",
     "content": "60e9d8eb"
   },
-  "/docs/API/Hardware/is.windowsPhone-66e": {
+  "/thiis/docs/API/Hardware/is.windowsPhone-069": {
     "__comp": "17896441",
     "content": "e4275023"
   },
-  "/docs/API/html-b22": {
+  "/thiis/docs/API/html-dd3": {
     "__comp": "17896441",
     "content": "104a1562"
   },
-  "/docs/API/Number/is.bigInt-c65": {
+  "/thiis/docs/API/Number/is.bigInt-aae": {
     "__comp": "17896441",
     "content": "25d90dff"
   },
-  "/docs/API/Number/is.even-d8d": {
+  "/thiis/docs/API/Number/is.even-ade": {
     "__comp": "17896441",
     "content": "bf8ebd3a"
   },
-  "/docs/API/Number/is.infinity-42b": {
+  "/thiis/docs/API/Number/is.infinity-8cf": {
     "__comp": "17896441",
     "content": "e97ae0e3"
   },
-  "/docs/API/Number/is.int-22c": {
+  "/thiis/docs/API/Number/is.int-6f6": {
     "__comp": "17896441",
     "content": "b5a9f6c9"
   },
-  "/docs/API/Number/is.negative-450": {
+  "/thiis/docs/API/Number/is.negative-d8b": {
     "__comp": "17896441",
     "content": "1aceb9c2"
   },
-  "/docs/API/Number/is.number-aef": {
+  "/thiis/docs/API/Number/is.number-d98": {
     "__comp": "17896441",
     "content": "f207d07a"
   },
-  "/docs/API/Number/is.numeric-3ec": {
+  "/thiis/docs/API/Number/is.numeric-6a6": {
     "__comp": "17896441",
     "content": "e174d26c"
   },
-  "/docs/API/Number/is.odd-444": {
+  "/thiis/docs/API/Number/is.odd-cba": {
     "__comp": "17896441",
     "content": "e6e858d8"
   },
-  "/docs/API/Number/is.positive-958": {
+  "/thiis/docs/API/Number/is.positive-41e": {
     "__comp": "17896441",
     "content": "8617d41a"
   },
-  "/docs/API/Number/is.zero-6e6": {
+  "/thiis/docs/API/Number/is.zero-8ca": {
     "__comp": "17896441",
     "content": "803ee3e7"
   },
-  "/docs/API/rest-b4b": {
+  "/thiis/docs/API/rest-c66": {
     "__comp": "17896441",
     "content": "db581bb1"
   },
-  "/docs/API/String/is.camelCase-120": {
+  "/thiis/docs/API/String/is.camelCase-837": {
     "__comp": "17896441",
     "content": "af60db21"
   },
-  "/docs/API/String/is.char-8e7": {
+  "/thiis/docs/API/String/is.char-6c0": {
     "__comp": "17896441",
     "content": "27281218"
   },
-  "/docs/API/String/is.ipv4-35c": {
+  "/thiis/docs/API/String/is.ipv4-af7": {
     "__comp": "17896441",
     "content": "2e2c11c6"
   },
-  "/docs/API/String/is.ipv6-086": {
+  "/thiis/docs/API/String/is.ipv6-7e9": {
     "__comp": "17896441",
     "content": "a5897b30"
   },
-  "/docs/API/String/is.kebabCase-09b": {
+  "/thiis/docs/API/String/is.kebabCase-0e8": {
     "__comp": "17896441",
     "content": "01d39ec5"
   },
-  "/docs/API/String/is.lowerCase-1e9": {
+  "/thiis/docs/API/String/is.lowerCase-77d": {
     "__comp": "17896441",
     "content": "2b741dce"
   },
-  "/docs/API/String/is.macAddress-0e6": {
+  "/thiis/docs/API/String/is.macAddress-d63": {
     "__comp": "17896441",
     "content": "6e313f40"
   },
-  "/docs/API/String/is.pascalCase-0bd": {
+  "/thiis/docs/API/String/is.pascalCase-8be": {
     "__comp": "17896441",
     "content": "bfffc999"
   },
-  "/docs/API/String/is.snakeCase-1f5": {
+  "/thiis/docs/API/String/is.snakeCase-0e5": {
     "__comp": "17896441",
     "content": "7865f6d9"
   },
-  "/docs/API/String/is.string-b6e": {
+  "/thiis/docs/API/String/is.string-202": {
     "__comp": "17896441",
     "content": "cd7198d4"
   },
-  "/docs/API/String/is.upperCase-9f0": {
+  "/thiis/docs/API/String/is.upperCase-8a9": {
     "__comp": "17896441",
     "content": "c9bd580e"
   },
-  "/docs/API/String/is.word-03a": {
+  "/thiis/docs/API/String/is.word-fe1": {
     "__comp": "17896441",
     "content": "e263e339"
   },
-  "/docs/API/System/is.android-7b9": {
+  "/thiis/docs/API/System/is.android-cc8": {
     "__comp": "17896441",
     "content": "4e1cbdc2"
   },
-  "/docs/API/System/is.ios-5e4": {
+  "/thiis/docs/API/System/is.ios-be3": {
     "__comp": "17896441",
     "content": "634e4cd8"
   },
-  "/docs/API/System/is.mac-21c": {
+  "/thiis/docs/API/System/is.mac-439": {
     "__comp": "17896441",
     "content": "80abfa78"
   },
-  "/docs/API/System/is.windows-46f": {
+  "/thiis/docs/API/System/is.windows-fef": {
     "__comp": "17896441",
     "content": "6aaf01d2"
   },
-  "/docs/category/documentation---basics-e5b": {
+  "/thiis/docs/category/documentation---basics-6fe": {
     "__comp": "14eb3368",
-    "categoryGeneratedIndex": "fe498b4e"
+    "categoryGeneratedIndex": "aaf0901b"
   },
-  "/docs/category/documentation---extras-0ed": {
+  "/thiis/docs/category/documentation---extras-126": {
     "__comp": "14eb3368",
-    "categoryGeneratedIndex": "58abc5c5"
+    "categoryGeneratedIndex": "dc02e1af"
   },
-  "/docs/Getting started/CDN-505": {
+  "/thiis/docs/Getting started/CDN-594": {
     "__comp": "17896441",
     "content": "0bca5e0d"
   },
-  "/docs/Getting started/import-74e": {
+  "/thiis/docs/Getting started/import-bf6": {
     "__comp": "17896441",
     "content": "9443bbe5"
   },
-  "/docs/Getting started/install-5db": {
+  "/thiis/docs/Getting started/install-ec5": {
     "__comp": "17896441",
     "content": "18400092"
   },
-  "/docs/Getting started/Introduction-462": {
+  "/thiis/docs/Getting started/Introduction-cb1": {
     "__comp": "17896441",
     "content": "3d4d7ce3"
   },
-  "/docs/tutorial-basics/congratulations-897": {
+  "/thiis/docs/tutorial-basics/congratulations-ae7": {
     "__comp": "17896441",
     "content": "822bd8ab"
   },
-  "/docs/tutorial-basics/create-a-document-1a3": {
+  "/thiis/docs/tutorial-basics/create-a-document-25c": {
     "__comp": "17896441",
     "content": "1e4232ab"
   },
-  "/docs/tutorial-basics/create-a-page-f4a": {
+  "/thiis/docs/tutorial-basics/create-a-page-adf": {
     "__comp": "17896441",
     "content": "5c868d36"
   },
-  "/docs/tutorial-basics/deploy-your-site-154": {
+  "/thiis/docs/tutorial-basics/deploy-your-site-867": {
     "__comp": "17896441",
     "content": "f55d3e7a"
   },
-  "/docs/tutorial-basics/markdown-features-cd7": {
+  "/thiis/docs/tutorial-basics/markdown-features-319": {
     "__comp": "17896441",
     "content": "18c41134"
   },
-  "/docs/tutorial-extras/manage-docs-versions-512": {
+  "/thiis/docs/tutorial-extras/manage-docs-versions-862": {
     "__comp": "17896441",
     "content": "dff1c289"
   },
-  "/docs/tutorial-extras/translate-your-site-593": {
+  "/thiis/docs/tutorial-extras/translate-your-site-d23": {
     "__comp": "17896441",
     "content": "e44a2883"
   },
-  "/-a96": {
+  "/thiis/-fc2": {
     "__comp": "c4f5d8e4",
     "__context": {
       "plugin": "9f596e6d"

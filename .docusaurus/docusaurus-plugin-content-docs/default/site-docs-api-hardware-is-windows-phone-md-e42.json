@@ -6,7 +6,7 @@
   "source": "@site/docs/API/Hardware/is.windowsPhone.md",
   "sourceDirName": "API/Hardware",
   "slug": "/API/Hardware/is.windowsPhone",
-  "permalink": "/docs/API/Hardware/is.windowsPhone",
+  "permalink": "/thiis/docs/API/Hardware/is.windowsPhone",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.windowsPhone.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.phone",
-    "permalink": "/docs/API/Hardware/is.phone"
+    "permalink": "/thiis/docs/API/Hardware/is.phone"
   },
   "next": {
     "title": "is.bigInt",
-    "permalink": "/docs/API/Number/is.bigInt"
+    "permalink": "/thiis/docs/API/Number/is.bigInt"
   }
 }

@@ -6,7 +6,7 @@
   "source": "@site/docs/API/Hardware/is.ipad.md",
   "sourceDirName": "API/Hardware",
   "slug": "/API/Hardware/is.ipad",
-  "permalink": "/docs/API/Hardware/is.ipad",
+  "permalink": "/thiis/docs/API/Hardware/is.ipad",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.ipad.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.safari",
-    "permalink": "/docs/API/Browser/is.safari"
+    "permalink": "/thiis/docs/API/Browser/is.safari"
   },
   "next": {
     "title": "is.iphone",
-    "permalink": "/docs/API/Hardware/is.iphone"
+    "permalink": "/thiis/docs/API/Hardware/is.iphone"
   }
 }

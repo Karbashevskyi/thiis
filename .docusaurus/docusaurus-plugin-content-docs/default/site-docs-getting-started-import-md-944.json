@@ -6,7 +6,7 @@
   "source": "@site/docs/Getting started/import.md",
   "sourceDirName": "Getting started",
   "slug": "/Getting started/import",
-  "permalink": "/docs/Getting started/import",
+  "permalink": "/thiis/docs/Getting started/import",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Getting started/import.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "💡 Introduction",
-    "permalink": "/docs/Getting started/Introduction"
+    "permalink": "/thiis/docs/Getting started/Introduction"
   },
   "next": {
     "title": "💿 Installation",
-    "permalink": "/docs/Getting started/install"
+    "permalink": "/thiis/docs/Getting started/install"
   }
 }

@@ -6,7 +6,7 @@
   "source": "@site/docs/API/Hardware/is.ipod.md",
   "sourceDirName": "API/Hardware",
   "slug": "/API/Hardware/is.ipod",
-  "permalink": "/docs/API/Hardware/is.ipod",
+  "permalink": "/thiis/docs/API/Hardware/is.ipod",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.ipod.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.iphone",
-    "permalink": "/docs/API/Hardware/is.iphone"
+    "permalink": "/thiis/docs/API/Hardware/is.iphone"
   },
   "next": {
     "title": "is.phone",
-    "permalink": "/docs/API/Hardware/is.phone"
+    "permalink": "/thiis/docs/API/Hardware/is.phone"
   }
 }

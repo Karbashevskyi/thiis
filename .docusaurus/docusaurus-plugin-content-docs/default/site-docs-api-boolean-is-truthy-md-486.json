@@ -6,7 +6,7 @@
   "source": "@site/docs/API/Boolean/is.truthy.md",
   "sourceDirName": "API/Boolean",
   "slug": "/API/Boolean/is.truthy",
-  "permalink": "/docs/API/Boolean/is.truthy",
+  "permalink": "/thiis/docs/API/Boolean/is.truthy",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Boolean/is.truthy.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.true",
-    "permalink": "/docs/API/Boolean/is.true"
+    "permalink": "/thiis/docs/API/Boolean/is.true"
   },
   "next": {
     "title": "is.browser",
-    "permalink": "/docs/API/Browser/is.browser"
+    "permalink": "/thiis/docs/API/Browser/is.browser"
   }
 }

@@ -6,7 +6,7 @@
   "source": "@site/docs/API/Browser/is.safari.md",
   "sourceDirName": "API/Browser",
   "slug": "/API/Browser/is.safari",
-  "permalink": "/docs/API/Browser/is.safari",
+  "permalink": "/thiis/docs/API/Browser/is.safari",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.safari.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.opera",
-    "permalink": "/docs/API/Browser/is.opera"
+    "permalink": "/thiis/docs/API/Browser/is.opera"
   },
   "next": {
     "title": "is.ipad",
-    "permalink": "/docs/API/Hardware/is.ipad"
+    "permalink": "/thiis/docs/API/Hardware/is.ipad"
   }
 }

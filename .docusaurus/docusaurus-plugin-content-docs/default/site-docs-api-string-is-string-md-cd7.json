@@ -6,7 +6,7 @@
   "source": "@site/docs/API/String/is.string.md",
   "sourceDirName": "API/String",
   "slug": "/API/String/is.string",
-  "permalink": "/docs/API/String/is.string",
+  "permalink": "/thiis/docs/API/String/is.string",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.string.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.snakeCase",
-    "permalink": "/docs/API/String/is.snakeCase"
+    "permalink": "/thiis/docs/API/String/is.snakeCase"
   },
   "next": {
     "title": "is.upperCase",
-    "permalink": "/docs/API/String/is.upperCase"
+    "permalink": "/thiis/docs/API/String/is.upperCase"
   }
 }

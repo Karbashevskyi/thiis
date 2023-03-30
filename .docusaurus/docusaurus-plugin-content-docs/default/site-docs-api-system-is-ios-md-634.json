@@ -6,7 +6,7 @@
   "source": "@site/docs/API/System/is.ios.md",
   "sourceDirName": "API/System",
   "slug": "/API/System/is.ios",
-  "permalink": "/docs/API/System/is.ios",
+  "permalink": "/thiis/docs/API/System/is.ios",
   "draft": false,
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/System/is.ios.md",
   "tags": [],
@@ -15,10 +15,10 @@
   "sidebar": "documentationSidebar",
   "previous": {
     "title": "is.android",
-    "permalink": "/docs/API/System/is.android"
+    "permalink": "/thiis/docs/API/System/is.android"
   },
   "next": {
     "title": "is.mac",
-    "permalink": "/docs/API/System/is.mac"
+    "permalink": "/thiis/docs/API/System/is.mac"
   }
 }

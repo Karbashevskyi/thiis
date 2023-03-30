@@ -1387,6 +1387,19 @@ is.not.int(Number.NEGATIVE_INFINITY) // true
 // And all other known types will return true
 ```
 
+### is.mac(target: unknown)
+- Target argument: **optional**.
+- Checks if current system is mac.
+
+```typescript
+
+// And all other known types will return false
+
+// Reversal boolean result
+
+// And all other known types will return true
+```
+
 ## Rest
 
 ### is.array(target: unknown)

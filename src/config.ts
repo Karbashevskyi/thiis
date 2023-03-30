@@ -37,6 +37,7 @@ export const isConfig = {
         ipad: /(iPad)/i,
         ipod: /(iPod)/i,
         ie: /(Trident\/|MSIE\s)([\d.]+)/,
-        edge: /edge|edg|edga\/(\d+)/i
+        edge: /edge|edg|edga\/(\d+)/i,
+        mac: /mac/i
     },
 };

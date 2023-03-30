@@ -461,6 +461,7 @@ stream$.next('false'); // Bad
 | compare           | ✅     |          |          |                                                                                                                      |
 | empty             | ✅     |          |          |                                                                                                                      |
 | even              | ✅🆕   |          |          |                                                                                                                      |
+| mac               | ✅🆕   |          |          |                                                                                                                      |
 | ios               | ✅🆕   |          |          |                                                                                                                      |
 | ipod              | ✅🆕   |          |          |                                                                                                                      |
 | ipad              | ✅🆕   |          |          |                                                                                                                      |

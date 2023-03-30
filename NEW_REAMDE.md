@@ -43,11 +43,8 @@ if (is.object.not.empty(variable)) {
     - [Installation](#-installation)
     - [CDN](#-cdn)
     - [Import](#-import)
-      TODO
     - [API](#-api)
-    - [New methods that are available through the package, but which are only declared in the package, but actually take data from outside the package.](#new-methods-that-are-available-through-the-package-but-which-are-only-declared-in-the-package-but-actually-take-data-from-outside-the-package)
-        - [General (841 methods)](#generale--841-methods-)
-        - [HTML (80 methods)](#html--80-methods-)
+      - TODO
     - [Additional](#-additional)
     - [Contributing](#-contributing)
     - [Authors](#-authors)
@@ -13538,3 +13535,26 @@ is.not.int(Number.NEGATIVE_INFINITY) // true
 
 // And all other known types will return true
 ```
+
+[Back to table of contents](#-table-of-contents)
+
+## 👤 Contributing
+
+[//]: # 'Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.'
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Add your changes: `git add .`
+4. Commit your changes: `git commit -am 'Add some feature'`
+5. Push to the branch: `git push origin my-new-feature`
+6. Submit a pull request 😎
+
+## ✍️ Authors
+
+- **Ivan Karbashevskyi** - _Initial work_ - [Karbashevskyi](https://github.com/Karbashevskyi)
+
+See also the list of [contributors](https://github.com/Karbashevskyi/thiis/contributors) who participated in this project.
+
+## 📜 License
+
+[MIT License](https://andreasonny.mit-license.org/2019) © Karbashevskyi

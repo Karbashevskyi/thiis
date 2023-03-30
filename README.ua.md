@@ -463,7 +463,8 @@ stream$.next('false'); // Bad
 | Name              | Tests | Status   | New name | Comment            [NEW_REAMDE.md](NEW_REAMDE.md)                                                                                    |
 |-------------------|-------|----------|----------|--------------------------------------------------------------------------------------------------------|
 | array             | ✅     |||          |
-| android           | ✅🆕   |          |          |                                                                                                        |
+| android           | ✅🆕   |          |          |                                                                                                                     |
+| windowsPhone      | ✅🆕   |          |          |                                                                                                        |
 | browser           | ✅🆕   |          |          |
 | bigInt            | ✅     |||
 | boolean           | ✅     |||          |

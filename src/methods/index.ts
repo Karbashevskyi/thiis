@@ -54,6 +54,7 @@ import {EdgeMethod} from './browser/edge.method';
 import {BrowserMethod} from './browser/browser.method';
 import {MacMethod} from './system/mac.method';
 import {ChromeMethod} from './browser/chrome.method';
+import {WindowsPhoneMethod} from './hardware/windows-phone.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -89,6 +90,7 @@ export const predefinedMethods = {
     ipod: IpodMethod,
     iphone: IphoneMethod,
     ipad: IpadMethod,
+    windowsPhone: WindowsPhoneMethod,
     // Boolean
     boolean: BooleanMethod,
     false: FalseMethod,

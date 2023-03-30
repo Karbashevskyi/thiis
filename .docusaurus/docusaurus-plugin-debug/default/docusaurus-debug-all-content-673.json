@@ -1,0 +1,1769 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/thiis/docs",
+          "tagsPath": "/thiis/docs/tags",
+          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs",
+          "editUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/en/docusaurus-plugin-content-docs/current",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/Users/ivankarbashevskyi/Projects/packages/thiis/sidebars.js",
+          "contentPath": "/Users/ivankarbashevskyi/Projects/packages/thiis/docs",
+          "contentPathLocalized": "/Users/ivankarbashevskyi/Projects/packages/thiis/i18n/en/docusaurus-plugin-content-docs/current",
+          "docs": [
+            {
+              "unversionedId": "API/Boolean/is.boolean",
+              "id": "API/Boolean/is.boolean",
+              "title": "is.boolean",
+              "description": "is.boolean(target: unknown)",
+              "source": "@site/docs/API/Boolean/is.boolean.md",
+              "sourceDirName": "API/Boolean",
+              "slug": "/API/Boolean/is.boolean",
+              "permalink": "/thiis/docs/API/Boolean/is.boolean",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Boolean/is.boolean.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "Translate your site",
+                "permalink": "/thiis/docs/tutorial-extras/translate-your-site"
+              },
+              "next": {
+                "title": "is.false",
+                "permalink": "/thiis/docs/API/Boolean/is.false"
+              }
+            },
+            {
+              "unversionedId": "API/Boolean/is.false",
+              "id": "API/Boolean/is.false",
+              "title": "is.false",
+              "description": "is.false(target: unknown)",
+              "source": "@site/docs/API/Boolean/is.false.md",
+              "sourceDirName": "API/Boolean",
+              "slug": "/API/Boolean/is.false",
+              "permalink": "/thiis/docs/API/Boolean/is.false",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Boolean/is.false.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.boolean",
+                "permalink": "/thiis/docs/API/Boolean/is.boolean"
+              },
+              "next": {
+                "title": "is.falsy",
+                "permalink": "/thiis/docs/API/Boolean/is.falsy"
+              }
+            },
+            {
+              "unversionedId": "API/Boolean/is.falsy",
+              "id": "API/Boolean/is.falsy",
+              "title": "is.falsy",
+              "description": "is.falsy(target: unknown)",
+              "source": "@site/docs/API/Boolean/is.falsy.md",
+              "sourceDirName": "API/Boolean",
+              "slug": "/API/Boolean/is.falsy",
+              "permalink": "/thiis/docs/API/Boolean/is.falsy",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Boolean/is.falsy.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.false",
+                "permalink": "/thiis/docs/API/Boolean/is.false"
+              },
+              "next": {
+                "title": "is.true",
+                "permalink": "/thiis/docs/API/Boolean/is.true"
+              }
+            },
+            {
+              "unversionedId": "API/Boolean/is.true",
+              "id": "API/Boolean/is.true",
+              "title": "is.true",
+              "description": "is.true(target: unknown)",
+              "source": "@site/docs/API/Boolean/is.true.md",
+              "sourceDirName": "API/Boolean",
+              "slug": "/API/Boolean/is.true",
+              "permalink": "/thiis/docs/API/Boolean/is.true",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Boolean/is.true.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.falsy",
+                "permalink": "/thiis/docs/API/Boolean/is.falsy"
+              },
+              "next": {
+                "title": "is.truthy",
+                "permalink": "/thiis/docs/API/Boolean/is.truthy"
+              }
+            },
+            {
+              "unversionedId": "API/Boolean/is.truthy",
+              "id": "API/Boolean/is.truthy",
+              "title": "is.truthy",
+              "description": "is.truthy(target: unknown)",
+              "source": "@site/docs/API/Boolean/is.truthy.md",
+              "sourceDirName": "API/Boolean",
+              "slug": "/API/Boolean/is.truthy",
+              "permalink": "/thiis/docs/API/Boolean/is.truthy",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Boolean/is.truthy.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.true",
+                "permalink": "/thiis/docs/API/Boolean/is.true"
+              },
+              "next": {
+                "title": "is.browser",
+                "permalink": "/thiis/docs/API/Browser/is.browser"
+              }
+            },
+            {
+              "unversionedId": "API/Browser/is.browser",
+              "id": "API/Browser/is.browser",
+              "title": "is.browser",
+              "description": "is.browser(target: unknown)",
+              "source": "@site/docs/API/Browser/is.browser.md",
+              "sourceDirName": "API/Browser",
+              "slug": "/API/Browser/is.browser",
+              "permalink": "/thiis/docs/API/Browser/is.browser",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.browser.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.truthy",
+                "permalink": "/thiis/docs/API/Boolean/is.truthy"
+              },
+              "next": {
+                "title": "is.chrome",
+                "permalink": "/thiis/docs/API/Browser/is.chrome"
+              }
+            },
+            {
+              "unversionedId": "API/Browser/is.chrome",
+              "id": "API/Browser/is.chrome",
+              "title": "is.chrome",
+              "description": "is.chrome(target: unknown)",
+              "source": "@site/docs/API/Browser/is.chrome.md",
+              "sourceDirName": "API/Browser",
+              "slug": "/API/Browser/is.chrome",
+              "permalink": "/thiis/docs/API/Browser/is.chrome",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.chrome.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.browser",
+                "permalink": "/thiis/docs/API/Browser/is.browser"
+              },
+              "next": {
+                "title": "is.edge",
+                "permalink": "/thiis/docs/API/Browser/is.edge"
+              }
+            },
+            {
+              "unversionedId": "API/Browser/is.edge",
+              "id": "API/Browser/is.edge",
+              "title": "is.edge",
+              "description": "is.edge(target: unknown)",
+              "source": "@site/docs/API/Browser/is.edge.md",
+              "sourceDirName": "API/Browser",
+              "slug": "/API/Browser/is.edge",
+              "permalink": "/thiis/docs/API/Browser/is.edge",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.edge.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.chrome",
+                "permalink": "/thiis/docs/API/Browser/is.chrome"
+              },
+              "next": {
+                "title": "is.firefox",
+                "permalink": "/thiis/docs/API/Browser/is.firefox"
+              }
+            },
+            {
+              "unversionedId": "API/Browser/is.firefox",
+              "id": "API/Browser/is.firefox",
+              "title": "is.firefox",
+              "description": "is.firefox(target: unknown)",
+              "source": "@site/docs/API/Browser/is.firefox.md",
+              "sourceDirName": "API/Browser",
+              "slug": "/API/Browser/is.firefox",
+              "permalink": "/thiis/docs/API/Browser/is.firefox",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.firefox.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.edge",
+                "permalink": "/thiis/docs/API/Browser/is.edge"
+              },
+              "next": {
+                "title": "is.ie",
+                "permalink": "/thiis/docs/API/Browser/is.ie"
+              }
+            },
+            {
+              "unversionedId": "API/Browser/is.ie",
+              "id": "API/Browser/is.ie",
+              "title": "is.ie",
+              "description": "is.ie(target: unknown)",
+              "source": "@site/docs/API/Browser/is.ie.md",
+              "sourceDirName": "API/Browser",
+              "slug": "/API/Browser/is.ie",
+              "permalink": "/thiis/docs/API/Browser/is.ie",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.ie.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.firefox",
+                "permalink": "/thiis/docs/API/Browser/is.firefox"
+              },
+              "next": {
+                "title": "is.opera",
+                "permalink": "/thiis/docs/API/Browser/is.opera"
+              }
+            },
+            {
+              "unversionedId": "API/Browser/is.opera",
+              "id": "API/Browser/is.opera",
+              "title": "is.opera",
+              "description": "is.opera(target: unknown)",
+              "source": "@site/docs/API/Browser/is.opera.md",
+              "sourceDirName": "API/Browser",
+              "slug": "/API/Browser/is.opera",
+              "permalink": "/thiis/docs/API/Browser/is.opera",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.opera.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.ie",
+                "permalink": "/thiis/docs/API/Browser/is.ie"
+              },
+              "next": {
+                "title": "is.safari",
+                "permalink": "/thiis/docs/API/Browser/is.safari"
+              }
+            },
+            {
+              "unversionedId": "API/Browser/is.safari",
+              "id": "API/Browser/is.safari",
+              "title": "is.safari",
+              "description": "is.safari(target: unknown)",
+              "source": "@site/docs/API/Browser/is.safari.md",
+              "sourceDirName": "API/Browser",
+              "slug": "/API/Browser/is.safari",
+              "permalink": "/thiis/docs/API/Browser/is.safari",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Browser/is.safari.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.opera",
+                "permalink": "/thiis/docs/API/Browser/is.opera"
+              },
+              "next": {
+                "title": "is.ipad",
+                "permalink": "/thiis/docs/API/Hardware/is.ipad"
+              }
+            },
+            {
+              "unversionedId": "API/global",
+              "id": "API/global",
+              "title": "global",
+              "description": "External",
+              "source": "@site/docs/API/global.md",
+              "sourceDirName": "API",
+              "slug": "/API/global",
+              "permalink": "/thiis/docs/API/global",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/global.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.windows",
+                "permalink": "/thiis/docs/API/System/is.windows"
+              },
+              "next": {
+                "title": "html",
+                "permalink": "/thiis/docs/API/html"
+              }
+            },
+            {
+              "unversionedId": "API/Hardware/is.ipad",
+              "id": "API/Hardware/is.ipad",
+              "title": "is.ipad",
+              "description": "is.ipad(target: unknown)",
+              "source": "@site/docs/API/Hardware/is.ipad.md",
+              "sourceDirName": "API/Hardware",
+              "slug": "/API/Hardware/is.ipad",
+              "permalink": "/thiis/docs/API/Hardware/is.ipad",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.ipad.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.safari",
+                "permalink": "/thiis/docs/API/Browser/is.safari"
+              },
+              "next": {
+                "title": "is.iphone",
+                "permalink": "/thiis/docs/API/Hardware/is.iphone"
+              }
+            },
+            {
+              "unversionedId": "API/Hardware/is.iphone",
+              "id": "API/Hardware/is.iphone",
+              "title": "is.iphone",
+              "description": "is.iphone(target: unknown)",
+              "source": "@site/docs/API/Hardware/is.iphone.md",
+              "sourceDirName": "API/Hardware",
+              "slug": "/API/Hardware/is.iphone",
+              "permalink": "/thiis/docs/API/Hardware/is.iphone",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.iphone.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.ipad",
+                "permalink": "/thiis/docs/API/Hardware/is.ipad"
+              },
+              "next": {
+                "title": "is.ipod",
+                "permalink": "/thiis/docs/API/Hardware/is.ipod"
+              }
+            },
+            {
+              "unversionedId": "API/Hardware/is.ipod",
+              "id": "API/Hardware/is.ipod",
+              "title": "is.ipod",
+              "description": "is.ipod(target: unknown)",
+              "source": "@site/docs/API/Hardware/is.ipod.md",
+              "sourceDirName": "API/Hardware",
+              "slug": "/API/Hardware/is.ipod",
+              "permalink": "/thiis/docs/API/Hardware/is.ipod",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.ipod.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.iphone",
+                "permalink": "/thiis/docs/API/Hardware/is.iphone"
+              },
+              "next": {
+                "title": "is.phone",
+                "permalink": "/thiis/docs/API/Hardware/is.phone"
+              }
+            },
+            {
+              "unversionedId": "API/Hardware/is.phone",
+              "id": "API/Hardware/is.phone",
+              "title": "is.phone",
+              "description": "is.phone(target: unknown)",
+              "source": "@site/docs/API/Hardware/is.phone.md",
+              "sourceDirName": "API/Hardware",
+              "slug": "/API/Hardware/is.phone",
+              "permalink": "/thiis/docs/API/Hardware/is.phone",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.phone.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.ipod",
+                "permalink": "/thiis/docs/API/Hardware/is.ipod"
+              },
+              "next": {
+                "title": "is.windowsPhone",
+                "permalink": "/thiis/docs/API/Hardware/is.windowsPhone"
+              }
+            },
+            {
+              "unversionedId": "API/Hardware/is.windowsPhone",
+              "id": "API/Hardware/is.windowsPhone",
+              "title": "is.windowsPhone",
+              "description": "is.windowsPhone(target: unknown)",
+              "source": "@site/docs/API/Hardware/is.windowsPhone.md",
+              "sourceDirName": "API/Hardware",
+              "slug": "/API/Hardware/is.windowsPhone",
+              "permalink": "/thiis/docs/API/Hardware/is.windowsPhone",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Hardware/is.windowsPhone.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.phone",
+                "permalink": "/thiis/docs/API/Hardware/is.phone"
+              },
+              "next": {
+                "title": "is.bigInt",
+                "permalink": "/thiis/docs/API/Number/is.bigInt"
+              }
+            },
+            {
+              "unversionedId": "API/html",
+              "id": "API/html",
+              "title": "html",
+              "description": "HTML",
+              "source": "@site/docs/API/html.md",
+              "sourceDirName": "API",
+              "slug": "/API/html",
+              "permalink": "/thiis/docs/API/html",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/html.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "global",
+                "permalink": "/thiis/docs/API/global"
+              },
+              "next": {
+                "title": "rest",
+                "permalink": "/thiis/docs/API/rest"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.bigInt",
+              "id": "API/Number/is.bigInt",
+              "title": "is.bigInt",
+              "description": "is.bigInt(target: unknown)",
+              "source": "@site/docs/API/Number/is.bigInt.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.bigInt",
+              "permalink": "/thiis/docs/API/Number/is.bigInt",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.bigInt.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.windowsPhone",
+                "permalink": "/thiis/docs/API/Hardware/is.windowsPhone"
+              },
+              "next": {
+                "title": "is.even",
+                "permalink": "/thiis/docs/API/Number/is.even"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.even",
+              "id": "API/Number/is.even",
+              "title": "is.even",
+              "description": "is.even(target: unknown)",
+              "source": "@site/docs/API/Number/is.even.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.even",
+              "permalink": "/thiis/docs/API/Number/is.even",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.even.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.bigInt",
+                "permalink": "/thiis/docs/API/Number/is.bigInt"
+              },
+              "next": {
+                "title": "is.infinity",
+                "permalink": "/thiis/docs/API/Number/is.infinity"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.infinity",
+              "id": "API/Number/is.infinity",
+              "title": "is.infinity",
+              "description": "is.infinity(target: unknown)",
+              "source": "@site/docs/API/Number/is.infinity.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.infinity",
+              "permalink": "/thiis/docs/API/Number/is.infinity",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.infinity.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.even",
+                "permalink": "/thiis/docs/API/Number/is.even"
+              },
+              "next": {
+                "title": "is.int",
+                "permalink": "/thiis/docs/API/Number/is.int"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.int",
+              "id": "API/Number/is.int",
+              "title": "is.int",
+              "description": "is.int(target: unknown)",
+              "source": "@site/docs/API/Number/is.int.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.int",
+              "permalink": "/thiis/docs/API/Number/is.int",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.int.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.infinity",
+                "permalink": "/thiis/docs/API/Number/is.infinity"
+              },
+              "next": {
+                "title": "is.negative",
+                "permalink": "/thiis/docs/API/Number/is.negative"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.negative",
+              "id": "API/Number/is.negative",
+              "title": "is.negative",
+              "description": "is.negative(target: unknown)",
+              "source": "@site/docs/API/Number/is.negative.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.negative",
+              "permalink": "/thiis/docs/API/Number/is.negative",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.negative.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.int",
+                "permalink": "/thiis/docs/API/Number/is.int"
+              },
+              "next": {
+                "title": "is.number",
+                "permalink": "/thiis/docs/API/Number/is.number"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.number",
+              "id": "API/Number/is.number",
+              "title": "is.number",
+              "description": "is.number(target: unknown)",
+              "source": "@site/docs/API/Number/is.number.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.number",
+              "permalink": "/thiis/docs/API/Number/is.number",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.number.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.negative",
+                "permalink": "/thiis/docs/API/Number/is.negative"
+              },
+              "next": {
+                "title": "is.numeric",
+                "permalink": "/thiis/docs/API/Number/is.numeric"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.numeric",
+              "id": "API/Number/is.numeric",
+              "title": "is.numeric",
+              "description": "is.numeric(target: unknown)",
+              "source": "@site/docs/API/Number/is.numeric.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.numeric",
+              "permalink": "/thiis/docs/API/Number/is.numeric",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.numeric.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.number",
+                "permalink": "/thiis/docs/API/Number/is.number"
+              },
+              "next": {
+                "title": "is.odd",
+                "permalink": "/thiis/docs/API/Number/is.odd"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.odd",
+              "id": "API/Number/is.odd",
+              "title": "is.odd",
+              "description": "is.odd(target: unknown)",
+              "source": "@site/docs/API/Number/is.odd.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.odd",
+              "permalink": "/thiis/docs/API/Number/is.odd",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.odd.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.numeric",
+                "permalink": "/thiis/docs/API/Number/is.numeric"
+              },
+              "next": {
+                "title": "is.positive",
+                "permalink": "/thiis/docs/API/Number/is.positive"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.positive",
+              "id": "API/Number/is.positive",
+              "title": "is.positive",
+              "description": "is.positive(target: unknown)",
+              "source": "@site/docs/API/Number/is.positive.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.positive",
+              "permalink": "/thiis/docs/API/Number/is.positive",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.positive.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.odd",
+                "permalink": "/thiis/docs/API/Number/is.odd"
+              },
+              "next": {
+                "title": "is.zero",
+                "permalink": "/thiis/docs/API/Number/is.zero"
+              }
+            },
+            {
+              "unversionedId": "API/Number/is.zero",
+              "id": "API/Number/is.zero",
+              "title": "is.zero",
+              "description": "is.zero(target: unknown)",
+              "source": "@site/docs/API/Number/is.zero.md",
+              "sourceDirName": "API/Number",
+              "slug": "/API/Number/is.zero",
+              "permalink": "/thiis/docs/API/Number/is.zero",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/Number/is.zero.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.positive",
+                "permalink": "/thiis/docs/API/Number/is.positive"
+              },
+              "next": {
+                "title": "is.camelCase",
+                "permalink": "/thiis/docs/API/String/is.camelCase"
+              }
+            },
+            {
+              "unversionedId": "API/rest",
+              "id": "API/rest",
+              "title": "rest",
+              "description": "Rest",
+              "source": "@site/docs/API/rest.md",
+              "sourceDirName": "API",
+              "slug": "/API/rest",
+              "permalink": "/thiis/docs/API/rest",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/rest.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "html",
+                "permalink": "/thiis/docs/API/html"
+              },
+              "next": {
+                "title": "🔗 CDN",
+                "permalink": "/thiis/docs/Getting started/CDN"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.camelCase",
+              "id": "API/String/is.camelCase",
+              "title": "is.camelCase",
+              "description": "is.camelCase(target: unknown)",
+              "source": "@site/docs/API/String/is.camelCase.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.camelCase",
+              "permalink": "/thiis/docs/API/String/is.camelCase",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.camelCase.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.zero",
+                "permalink": "/thiis/docs/API/Number/is.zero"
+              },
+              "next": {
+                "title": "is.char",
+                "permalink": "/thiis/docs/API/String/is.char"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.char",
+              "id": "API/String/is.char",
+              "title": "is.char",
+              "description": "is.char(target: unknown)",
+              "source": "@site/docs/API/String/is.char.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.char",
+              "permalink": "/thiis/docs/API/String/is.char",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.char.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.camelCase",
+                "permalink": "/thiis/docs/API/String/is.camelCase"
+              },
+              "next": {
+                "title": "is.ipv4",
+                "permalink": "/thiis/docs/API/String/is.ipv4"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.ipv4",
+              "id": "API/String/is.ipv4",
+              "title": "is.ipv4",
+              "description": "is.ipv4(target: unknown)",
+              "source": "@site/docs/API/String/is.ipv4.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.ipv4",
+              "permalink": "/thiis/docs/API/String/is.ipv4",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.ipv4.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.char",
+                "permalink": "/thiis/docs/API/String/is.char"
+              },
+              "next": {
+                "title": "is.ipv6",
+                "permalink": "/thiis/docs/API/String/is.ipv6"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.ipv6",
+              "id": "API/String/is.ipv6",
+              "title": "is.ipv6",
+              "description": "is.ipv6(target: unknown)",
+              "source": "@site/docs/API/String/is.ipv6.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.ipv6",
+              "permalink": "/thiis/docs/API/String/is.ipv6",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.ipv6.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.ipv4",
+                "permalink": "/thiis/docs/API/String/is.ipv4"
+              },
+              "next": {
+                "title": "is.kebabCase",
+                "permalink": "/thiis/docs/API/String/is.kebabCase"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.kebabCase",
+              "id": "API/String/is.kebabCase",
+              "title": "is.kebabCase",
+              "description": "is.kebabCase(target: unknown)",
+              "source": "@site/docs/API/String/is.kebabCase.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.kebabCase",
+              "permalink": "/thiis/docs/API/String/is.kebabCase",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.kebabCase.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.ipv6",
+                "permalink": "/thiis/docs/API/String/is.ipv6"
+              },
+              "next": {
+                "title": "is.lowerCase",
+                "permalink": "/thiis/docs/API/String/is.lowerCase"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.lowerCase",
+              "id": "API/String/is.lowerCase",
+              "title": "is.lowerCase",
+              "description": "is.lowerCase(target: unknown)",
+              "source": "@site/docs/API/String/is.lowerCase.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.lowerCase",
+              "permalink": "/thiis/docs/API/String/is.lowerCase",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.lowerCase.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.kebabCase",
+                "permalink": "/thiis/docs/API/String/is.kebabCase"
+              },
+              "next": {
+                "title": "is.macAddress",
+                "permalink": "/thiis/docs/API/String/is.macAddress"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.macAddress",
+              "id": "API/String/is.macAddress",
+              "title": "is.macAddress",
+              "description": "is.macAddress(target: unknown)",
+              "source": "@site/docs/API/String/is.macAddress.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.macAddress",
+              "permalink": "/thiis/docs/API/String/is.macAddress",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.macAddress.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.lowerCase",
+                "permalink": "/thiis/docs/API/String/is.lowerCase"
+              },
+              "next": {
+                "title": "is.pascalCase",
+                "permalink": "/thiis/docs/API/String/is.pascalCase"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.pascalCase",
+              "id": "API/String/is.pascalCase",
+              "title": "is.pascalCase",
+              "description": "is.pascalCase(target: unknown)",
+              "source": "@site/docs/API/String/is.pascalCase.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.pascalCase",
+              "permalink": "/thiis/docs/API/String/is.pascalCase",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.pascalCase.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.macAddress",
+                "permalink": "/thiis/docs/API/String/is.macAddress"
+              },
+              "next": {
+                "title": "is.snakeCase",
+                "permalink": "/thiis/docs/API/String/is.snakeCase"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.snakeCase",
+              "id": "API/String/is.snakeCase",
+              "title": "is.snakeCase",
+              "description": "is.snakeCase(target: unknown)",
+              "source": "@site/docs/API/String/is.snakeCase.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.snakeCase",
+              "permalink": "/thiis/docs/API/String/is.snakeCase",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.snakeCase.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.pascalCase",
+                "permalink": "/thiis/docs/API/String/is.pascalCase"
+              },
+              "next": {
+                "title": "is.string",
+                "permalink": "/thiis/docs/API/String/is.string"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.string",
+              "id": "API/String/is.string",
+              "title": "is.string",
+              "description": "is.string(target: unknown)",
+              "source": "@site/docs/API/String/is.string.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.string",
+              "permalink": "/thiis/docs/API/String/is.string",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.string.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.snakeCase",
+                "permalink": "/thiis/docs/API/String/is.snakeCase"
+              },
+              "next": {
+                "title": "is.upperCase",
+                "permalink": "/thiis/docs/API/String/is.upperCase"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.upperCase",
+              "id": "API/String/is.upperCase",
+              "title": "is.upperCase",
+              "description": "is.upperCase(target: unknown)",
+              "source": "@site/docs/API/String/is.upperCase.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.upperCase",
+              "permalink": "/thiis/docs/API/String/is.upperCase",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.upperCase.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.string",
+                "permalink": "/thiis/docs/API/String/is.string"
+              },
+              "next": {
+                "title": "is.word",
+                "permalink": "/thiis/docs/API/String/is.word"
+              }
+            },
+            {
+              "unversionedId": "API/String/is.word",
+              "id": "API/String/is.word",
+              "title": "is.word",
+              "description": "is.word(target: unknown)",
+              "source": "@site/docs/API/String/is.word.md",
+              "sourceDirName": "API/String",
+              "slug": "/API/String/is.word",
+              "permalink": "/thiis/docs/API/String/is.word",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/String/is.word.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.upperCase",
+                "permalink": "/thiis/docs/API/String/is.upperCase"
+              },
+              "next": {
+                "title": "is.android",
+                "permalink": "/thiis/docs/API/System/is.android"
+              }
+            },
+            {
+              "unversionedId": "API/System/is.android",
+              "id": "API/System/is.android",
+              "title": "is.android",
+              "description": "is.android(target: unknown)",
+              "source": "@site/docs/API/System/is.android.md",
+              "sourceDirName": "API/System",
+              "slug": "/API/System/is.android",
+              "permalink": "/thiis/docs/API/System/is.android",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/System/is.android.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.word",
+                "permalink": "/thiis/docs/API/String/is.word"
+              },
+              "next": {
+                "title": "is.ios",
+                "permalink": "/thiis/docs/API/System/is.ios"
+              }
+            },
+            {
+              "unversionedId": "API/System/is.ios",
+              "id": "API/System/is.ios",
+              "title": "is.ios",
+              "description": "is.ios(target: unknown)",
+              "source": "@site/docs/API/System/is.ios.md",
+              "sourceDirName": "API/System",
+              "slug": "/API/System/is.ios",
+              "permalink": "/thiis/docs/API/System/is.ios",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/System/is.ios.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.android",
+                "permalink": "/thiis/docs/API/System/is.android"
+              },
+              "next": {
+                "title": "is.mac",
+                "permalink": "/thiis/docs/API/System/is.mac"
+              }
+            },
+            {
+              "unversionedId": "API/System/is.mac",
+              "id": "API/System/is.mac",
+              "title": "is.mac",
+              "description": "is.mac(target: unknown)",
+              "source": "@site/docs/API/System/is.mac.md",
+              "sourceDirName": "API/System",
+              "slug": "/API/System/is.mac",
+              "permalink": "/thiis/docs/API/System/is.mac",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/System/is.mac.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.ios",
+                "permalink": "/thiis/docs/API/System/is.ios"
+              },
+              "next": {
+                "title": "is.windows",
+                "permalink": "/thiis/docs/API/System/is.windows"
+              }
+            },
+            {
+              "unversionedId": "API/System/is.windows",
+              "id": "API/System/is.windows",
+              "title": "is.windows",
+              "description": "is.windows(target: unknown)",
+              "source": "@site/docs/API/System/is.windows.md",
+              "sourceDirName": "API/System",
+              "slug": "/API/System/is.windows",
+              "permalink": "/thiis/docs/API/System/is.windows",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/API/System/is.windows.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "is.mac",
+                "permalink": "/thiis/docs/API/System/is.mac"
+              },
+              "next": {
+                "title": "global",
+                "permalink": "/thiis/docs/API/global"
+              }
+            },
+            {
+              "unversionedId": "Getting started/CDN",
+              "id": "Getting started/CDN",
+              "title": "🔗 CDN",
+              "description": "",
+              "source": "@site/docs/Getting started/CDN.md",
+              "sourceDirName": "Getting started",
+              "slug": "/Getting started/CDN",
+              "permalink": "/thiis/docs/Getting started/CDN",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Getting started/CDN.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "rest",
+                "permalink": "/thiis/docs/API/rest"
+              },
+              "next": {
+                "title": "💡 Introduction",
+                "permalink": "/thiis/docs/Getting started/Introduction"
+              }
+            },
+            {
+              "unversionedId": "Getting started/import",
+              "id": "Getting started/import",
+              "title": "🙌 Import",
+              "description": "",
+              "source": "@site/docs/Getting started/import.md",
+              "sourceDirName": "Getting started",
+              "slug": "/Getting started/import",
+              "permalink": "/thiis/docs/Getting started/import",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Getting started/import.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "💡 Introduction",
+                "permalink": "/thiis/docs/Getting started/Introduction"
+              },
+              "next": {
+                "title": "💿 Installation",
+                "permalink": "/thiis/docs/Getting started/install"
+              }
+            },
+            {
+              "unversionedId": "Getting started/install",
+              "id": "Getting started/install",
+              "title": "💿 Installation",
+              "description": "",
+              "source": "@site/docs/Getting started/install.md",
+              "sourceDirName": "Getting started",
+              "slug": "/Getting started/install",
+              "permalink": "/thiis/docs/Getting started/install",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Getting started/install.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "🙌 Import",
+                "permalink": "/thiis/docs/Getting started/import"
+              }
+            },
+            {
+              "unversionedId": "Getting started/Introduction",
+              "id": "Getting started/Introduction",
+              "title": "💡 Introduction",
+              "description": "NPM Latest Version",
+              "source": "@site/docs/Getting started/Introduction.md",
+              "sourceDirName": "Getting started",
+              "slug": "/Getting started/Introduction",
+              "permalink": "/thiis/docs/Getting started/Introduction",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Getting started/Introduction.md",
+              "tags": [],
+              "version": "current",
+              "frontMatter": {},
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "🔗 CDN",
+                "permalink": "/thiis/docs/Getting started/CDN"
+              },
+              "next": {
+                "title": "🙌 Import",
+                "permalink": "/thiis/docs/Getting started/import"
+              }
+            },
+            {
+              "unversionedId": "tutorial-basics/congratulations",
+              "id": "tutorial-basics/congratulations",
+              "title": "Congratulations!",
+              "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
+              "source": "@site/docs/tutorial-basics/congratulations.md",
+              "sourceDirName": "tutorial-basics",
+              "slug": "/tutorial-basics/congratulations",
+              "permalink": "/thiis/docs/tutorial-basics/congratulations",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/congratulations.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 6,
+              "frontMatter": {
+                "sidebar_position": 6
+              },
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "Deploy your site",
+                "permalink": "/thiis/docs/tutorial-basics/deploy-your-site"
+              },
+              "next": {
+                "title": "Documentation - Extras",
+                "permalink": "/thiis/docs/category/documentation---extras"
+              }
+            },
+            {
+              "unversionedId": "tutorial-basics/create-a-document",
+              "id": "tutorial-basics/create-a-document",
+              "title": "Create a Document",
+              "description": "Documents are groups of pages connected through:",
+              "source": "@site/docs/tutorial-basics/create-a-document.md",
+              "sourceDirName": "tutorial-basics",
+              "slug": "/tutorial-basics/create-a-document",
+              "permalink": "/thiis/docs/tutorial-basics/create-a-document",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/create-a-document.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "Create a Page",
+                "permalink": "/thiis/docs/tutorial-basics/create-a-page"
+              },
+              "next": {
+                "title": "Markdown Features",
+                "permalink": "/thiis/docs/tutorial-basics/markdown-features"
+              }
+            },
+            {
+              "unversionedId": "tutorial-basics/create-a-page",
+              "id": "tutorial-basics/create-a-page",
+              "title": "Create a Page",
+              "description": "Add Markdown or React files to src/pages to create a standalone page:",
+              "source": "@site/docs/tutorial-basics/create-a-page.md",
+              "sourceDirName": "tutorial-basics",
+              "slug": "/tutorial-basics/create-a-page",
+              "permalink": "/thiis/docs/tutorial-basics/create-a-page",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/create-a-page.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "Documentation - Basics",
+                "permalink": "/thiis/docs/category/documentation---basics"
+              },
+              "next": {
+                "title": "Create a Document",
+                "permalink": "/thiis/docs/tutorial-basics/create-a-document"
+              }
+            },
+            {
+              "unversionedId": "tutorial-basics/deploy-your-site",
+              "id": "tutorial-basics/deploy-your-site",
+              "title": "Deploy your site",
+              "description": "Docusaurus is a static-site-generator (also called Jamstack).",
+              "source": "@site/docs/tutorial-basics/deploy-your-site.md",
+              "sourceDirName": "tutorial-basics",
+              "slug": "/tutorial-basics/deploy-your-site",
+              "permalink": "/thiis/docs/tutorial-basics/deploy-your-site",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/deploy-your-site.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 5,
+              "frontMatter": {
+                "sidebar_position": 5
+              },
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "Markdown Features",
+                "permalink": "/thiis/docs/tutorial-basics/markdown-features"
+              },
+              "next": {
+                "title": "Congratulations!",
+                "permalink": "/thiis/docs/tutorial-basics/congratulations"
+              }
+            },
+            {
+              "unversionedId": "tutorial-basics/markdown-features",
+              "id": "tutorial-basics/markdown-features",
+              "title": "Markdown Features",
+              "description": "Docusaurus supports Markdown and a few additional features.",
+              "source": "@site/docs/tutorial-basics/markdown-features.mdx",
+              "sourceDirName": "tutorial-basics",
+              "slug": "/tutorial-basics/markdown-features",
+              "permalink": "/thiis/docs/tutorial-basics/markdown-features",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/markdown-features.mdx",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_position": 4
+              },
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "Create a Document",
+                "permalink": "/thiis/docs/tutorial-basics/create-a-document"
+              },
+              "next": {
+                "title": "Deploy your site",
+                "permalink": "/thiis/docs/tutorial-basics/deploy-your-site"
+              }
+            },
+            {
+              "unversionedId": "tutorial-extras/manage-docs-versions",
+              "id": "tutorial-extras/manage-docs-versions",
+              "title": "Manage Docs Versions",
+              "description": "Docusaurus can manage multiple versions of your docs.",
+              "source": "@site/docs/tutorial-extras/manage-docs-versions.md",
+              "sourceDirName": "tutorial-extras",
+              "slug": "/tutorial-extras/manage-docs-versions",
+              "permalink": "/thiis/docs/tutorial-extras/manage-docs-versions",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-extras/manage-docs-versions.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1
+              },
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "Documentation - Extras",
+                "permalink": "/thiis/docs/category/documentation---extras"
+              },
+              "next": {
+                "title": "Translate your site",
+                "permalink": "/thiis/docs/tutorial-extras/translate-your-site"
+              }
+            },
+            {
+              "unversionedId": "tutorial-extras/translate-your-site",
+              "id": "tutorial-extras/translate-your-site",
+              "title": "Translate your site",
+              "description": "Let's translate docs/intro.md to French.",
+              "source": "@site/docs/tutorial-extras/translate-your-site.md",
+              "sourceDirName": "tutorial-extras",
+              "slug": "/tutorial-extras/translate-your-site",
+              "permalink": "/thiis/docs/tutorial-extras/translate-your-site",
+              "draft": false,
+              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-extras/translate-your-site.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2
+              },
+              "sidebar": "documentationSidebar",
+              "previous": {
+                "title": "Manage Docs Versions",
+                "permalink": "/thiis/docs/tutorial-extras/manage-docs-versions"
+              },
+              "next": {
+                "title": "is.boolean",
+                "permalink": "/thiis/docs/API/Boolean/is.boolean"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "documentationSidebar": [
+              {
+                "type": "category",
+                "label": "Documentation - Basics",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tutorial-basics/create-a-page"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial-basics/create-a-document"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial-basics/markdown-features"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial-basics/deploy-your-site"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial-basics/congratulations"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "description": "5 minutes to learn the most important Docusaurus concepts.",
+                  "slug": "/category/documentation---basics",
+                  "permalink": "/thiis/docs/category/documentation---basics"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Documentation - Extras",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tutorial-extras/manage-docs-versions"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial-extras/translate-your-site"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/documentation---extras",
+                  "permalink": "/thiis/docs/category/documentation---extras"
+                }
+              },
+              {
+                "type": "category",
+                "label": "API",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "category",
+                    "label": "Boolean",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "API/Boolean/is.boolean"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Boolean/is.false"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Boolean/is.falsy"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Boolean/is.true"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Boolean/is.truthy"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "category",
+                    "label": "Browser",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "API/Browser/is.browser"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Browser/is.chrome"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Browser/is.edge"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Browser/is.firefox"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Browser/is.ie"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Browser/is.opera"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Browser/is.safari"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "category",
+                    "label": "Hardware",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "API/Hardware/is.ipad"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Hardware/is.iphone"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Hardware/is.ipod"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Hardware/is.phone"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Hardware/is.windowsPhone"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "category",
+                    "label": "Number",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.bigInt"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.even"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.infinity"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.int"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.negative"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.number"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.numeric"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.odd"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.positive"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/Number/is.zero"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "category",
+                    "label": "String",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.camelCase"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.char"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.ipv4"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.ipv6"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.kebabCase"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.lowerCase"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.macAddress"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.pascalCase"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.snakeCase"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.string"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.upperCase"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/String/is.word"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "category",
+                    "label": "System",
+                    "collapsible": true,
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "doc",
+                        "id": "API/System/is.android"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/System/is.ios"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/System/is.mac"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "API/System/is.windows"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "doc",
+                    "id": "API/global"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "API/html"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "API/rest"
+                  }
+                ]
+              },
+              {
+                "type": "category",
+                "label": "Getting started",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "Getting started/CDN"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Getting started/Introduction"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Getting started/import"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "Getting started/install"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": {
+      "blogSidebarTitle": "Recent posts",
+      "blogPosts": [],
+      "blogListPaginated": [],
+      "blogTags": {},
+      "blogTagsListPath": "/thiis/blog/tags",
+      "blogTagsPaginated": []
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/thiis/",
+        "source": "@site/src/pages/index.js"
+      },
+      {
+        "type": "mdx",
+        "permalink": "/thiis/markdown-page",
+        "source": "@site/src/pages/markdown-page.md",
+        "title": "Markdown page example",
+        "description": "You don't need React to write simple standalone pages.",
+        "frontMatter": {
+          "title": "Markdown page example"
+        }
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {},
+  "docusaurus-theme-classic": {},
+  "docusaurus-bootstrap-plugin": {},
+  "docusaurus-mdx-fallback-plugin": {}
+}

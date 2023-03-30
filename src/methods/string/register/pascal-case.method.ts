@@ -1,9 +1,9 @@
 import { isConfig } from '../../../config';
 import { StringMethod } from '../string.method';
 
-export function PascalCaseMethod(argument: unknown): argument is string {
-  if (StringMethod(argument)) {
-    return isConfig.regex.pascalCase.test(argument);
+export function PascalCaseMethod(target: unknown): target is string {
+  if (StringMethod(target)) {
+    return isConfig.regex.pascalCase.test(target);
   }
   return false;
 }

@@ -59,7 +59,7 @@ export type ConvertTypeToGenericMixTypes<T> = {
     [key in keyof T]: mixTypes<T[key]>;
 };
 
-type instanceofType<T = () => void> = (argument: unknown) => argument is T;
+type instanceofType<T = () => void> = (target: unknown) => target is T;
 type instanceofTypeMix<T = () => void> = mixTypes<instanceofType<T>>;
 
 export type ConvertTypeToGenericInstanceOf<T> = {

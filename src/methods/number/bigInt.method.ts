@@ -1,3 +1,3 @@
-export function BigIntMethod(argument: unknown): argument is bigint {
-  return typeof argument === 'bigint';
+export function BigIntMethod(target: unknown): target is bigint {
+  return typeof target === 'bigint';
 }

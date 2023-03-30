@@ -1,3 +1,3 @@
-export function ZeroMethod(argument: unknown): argument is 0 {
-  return argument === 0;
+export function ZeroMethod(target: unknown): target is 0 {
+  return target === 0;
 }

@@ -6,9 +6,9 @@ import { isConfig } from './config';
 export const RegisterInIs = registerInIsDecorator;
 export const IsConfig = isConfig;
 
-function defaultFunction(argument: unknown): unknown {
-  // TODO return typeof argument or make something cool
-  return argument;
+function defaultFunction(target: unknown): unknown {
+  // TODO return typeof target or make something cool
+  return target;
 }
 
 export const is: AllMethodsInterface = new Proxy<any>(defaultFunction, {

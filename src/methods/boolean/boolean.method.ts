@@ -1,3 +1,3 @@
-export function BooleanMethod(argument: unknown): argument is boolean {
-  return typeof argument === 'boolean';
+export function BooleanMethod(target: unknown): target is boolean {
+  return typeof target === 'boolean';
 }

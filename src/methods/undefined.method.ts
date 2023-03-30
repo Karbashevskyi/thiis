@@ -1,3 +1,3 @@
-export function UndefinedMethod(argument: unknown): argument is undefined {
-  return argument === undefined;
+export function UndefinedMethod(target: unknown): target is undefined {
+  return target === undefined;
 }

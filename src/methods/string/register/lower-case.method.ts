@@ -1,9 +1,9 @@
 import { isConfig } from '../../../config';
 import { StringMethod } from '../string.method';
 
-export function LowerCaseMethod(argument: unknown): argument is string {
-  if (StringMethod(argument)) {
-    return !isConfig.regex.upperCase.test(argument);
+export function LowerCaseMethod(target: unknown): target is string {
+  if (StringMethod(target)) {
+    return !isConfig.regex.upperCase.test(target);
   }
   return false;
 }

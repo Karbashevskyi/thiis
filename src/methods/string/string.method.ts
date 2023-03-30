@@ -1,3 +1,3 @@
-export function StringMethod(argument: unknown): argument is string {
-  return typeof argument === 'string';
+export function StringMethod(target: unknown): target is string {
+  return typeof target === 'string';
 }

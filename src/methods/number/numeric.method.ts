@@ -4,19 +4,19 @@ import { isConfig } from '../../config';
 import { EmptyMethod } from '../empty.method';
 import { SymbolMethod } from '../symbol.method';
 
-export function NumericMethod(argument: any): boolean {
-  if (SymbolMethod(argument)) {
+export function NumericMethod(target: any): boolean {
+  if (SymbolMethod(target)) {
     return false;
   }
-  argument = '' + argument;
-  if (EmptyMethod(argument)) {
+  target = '' + target;
+  if (EmptyMethod(target)) {
     return false;
   }
-  if (NumberMethod(+argument)) {
+  if (NumberMethod(+target)) {
     return true;
   }
-  if (isConfig.regex.bigint.test(argument)) {
-    return BigIntMethod(BigInt(argument.slice(0, -1)));
+  if (isConfig.regex.bigint.test(target)) {
+    return BigIntMethod(BigInt(target.slice(0, -1)));
   }
   return false;
 }

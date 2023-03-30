@@ -2,9 +2,9 @@ import { NumberMethod } from './number/number.method';
 import { isConfig } from '../config';
 import { NumericMethod } from './number/numeric.method';
 
-function toNumber(argument: any): number {
-  argument = +argument;
-  if (!NumberMethod(argument) && isConfig.error.enabled) {
+function toNumber(target: any): number {
+  target = +target;
+  if (!NumberMethod(target) && isConfig.error.enabled) {
     console?.error?.(`
             Bad data in the method name, good examples: 
             is.len_10
@@ -18,7 +18,7 @@ function toNumber(argument: any): number {
             is.len_gt_8_lte_10
         `);
   }
-  return argument;
+  return target;
 }
 
 function operation(command: string, target: number, value: number): boolean {
@@ -49,11 +49,11 @@ function operation(command: string, target: number, value: number): boolean {
  * is.len_lte_N
  * is.len_gt_N_lte_N
  *
- * @param argument - string
+ * @param target - string
  * @param configList - ['10'] || ['gt', '10']
  */
-export function LenMethod(argument: string, ...configList: string[]): boolean {
-  const length: number = argument?.length ?? 0;
+export function LenMethod(target: string, ...configList: string[]): boolean {
+  const length: number = target?.length ?? 0;
   if (NumericMethod(configList[0])) {
     return length === toNumber(configList[0]);
   } else {

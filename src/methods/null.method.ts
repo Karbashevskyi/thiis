@@ -1,3 +1,3 @@
-export function NullMethod(argument: unknown): argument is null {
-  return argument === null;
+export function NullMethod(target: unknown): target is null {
+  return target === null;
 }

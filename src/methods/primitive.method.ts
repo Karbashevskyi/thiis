@@ -1,9 +1,9 @@
-export function PrimitiveMethod(argument: unknown): boolean {
-  if (argument === null) {
+export function PrimitiveMethod(target: unknown): boolean {
+  if (target === null) {
     return true;
   }
 
-  if (typeof argument === 'object' || typeof argument === 'function') {
+  if (typeof target === 'object' || typeof target === 'function') {
     return false;
   } else {
     return true;

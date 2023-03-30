@@ -1,3 +1,3 @@
-export function SymbolMethod(argument: unknown): argument is symbol {
-  return typeof argument === 'symbol';
+export function SymbolMethod(target: unknown): target is symbol {
+  return typeof target === 'symbol';
 }

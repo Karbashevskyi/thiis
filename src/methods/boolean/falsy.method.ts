@@ -1,3 +1,3 @@
-export function FalsyMethod(argument: unknown): argument is false {
-  return !argument;
+export function FalsyMethod(target: unknown): target is false {
+  return !target;
 }

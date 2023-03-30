@@ -2,18 +2,18 @@ import { StringMethod } from './string/string.method';
 import { ObjectMethod } from './object.method';
 import { ArrayMethod } from './array.method';
 
-export function EmptyMethod<T extends object>(argument: unknown): boolean {
-  if (StringMethod(argument)) {
-    return argument.trim()[0] === undefined;
+export function EmptyMethod<T extends object>(target: unknown): boolean {
+  if (StringMethod(target)) {
+    return target.trim()[0] === undefined;
   }
 
-  if (ObjectMethod<T>(argument) || ArrayMethod<T>(argument)) {
-    if (Reflect.has(argument, 'size')) {
+  if (ObjectMethod<T>(target) || ArrayMethod<T>(target)) {
+    if (Reflect.has(target, 'size')) {
       // @ts-ignore
-      return argument.size <= 0;
+      return target.size <= 0;
     }
-    for (const key in argument) {
-      if (argument.hasOwnProperty(key)) {
+    for (const key in target) {
+      if (target.hasOwnProperty(key)) {
         return false;
       }
     }

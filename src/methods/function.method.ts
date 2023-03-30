@@ -1,11 +1,11 @@
 const toString: typeof Object.prototype.toString = Object.prototype.toString;
 
-export function FunctionMethod<T extends typeof Function>(argument: unknown): argument is T {
+export function FunctionMethod<T extends typeof Function>(target: unknown): target is T {
   try {
     return (
-      toString.call(argument) === '[object Function]' ||
-      AsyncFunctionMethod(argument) ||
-      GeneratorFunctionMethod(argument)
+      toString.call(target) === '[object Function]' ||
+      AsyncFunctionMethod(target) ||
+      GeneratorFunctionMethod(target)
     );
   } catch (e) {
     if (e instanceof TypeError) {
@@ -17,17 +17,17 @@ export function FunctionMethod<T extends typeof Function>(argument: unknown): ar
   }
 }
 
-export function AsyncFunctionMethod(argument: unknown): argument is '[object AsyncFunction]' {
+export function AsyncFunctionMethod(target: unknown): target is '[object AsyncFunction]' {
   try {
-    return toString.call(argument) === '[object AsyncFunction]';
+    return toString.call(target) === '[object AsyncFunction]';
   } catch (e) {
     return false;
   }
 }
 
-export function GeneratorFunctionMethod(argument: unknown): argument is '[object Generator]' {
+export function GeneratorFunctionMethod(target: unknown): target is '[object Generator]' {
   try {
-    return toString.call(argument) === '[object Generator]';
+    return toString.call(target) === '[object Generator]';
   } catch (e) {
     return false;
   }

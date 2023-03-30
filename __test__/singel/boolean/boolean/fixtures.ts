@@ -6,6 +6,15 @@ export const dataForGoodTesting: {value: any}[] = [
     },
     {
         value: false
+    },
+    {
+        value: Boolean()
+    },
+    {
+        value: Boolean(1)
+    },
+    {
+        value: Boolean(0)
     }
 ];
 

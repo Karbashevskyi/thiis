@@ -8,6 +8,7 @@ export const isConfig = {
         phone: 768
     },
     state: {
+        vendor: window?.navigator?.vendor ?? '',
         navigator: window?.navigator ?? '',
         userAgent: window?.navigator?.userAgent ?? '',
         // @ts-ignore
@@ -38,6 +39,8 @@ export const isConfig = {
         ipod: /(iPod)/i,
         ie: /(Trident\/|MSIE\s)([\d.]+)/,
         edge: /edge|edg|edga\/(\d+)/i,
-        mac: /mac/i
+        mac: /mac/i,
+        chrome: /Chrome|CriOS/i,
+        googleInc: /Google Inc/i
     },
 };

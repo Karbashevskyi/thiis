@@ -3,9 +3,18 @@ export const dataForGoodTesting: {value: any}[] = [
     {
         value: true
     },
+    {
+        value: Boolean(1)
+    },
+    {
+        value: Boolean(-1)
+    },
 ];
 
 export const dataForBadTesting: {value: any}[] = [
+    {
+        value: Boolean(0)
+    },
     {
         value: 'null'
     },

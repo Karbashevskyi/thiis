@@ -4,9 +4,18 @@ export const dataForGoodTesting: {value: any}[] = [
     {
         value: false
     },
+    {
+        value: Boolean(0)
+    },
 ];
 
 export const dataForBadTesting: {value: any}[] = [
+    {
+        value: Boolean(1)
+    },
+    {
+        value: Boolean(-1)
+    },
     {
         value: 'undefined'
     },

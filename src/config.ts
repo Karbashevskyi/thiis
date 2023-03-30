@@ -41,6 +41,7 @@ export const isConfig = {
         edge: /edge|edg|edga\/(\d+)/i,
         mac: /mac/i,
         chrome: /Chrome|CriOS/i,
-        googleInc: /Google Inc/i
+        googleInc: /Google Inc/i,
+        phone: /phone/i
     },
 };

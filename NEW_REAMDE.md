@@ -1,9 +1,8 @@
-# thiis
 ![NPM Latest Version](https://img.shields.io/npm/v/thiis)
 
-## Introduction
+# Introduction
 
-### Why you should use and support the package:
+## Why you should use and support the package:
 1. ✅ Typification.
 2. ✅ Reducing the code in the project.
 3. ✅ Easier to read and understand the code.
@@ -15,7 +14,7 @@
 9. ✅ AMD, Node & browser ready
 10. ✅ Small size: ~8KB.
 
-## 💡 Idea
+# 💡 Idea
 
 this package was created in order to simplify writing in typescript / javascript, it often happens that you need to have
 checks for different types of data, these checks can be "huge", but if you could simply describe in words what we want
@@ -35,7 +34,7 @@ if (is.object.not.empty(variable)) {
 }
 ```
 
-## 📝 Table of contents
+# 📝 Table of contents
 
 - [thiis](#thiis)
     - [Idea](#-idea)
@@ -54,13 +53,13 @@ if (is.object.not.empty(variable)) {
     - [Authors](#-authors)
     - [License](#-license)
 
-## 💿 Installation
+# 💿 Installation
 
 ```bash
 npm install thiis
 ```
 
-## 🔗 CDN
+# 🔗 CDN
 
 ```html
 <script>
@@ -75,18 +74,20 @@ npm install thiis
 
 [Back to table of contents](#-table-of-contents)
 
-## 🙌 Import
+# 🙌 Import
 
 ```bash
 import {is} from "thiis";
 ```
 
-## 🗃 API
+# 🗃 API
 
-### Boolean
+## Boolean
 
-#### is.boolean(target: unknown)
-Checks if the given "target" type is boolean.
+### is.boolean(target: unknown)
+- Target argument: **required**.
+- Checks if the given "**target**" type is boolean.
+
 ```typescript
 
 is.boolean(true) // true
@@ -103,8 +104,10 @@ is.boolean([]) // false
 
 ```
 
-#### is.false(target: unknown)
-Checks if the given "target" type is false.
+### is.false(target: unknown)
+- Target argument: **required**.
+- Checks if the given "**target**" type is false.
+
 ```typescript
 
 is.false(false) // true
@@ -122,8 +125,10 @@ is.false([]) // false
 
 ```
 
-#### is.falsy(target: unknown)
-Checks if the given "target" type is false.
+### is.falsy(target: unknown)
+- Target argument: **required**.
+- Checks if the given "**target**" type is false.
+
 ```typescript
 
 is.falsy(false) // true
@@ -147,8 +152,10 @@ is.falsy([]) // false
 
 ```
 
-#### is.true(target: unknown)
-Checks if the given "target" type is true.
+### is.true(target: unknown)
+- Target argument: **required**.
+- Checks if the given "**target**" type is true.
+
 ```typescript
 
 is.true(true) // true
@@ -166,8 +173,9 @@ is.true([]) // false
 
 ```
 
-#### is.truthy(target: unknown)
-Checks if the given "target" type is true.
+### is.truthy(target: unknown)
+- Target argument: **required**.
+- Checks if the given "**target**" type is true.
 
 ```typescript
 
@@ -196,10 +204,11 @@ is.truthy([]) // false
 
 ```
 
-### Browser
+## Browser
 
-#### is.browser(target: unknown)
-Return: boolean.
+### is.browser(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
 
 ```typescript
 
@@ -221,8 +230,9 @@ is.browser([]) // false
 
 ```
 
-#### is.edge(target: unknown)
-Return: boolean.
+### is.edge(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
 
 ```typescript
 
@@ -247,8 +257,9 @@ is.edge([]) // false
 
 ```
 
-#### is.firefox(target: unknown)
-Return: boolean.
+### is.firefox(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
 
 ```typescript
 
@@ -273,8 +284,9 @@ is.firefox([]) // false
 
 ```
 
-#### is.ie(target: unknown)
-Return: boolean.
+### is.ie(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
 
 ```typescript
 
@@ -299,8 +311,9 @@ is.ie([]) // false
 
 ```
 
-#### is.opera(target: unknown)
-Return: boolean.
+### is.opera(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
 
 ```typescript
 
@@ -325,8 +338,9 @@ is.opera([]) // false
 
 ```
 
-#### is.safari(target: unknown)
-Return: boolean.
+### is.safari(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
 
 ```typescript
 
@@ -352,10 +366,111 @@ is.safari([]) // false
 
 ```
 
-### Hardware
-### Number
-### String
-### System
-### Rest
-### External
+## Hardware
+
+### is.phone(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
+
+```typescript
+
+is.phone() // true if the command is executed in the browser with screenWidth <= 768
+is.phone(768) // true
+
+// Alternative
+IsConfig.state.screen.width = 768;
+is.phone() // true
+
+is.phone(769) // false
+is.phone(false) // false
+is.phone(new Boolean(0)) // false
+is.phone(new Boolean()) // false
+is.phone(0) // false
+is.phone('') // false
+is.phone({}) // false
+is.phone([]) // false
+// And all other known types will return false
+
+```
+
+### is.iphone(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
+
+```typescript
+
+is.iphone() // true if the command is executed in a browser running on the iPhone
+is.iphone('Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1') // true
+
+// Alternative
+IsConfig.state.userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1';
+is.iphone() // true
+
+is.iphone(769) // false
+is.iphone(false) // false
+is.iphone(new Boolean(0)) // false
+is.iphone(new Boolean()) // false
+is.iphone(0) // false
+is.iphone('') // false
+is.iphone({}) // false
+is.iphone([]) // false
+// And all other known types will return false
+
+```
+
+### is.ipod(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
+
+```typescript
+
+is.ipod() // true if the command is executed in a browser running on the iPod
+is.ipod('Mozilla/5.0 (iPod; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1') // true
+
+// Alternative
+IsConfig.state.userAgent = 'Mozilla/5.0 (iPod; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1';
+is.ipod() // true
+
+is.ipod(769) // false
+is.ipod(false) // false
+is.ipod(new Boolean(0)) // false
+is.ipod(new Boolean()) // false
+is.ipod(0) // false
+is.ipod('') // false
+is.ipod({}) // false
+is.ipod([]) // false
+// And all other known types will return false
+
+```
+
+### is.ipad(target: unknown)
+- Target argument: **optional**.
+- Return: boolean.
+
+```typescript
+
+is.ipad() // true if the command is executed in a browser running on the iPad
+is.ipad('Mozilla/5.0 (iPad; CPU OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/88.0.4324.104 Mobile/15E148 Safari/604.1') // true
+
+// Alternative
+IsConfig.state.userAgent = 'Mozilla/5.0 (iPad; CPU OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/88.0.4324.104 Mobile/15E148 Safari/604.1';
+is.ipad() // true
+
+is.ipad(769) // false
+is.ipad(false) // false
+is.ipad(new Boolean(0)) // false
+is.ipad(new Boolean()) // false
+is.ipad(0) // false
+is.ipad('') // false
+is.ipad({}) // false
+is.ipad([]) // false
+// And all other known types will return false
+
+```
+
+## Number
+## String
+## System
+## Rest
+## External
 

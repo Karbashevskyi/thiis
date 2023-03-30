@@ -456,6 +456,7 @@ stream$.next('false'); // Bad
 | camelCase         | ✅🆕   |          |          |                                                                                                                      |
 | char              | ✅🆕   |          |          |                                                                                                                      |
 | ie                | ✅🆕   |          |          |                                                                                                                      |
+| edge              | ✅🆕   |          |          |                                                                                                                      |
 | compare           | ✅     |          |          |                                                                                                                      |
 | empty             | ✅     |          |          |                                                                                                                      |
 | even              | ✅🆕   |          |          |                                                                                                                      |

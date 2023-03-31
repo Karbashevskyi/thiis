@@ -3,9 +3,7 @@ const toString: typeof Object.prototype.toString = Object.prototype.toString;
 export function FunctionMethod<T extends typeof Function>(target: unknown): target is T {
   try {
     return (
-      toString.call(target) === '[object Function]' ||
-      AsyncFunctionMethod(target) ||
-      GeneratorFunctionMethod(target)
+      toString.call(target) === '[object Function]' || AsyncFunctionMethod(target) || GeneratorFunctionMethod(target)
     );
   } catch (e) {
     if (e instanceof TypeError) {

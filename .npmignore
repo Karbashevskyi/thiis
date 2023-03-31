@@ -20,8 +20,6 @@ tslint.json
 /jest-html-reporters-attach/
 jest_html_reporters.html
 README.md
-README.ua.md
-NEW_REAMDE.md
 __test__
 jest.config.json
 .gitignore

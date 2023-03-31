@@ -55,6 +55,9 @@ import { BrowserMethod } from './browser/browser.method';
 import { MacMethod } from './system/mac.method';
 import { ChromeMethod } from './browser/chrome.method';
 import { WindowsPhoneMethod } from './hardware/windows-phone.method';
+import {BlackberryMethod} from './hardware/blackberry.method';
+import {AndroidPhoneMethod} from './hardware/android-phone.method';
+import {MobileMethod} from './hardware/mobile.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -91,6 +94,9 @@ export const predefinedMethods = {
   iphone: IphoneMethod,
   ipad: IpadMethod,
   windowsPhone: WindowsPhoneMethod,
+  blackberry: BlackberryMethod,
+  androidPhone: AndroidPhoneMethod,
+  mobile: MobileMethod,
   // Boolean
   boolean: BooleanMethod,
   false: FalseMethod,

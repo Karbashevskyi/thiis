@@ -43,5 +43,7 @@ export const isConfig = {
     chrome: /Chrome|CriOS/i,
     googleInc: /Google Inc/i,
     phone: /phone/i,
+    blackberry: /blackberry|bb10/i,
+    androidPhone: /Android.*Mobile/i
   },
 };

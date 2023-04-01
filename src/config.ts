@@ -1,3 +1,4 @@
+const glb = typeof window !== 'undefined' ? window : undefined;
 export const isConfig = {
   packageName: 'thiis',
   useGlobalContext: true,
@@ -8,13 +9,13 @@ export const isConfig = {
     phone: 768,
   },
   state: {
-    vendor: window?.navigator?.vendor ?? '',
-    navigator: window?.navigator ?? '',
-    userAgent: window?.navigator?.userAgent ?? '',
+    vendor: glb?.navigator?.vendor ?? '',
+    navigator: glb?.navigator ?? undefined,
+    userAgent: glb?.navigator?.userAgent ?? '',
     // @ts-ignore
-    platform: window?.navigator?.platform ?? window?.navigator?.userAgentData?.platform ?? process?.platform ?? '',
+    platform: glb?.navigator?.platform ?? glb?.navigator?.userAgentData?.platform ?? process?.platform ?? '',
     screen: {
-      width: window?.screen?.width ?? '',
+      width: glb?.screen?.width ?? 0,
     },
   },
   regex: {

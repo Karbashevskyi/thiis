@@ -1,0 +1,9 @@
+{
+  "name": "is_js",
+  "version": "0.9.0",
+  "main": "is.js",
+  "license": "MIT",
+  "files": [
+    "is.js"
+  ]
+}

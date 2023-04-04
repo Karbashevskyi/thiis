@@ -3,14 +3,14 @@ const {is: thiis} = require('../dist');
 const is_js = require('./is_js');
 
 
-console.time('thiis.string');
+console.time('thiis.object.not.empty');
 for (let i = 0; i < 100_000; i++) {
     if (thiis.object.not.empty({a: 1})) {
 
     }
 }
-console.timeEnd('thiis.string');
-//
+console.timeEnd('thiis.object.not.empty');
+
 console.time('is_js.is.object.not.empty');
 for (let i = 0; i < 100_000; i++) {
     if (is_js.object({a: 1}) && is_js.not.empty({a: 1})) {
@@ -27,27 +27,19 @@ for (let i = 0; i < 100_000; i++) {
 }
 console.timeEnd('NEW Engine is.object.not.empty');
 
+console.log(`
+|
+|
+|
+`)
 
+const used = process.memoryUsage();
+const {heapUsed} = used;
+console.log(`The script uses approximately ${Math.round((heapUsed/ 1024 / 1024) * 100) / 100} MB`);
+for (let key in used) {
+    console.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
+}
 
-
-
-// const maxLevel = 3;
-//
-// function consoleRec(target, level = 0) {
-//     if (level === 1) {
-//         console.log(' ');
-//     }
-//     console.log('|', [].constructor(level).join('-'), target.name);
-//     if (maxLevel > level) {
-//         Object.keys(target).forEach((k) => {
-//             if (target[k] instanceof Function) {
-//                 consoleRec(target[k], level + 1);
-//             }
-//         });
-//     }
-// }
-//
-// consoleRec(is);
 
 // console.log(is.object(''));
 // console.log(is.empty({a: 1}));

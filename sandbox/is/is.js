@@ -149,20 +149,16 @@ console.time('Initialization time fo new engine');
 
     function setMethods(target, without = undefined) {
 
-        let path = [...(target?.path ?? []), target];
-
         const context = {
-            path,
-            switchToIndexMethod: 0,
-            reverseBoolean: false,
-            result: false,
+            path: [...(target?.path ?? []), target],
+            pathNames: [...(target?.pathNames ?? []), target.name],
         };
 
-        context.indexNot = context.path.findIndex(({name}) => name === 'not');
-        context.firstIndexOfOr = context.path.findIndex(({name}) => name === 'or');
+        context.indexNot = context.pathNames.indexOf('not');
+        context.firstIndexOfOr = context.pathNames.indexOf('or');
 
         for (const method of target.allowed) {
-            const canBeAddedToPath = !path.some(({name}) => name !== 'or' && name === method.name);
+            const canBeAddedToPath = !context.path.some(({name}) => name !== 'or' && name === method.name);
             if (canBeAddedToPath) {
                 const newMethod = defineNewMethod(method, context)
                 target[method.name] = setMethods(newMethod);

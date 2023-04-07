@@ -21,38 +21,6 @@ console.time('Initialization time fo new engine');
 
     const is = {};
 
-    // TODO Try another option how to build the new engine
-    // TODO is.object.not.empty and in this place is only function to detect which another function to execute and gave started context to executed another function.
-
-    /**
-     *
-     * is
-     *  boolean: () => boolean.apply(null, arguments)
-     *
-     *      object: (() => methods.reduce((result, method) => method.apply(null, arguments)), false).bind({methods: [boolean, object]})
-     *      number: (() => methods.reduce((result, method) => method.apply(null, arguments)), false).bind({methods: [boolean, number]})
-     *      string: (() => methods.reduce((result, method) => method.apply(null, arguments)), false).bind({methods: [boolean, string]})
-     *      symbol: (() => methods.reduce((result, method) => method.apply(null, arguments)), false).bind({methods: [boolean, symbol]})
-     *
-     *  object: () => object.apply(null, arguments)
-     *
-     *  ...
-     *
-     *  number: () => number.apply(null, arguments)
-     *
-     *  ...
-     *
-     *  string: () => string.apply(null, arguments)
-     *
-     *  ...
-     *
-     *  symbol: () => symbol.apply(null, arguments)
-     *
-     *  ...
-     *
-     *
-     */
-
     function defineNewMethod(method) {
 
         return function () {

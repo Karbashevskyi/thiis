@@ -53,38 +53,32 @@ console.time('Initialization time fo new engine');
      *
      */
 
-    function defineNewMethod(method, context, newMethod) {
+    function defineNewMethod(method) {
 
-        newMethod = function () {
-            /**
-             * This is methods loop!
-             */
+        return function () {
 
             /**
-             * is.object.not.empty
-             * path: [object, not, empty]
-             * first call of the function always on the last method from the path list (empty).
+             * !!! ONE CONTEXT FOR ALL EXECUTION !!!
              */
 
-            /**
-             * 1. Check first method from the list and if is true, continue execution of method from list.
-             * 2. If current method is "not" skip then and go to the next one.
-             * 3. Check if current method has property in context (this.underNot) if true result of the method must be reverse.
-             */
+            this.__count = (this.count ?? 0) + 1;
 
-            const correctContext = this?.injected ? this.context : context;
+            this._index = this._index ?? 0;
 
-            if (correctContext.indexNot > -1) {
+            // TODO refactoring indexNot
+            // TODO refactoring firstIndexOfOr
 
-                if (correctContext.indexNot === 0) {
+            if (this.indexNot > -1) {
 
-                    if (correctContext.firstIndexOfOr === -1) {
+                if (this.indexNot === 0) {
+
+                    if (this.firstIndexOfOr === -1) {
 
                         /**
                          * Examples:
                          * 1. [x] is.not.object()
                          */
-                        return !method.apply(correctContext, arguments);
+                        return !method.apply(this, arguments);
 
                     }
 
@@ -96,15 +90,15 @@ console.time('Initialization time fo new engine');
 
                 } else {
 
-                    if (correctContext.firstIndexOfOr === -1) {
+                    if (this.firstIndexOfOr === -1) {
 
                         /**
                          * Examples:
                          * 1. [x] is.object.not.empty()
                          */
-                        if (correctContext.path[0].apply(correctContext, arguments)) {
+                        if (this.path[0].apply(this, arguments)) {
 
-                            return !method.apply(correctContext, arguments);
+                            return !method.apply(this, arguments);
 
                         } else {
 
@@ -125,15 +119,15 @@ console.time('Initialization time fo new engine');
 
             }
 
-            if (correctContext.firstIndexOfOr === -1) {
+            if (this.firstIndexOfOr === -1) {
 
                 /**
                  * Examples:
                  * 1. [x] is.object.empty()
                  */
-                if (correctContext.path[0].apply(correctContext, arguments)) {
+                if (this.path[0].apply(this, arguments)) {
 
-                    return method.apply(correctContext, arguments);
+                    return method.apply(this, arguments);
 
                 } else {
 
@@ -148,94 +142,88 @@ console.time('Initialization time fo new engine');
              * 1. [ ] is.object.or.string()
              * 2. [ ] is.null.or.undefined.or.empty()
              */
-            if (!this?.injected) {
+            if (!this?._injected) {
 
                 // Method and first method from path list don't have any wrapper!
-                if (method.apply(correctContext, arguments) || correctContext.path.shift().apply(correctContext, arguments)) {
+                if (method.apply(this, arguments) || this.path[this._index].apply(this, arguments)) {
 
                     return true;
 
                 }
 
-                correctContext.pathNames.shift();
-                correctContext.path = correctContext.path.filter(({originalName}) => originalName !== 'or');
+                this.path = this.path.filter(({originalName}) => originalName !== 'or');
             }
 
-            return correctContext.path.shift()?.apply?.(
-                {
-                    context: correctContext,
-                    injected: true
-                },
-                arguments) ?? false;
+            this._injected = true;
+
+            this._index++;
+
+            return this.path[this._index]?.apply?.(this, arguments) ?? false;
 
         };
-
-        newMethod.path = context.path;
-        newMethod.pathNames = context.pathNames;
-        newMethod.originalName = method?.originalName ?? method.name;
-
-        return newMethod;
 
     }
 
-    const MAX_LEVEL_OF_OR = 2; // is.array.or.map.or.set
+    const MAX_LEVEL_OF_OR = 1; // is.array.or.map.or.set
 
-    function setMethods(target, allowed, without = undefined, level = 0) {
+    function setMethods(target, path= [], pathNames = []) {
 
-        const context = {
-            path: [...(target?.path ?? []), target],
-            pathNames: [...(target?.pathNames ?? []), target.originalName],
-        };
-
-        if (!level) {
-            // If level is 0 we know that all commands don't have originalName property.
+        if (!('originalName' in target)) {
+            // If level is 0 we target that all commands don't have originalName property.
             target.originalName = target.name.toLowerCase();
-        } else {
-            console.log('next level')
         }
 
-        context.indexNot = context.pathNames.indexOf('NOT');
-        context.firstIndexOfOr = context.pathNames.indexOf('or');
+        pathNames = [...pathNames, target.originalName];
+        path = [...path, target];
+        const countOfOr = pathNames.filter(name => name === 'or').length;
 
-        for (const method of allowed) {
-            const canBeAddedToPath = !context.pathNames.some(name => name !== 'or' && name === method.originalName);
-            if (canBeAddedToPath) {
+        // context.indexNot = context.pathNames.indexOf('NOT');
+        // context.firstIndexOfOr = context.pathNames.indexOf('or');
 
-                if (target.pathNames?.includes('or')) {
-                    if (target.pathNames.filter(name => name === 'or').length === MAX_LEVEL_OF_OR) {
-                        continue;
-                    }
-                }
+        for (const method of target.allowed) {
 
-                const newMethod = defineNewMethod(method, context)
-                target[method.originalName] = setMethods(newMethod, allowed.filter(({originalName}) => originalName !== method.originalName), undefined, level + 1);
+            if (!('originalName' in method)) {
+                // If level is 0 we know that all commands don't have originalName property.
+                method.originalName = method.name.toLowerCase();
+            }
+
+            if (pathNames.some(name => name !== 'or' && name === method.originalName)) {
+                continue;
+            }
+
+            target[method.originalName] = defineNewMethod(method);
+
+            target[method.originalName].path = path;
+            target[method.originalName].originalName = method.originalName;
+            target[method.originalName].allowed = method.allowed;
+
+            if (countOfOr < MAX_LEVEL_OF_OR) {
+
+                target[method.originalName] = setMethods(
+                    target[method.originalName],
+                    path,
+                    pathNames
+                );
             }
         }
 
-        if (without) {
-            delete target[without];
-        }
         return target;
     }
 
     is.object = function OBJECT(target) {
-        this.resultObject = typeof target === 'object' && target !== null && !Array.isArray(target);
-        return this.resultObject;
+        return typeof target === 'object' && target !== null && !Array.isArray(target);
     }
 
     is.array = function ARRAY(target) {
-        this.resultArray = target instanceof Array;
-        return this.resultArray;
+        return target instanceof Array;
     }
 
     is.string = function STRING(target) {
-        this.resultString = typeof target === 'string';
-        return this.resultString;
+        return typeof target === 'string';
     }
 
     is.number = function NUMBER(target) {
-        this.resultNumber = typeof target === 'number' && !isNaN(target);
-        return this.resultNumber;
+        return typeof target === 'number' && !isNaN(target);
     }
 
     is.boolean = function BOOLEAN(target) {
@@ -253,8 +241,8 @@ console.time('Initialization time fo new engine');
     is.empty = function EMPTY(target) {
 
         if (
-            (this?.resultObject ?? is.object(target)) ||
-            (this?.resultArray ?? is.array(target))
+            (is.object(target)) ||
+            (is.array(target))
         ) {
             if (Reflect.has(target, 'size')) {
                 // @ts-ignore
@@ -268,7 +256,7 @@ console.time('Initialization time fo new engine');
             return true;
         }
 
-        if (this?.resultString ?? is.string(target)) {
+        if (is.string(target)) {
             return target.trim()[0] === undefined;
         }
 
@@ -286,7 +274,7 @@ console.time('Initialization time fo new engine');
         throw new Error("Don't use the command like first!");
     }
 
-    setMethods(or, [
+    or.allowed = [
         is.object,
         is.string,
         is.array,
@@ -295,46 +283,46 @@ console.time('Initialization time fo new engine');
         is.true,
         is.false,
         is.number
-    ]); // Don't use is.or!
+    ];
 
-    setMethods(is.number,  [
+    is.object.allowed = [
+        or,
+        is.not,
+        is.empty
+    ];
+    is.boolean.allowed = [
         is.not,
         or,
-    ]);
-    setMethods(is.boolean, [
+    ];
+    is.number.allowed = [
         is.not,
         or,
-    ]);
-    setMethods(is.true, [
+    ];
+    is.true.allowed = [
         is.not,
         or,
-    ]);
-    setMethods(is.false, [
+    ];
+    is.false.allowed = [
         is.not,
         or,
-    ]);
-    setMethods(is.array, [
+    ];
+    is.array.allowed = [
         is.not,
         or,
         is.empty
-    ]);
-    setMethods(is.string, [
+    ];
+    is.string.allowed = [
         is.not,
         or,
         is.empty
-    ]);
-    setMethods(is.object, [
-        is.not,
-        or,
-        is.empty
-    ]);
-    setMethods(is.empty, [
+    ];
+    is.empty.allowed = [
         is.not,
         or,
         is.object,
         is.string
-    ]);
-    setMethods(is.not, [
+    ];
+    is.not.allowed = [
         is.object,
         is.empty,
         is.string,
@@ -343,7 +331,9 @@ console.time('Initialization time fo new engine');
         is.true,
         is.false,
         is.number
-    ]); // Don't use is.or!
+    ];
+
+    Object.values(is).filter(method => 'allowed' in method).forEach((method) => setMethods(method));
 
     return is;
 }));
@@ -351,15 +341,17 @@ console.time('Initialization time fo new engine');
 console.timeEnd('Initialization time fo new engine');
 
 const is = module.exports;
-// console.log(is.object.not.empty({a: 1}));
+console.log(is.object.not.empty({a: 1}));
+// console.log(is.object.not.empty({}));
+// console.log(is.object.not.empty([]));
 
-// console.log(is.object.or.string(0));
+console.log(is.object.or.string(0));
+console.log(is.string.or.number([]));
+console.log(is.string.or.number({}));
+console.log(is.string.or.number(''));
+console.log(is.string.or.number(0));
+console.log(is.string.or.number(false));
 // console.log(is.string.or.number.or.boolean([]));
-// console.log(is.string.or.number.or.boolean({}));
-// console.log(is.string.or.number.or.boolean(''));
-// console.log(is.string.or.number.or.boolean(0));
-// console.log(is.string.or.number.or.boolean(false));
-// console.log(is.string.or.number.or.boolean.or.object([]));
 // console.log(is.string.or.number.or.boolean.or.object({}));
 // console.log(is.string.or.number.or.boolean.or.object(''));
 // console.log(is.string.or.number.or.boolean.or.object(0));
@@ -367,26 +359,30 @@ const is = module.exports;
 // console.log(is.not.string.or.number.or.boolean({}));
 
 
-const MAX_LEVEL = 10;
-let TOTAL = 0;
-
-function consoleRec(target, level = 1) {
-    // if (level === 2) {
-    //     if (target.name !== 'string') {
-    //         return;
-    //     }
-    //     console.log(' ');
-    // }
-    console.log('|', [].constructor(level).join('-'), target.originalName);
-    TOTAL++;
-    if (MAX_LEVEL >= level) {
-        Object.keys(target).forEach((k) => {
-            if (target[k] instanceof Function) {
-                consoleRec(target[k], level + 1);
-            }
-        });
-    }
-}
-
-consoleRec(is);
-console.log(TOTAL);
+// const MAX_LEVEL = 25;
+// let LAST_LEVEL = 0;
+// let TOTAL = 0;
+//
+// function consoleRec(target, level = 1) {
+//     // if (level === 2) {
+//     //     if (target.originalName !== 'string') {
+//     //         return;
+//     //     }
+//     //     console.log(' ');
+//     // }
+//     console.log('|', [].constructor(level).join('-'), target?.originalName ?? target.name);
+//     TOTAL++;
+//     if (level > LAST_LEVEL) {
+//         LAST_LEVEL = level;
+//     }
+//     if (MAX_LEVEL >= level) {
+//         Object.keys(target).forEach((k) => {
+//             if (target[k] instanceof Function) {
+//                 consoleRec(target[k], level + 1);
+//             }
+//         });
+//     }
+// }
+//
+// consoleRec(is);
+// console.log('LAST_LEVEL: ', LAST_LEVEL, 'TOTAL: ', TOTAL);

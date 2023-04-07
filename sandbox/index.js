@@ -1,15 +1,15 @@
 const is = require('./is');
-const {is: thiis} = require('../dist');
+// const {is: thiis} = require('../dist');
 const is_js = require('./is_js');
 
 
-console.time('thiis.object.not.empty');
-for (let i = 0; i < 100_000; i++) {
-    if (thiis.object.not.empty({a: 1})) {
-
-    }
-}
-console.timeEnd('thiis.object.not.empty');
+// console.time('thiis.object.not.empty');
+// for (let i = 0; i < 100_000; i++) {
+//     if (thiis.object.not.empty({a: 1})) {
+//
+//     }
+// }
+// console.timeEnd('thiis.object.not.empty');
 
 console.time('is_js.is.object.not.empty');
 for (let i = 0; i < 100_000; i++) {

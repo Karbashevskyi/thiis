@@ -21,12 +21,7 @@ console.time('Initialization time fo new engine');
 
     const is = {};
 
-    function defineNewMethod(target, method, pathNames) {
-
-        const maxIndex = pathNames.length - 1;
-        const indexOfNotMethod = pathNames.indexOf('not');
-        const indexOfFirstOrMethod = pathNames.indexOf('or');
-        const notMethodIsFirst = indexOfNotMethod === 0;
+    function defineNewMethod(method, path, pathNames) {
 
         const newMethod = function () {
 
@@ -38,8 +33,19 @@ console.time('Initialization time fo new engine');
              * !!! ONE CONTEXT FOR ALL EXECUTION !!!
              */
 
+            if (!('_temporaryContext' in self)) {
+                self._temporaryContext = {
+                    result: false,
+                    index: 0,
+                    maxIndex: self.pathNames.length - 1,
+                    indexOfNotMethod: self.pathNames.indexOf('not'),
+                    indexOfFirstOrMethod: self.pathNames.indexOf('or')
+                }
+                self._temporaryContext['notMethodIsFirst'] = self._temporaryContext['indexOfNotMethod'] === 0;
+            }
 
-            if (notMethodIsFirst) {
+
+            if (self._temporaryContext.notMethodIsFirst) {
                 /**
                  * TODO
                  * 1. [ ] is.not.object()
@@ -50,7 +56,7 @@ console.time('Initialization time fo new engine');
                  */
             } else {
 
-                if (indexOfNotMethod > 0) {
+                if (self._temporaryContext.indexOfNotMethod > 0) {
 
                     /**
                      * Examples:
@@ -67,7 +73,7 @@ console.time('Initialization time fo new engine');
                      */
 
                 } else {
-                    if (indexOfFirstOrMethod > 0) {
+                    if (self._temporaryContext.indexOfFirstOrMethod > 0) {
                         /**
                          * 4. [ ] is.object.or.string()
                          * 4. [ ] [object, wrapper->or, wrapper->string]
@@ -80,8 +86,14 @@ console.time('Initialization time fo new engine');
                          * 3. [ ] is.object.empty()
                          * 3. [ ] [object, wrapper->empty]
                          */
-                        if (method.apply(self, arguments)) {
-                            return self.nextMethod.apply(self, arguments);
+                        self._temporaryContext.result = self.path[self._temporaryContext.index].apply(self, arguments);
+                        if (self._temporaryContext.result) {
+                            self._temporaryContext.index++;
+                            if (self._temporaryContext.index <= self._temporaryContext.maxIndex) {
+                                return self.path[self._temporaryContext.index].apply(self, arguments);
+                            }
+                            delete self._temporaryContext;
+                            return true;
                         }
                         return false;
 
@@ -93,7 +105,7 @@ console.time('Initialization time fo new engine');
         };
 
 
-        newMethod.nextMethod = target;
+        newMethod.path = [...path, method];
         newMethod.pathNames = [...pathNames, method.originalName];
         newMethod.originalName = method.originalName;
         newMethod.allowed = method.allowed;
@@ -104,7 +116,7 @@ console.time('Initialization time fo new engine');
 
     const MAX_LEVEL_OF_OR = 1; // is.array.or.map.or.set
 
-    function setMethods(target, pathNames = []) {
+    function setMethods(target, path = [], pathNames = []) {
 
         if (!('originalName' in target)) {
             // If level is 0 we target that all commands don't have originalName property.
@@ -112,6 +124,7 @@ console.time('Initialization time fo new engine');
         }
 
         pathNames = [...pathNames, target.originalName];
+        path = [...path, target];
         const countOfOr = pathNames.filter(name => name === 'or').length;
 
         for (const method of target.allowed) {
@@ -125,12 +138,13 @@ console.time('Initialization time fo new engine');
                 continue;
             }
 
-            target[method.originalName] = defineNewMethod(target, method, pathNames);
+            target[method.originalName] = defineNewMethod(method, path, pathNames);
 
             if (countOfOr < MAX_LEVEL_OF_OR) {
 
                 target[method.originalName] = setMethods(
                     target[method.originalName],
+                    path,
                     pathNames
                 );
             }

@@ -27,6 +27,23 @@ for (let i = 0; i < 100_000; i++) {
 }
 console.timeEnd('NEW Engine is.object.not.empty');
 
+
+console.time('is_js.is.string.empty');
+for (let i = 0; i < 100_000; i++) {
+    if (is_js.string('Hello world') && is_js.empty('Hello world')) {
+
+    }
+}
+console.timeEnd('is_js.is.string.empty');
+
+console.time('NEW Engine is.string.empty');
+for (let i = 0; i < 100_000; i++) {
+    if (is.string.empty('Hello world')) {
+
+    }
+}
+console.timeEnd('NEW Engine is.string.empty');
+
 console.log(`
 |
 |

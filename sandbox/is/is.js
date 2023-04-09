@@ -160,7 +160,7 @@ console.time('Initialization time fo new engine');
         }
 
         pathNames = [...pathNames, target.originalName];
-        const countOfOr = pathNames.filter(name => name === 'or').length;
+        const notExceededOfOr = pathNames.filter(name => name === 'or').length < MAX_LEVEL_OF_OR;
 
         const indexOfNotMethod = pathNames.indexOf('not');
         const indexOfFirstOrMethod = pathNames.indexOf('or');
@@ -217,7 +217,7 @@ console.time('Initialization time fo new engine');
             target[method.originalName].originalName = method.originalName;
             target[method.originalName].allowed = method.allowed;
 
-            if (countOfOr < MAX_LEVEL_OF_OR || method.originalName !== 'or') {
+            if (notExceededOfOr || method.originalName !== 'or') {
 
                 target[method.originalName] = setMethods(
                     target[method.originalName],

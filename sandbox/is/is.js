@@ -21,25 +21,64 @@ console.time('Initialization time fo new engine');
 
     const is = {};
 
-    function defineNewMethod(target, method, pathNames) {
+    function case3Method() {
 
-        const maxIndex = pathNames.length - 1;
-        const indexOfNotMethod = pathNames.indexOf('not');
-        const indexOfFirstOrMethod = pathNames.indexOf('or');
-        const notMethodIsFirst = indexOfNotMethod === 0;
+        /**
+         * 3. [ ] is.object.empty()
+         * 3. [ ] [object, wrapper->empty]
+         */
+        if (this.currentMethod.apply(this, arguments)) {
+            return this.nextMethod.apply(this, arguments);
+        }
+        return false;
 
-        const newMethod = function () {
+    }
 
-            // console.log(this, arguments, method, path, pathNames);
+    function defineNewMethod(target, method, caseMethod) {
 
-            const self = this.originalName === method.originalName ? this : this[method.originalName];
+        return function () {
 
             /**
              * !!! ONE CONTEXT FOR ALL EXECUTION !!!
              */
 
+            return caseMethod.apply(this, arguments);
+
+        };
+
+    }
+
+    const MAX_LEVEL_OF_OR = 1; // is.array.or.map.or.set
+
+    function setMethods(target, pathNames = []) {
+
+        if (!('originalName' in target)) {
+            // If level is 0 we target that all commands don't have originalName property.
+            target.originalName = target.name.toLowerCase();
+        }
+
+        pathNames = [...pathNames, target.originalName];
+        const countOfOr = pathNames.filter(name => name === 'or').length;
+
+        // TODO use below contants to decive which wrapper to use
+        const indexOfNotMethod = pathNames.indexOf('not');
+        const indexOfFirstOrMethod = pathNames.indexOf('or');
+        const notMethodIsFirst = indexOfNotMethod === 0;
+
+        for (const method of target.allowed) {
+
+            if (!('originalName' in method)) {
+                // If level is 0 we know that all commands don't have originalName property.
+                method.originalName = method.name.toLowerCase();
+            }
+
+            if (pathNames.some(name => name !== 'or' && name === method.originalName)) {
+                continue;
+            }
+
 
             if (notMethodIsFirst) {
+
                 /**
                  * TODO
                  * 1. [ ] is.not.object()
@@ -48,6 +87,12 @@ console.time('Initialization time fo new engine');
                  * 2. [ ] is.not.null.or.undefined()
                  * 2. [ ] [not, wrapper->null, wrapper->or, wrapper->undefined]
                  */
+                target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
+                    nextMethod: target,
+                    currentMethod: method,
+                });
+                // TODO
+
             } else {
 
                 if (indexOfNotMethod > 0) {
@@ -66,7 +111,14 @@ console.time('Initialization time fo new engine');
                      * 8. [ ] [object, wrapper->or, wrapper->string, wrapper->not, wrapper->empty]
                      */
 
+                    target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
+                        nextMethod: target,
+                        currentMethod: method,
+                    });
+                    // TODO
+
                 } else {
+
                     if (indexOfFirstOrMethod > 0) {
                         /**
                          * 4. [ ] is.object.or.string()
@@ -75,57 +127,26 @@ console.time('Initialization time fo new engine');
                          * 5. [ ] is.null.or.undefined.or.empty()
                          * 5. [ ] [null, wrapper->or, wrapper->undefined, wrapper->or, wrapper->empty]
                          */
+
+                        target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
+                            nextMethod: target,
+                            currentMethod: method,
+                        });
+                        // TODO
                     } else {
-                        /**
-                         * 3. [ ] is.object.empty()
-                         * 3. [ ] [object, wrapper->empty]
-                         */
-                        if (method.apply(self, arguments)) {
-                            return self.nextMethod.apply(self, arguments);
-                        }
-                        return false;
+
+                        target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
+                            nextMethod: target,
+                            currentMethod: method,
+                        });
 
                     }
                 }
 
             }
 
-        };
-
-
-        newMethod.nextMethod = target;
-        newMethod.pathNames = [...pathNames, method.originalName];
-        newMethod.originalName = method.originalName;
-        newMethod.allowed = method.allowed;
-
-        return newMethod;
-
-    }
-
-    const MAX_LEVEL_OF_OR = 1; // is.array.or.map.or.set
-
-    function setMethods(target, pathNames = []) {
-
-        if (!('originalName' in target)) {
-            // If level is 0 we target that all commands don't have originalName property.
-            target.originalName = target.name.toLowerCase();
-        }
-
-        pathNames = [...pathNames, target.originalName];
-        const countOfOr = pathNames.filter(name => name === 'or').length;
-
-        for (const method of target.allowed) {
-
-            if (!('originalName' in method)) {
-                // If level is 0 we know that all commands don't have originalName property.
-                method.originalName = method.name.toLowerCase();
-            }
-
-            if (pathNames.some(name => name !== 'or' && name === method.originalName)) {
-                continue;
-            }
-
-            target[method.originalName] = defineNewMethod(target, method, pathNames);
+            target[method.originalName].originalName = method.originalName;
+            target[method.originalName].allowed = method.allowed;
 
             if (countOfOr < MAX_LEVEL_OF_OR) {
 
@@ -133,10 +154,13 @@ console.time('Initialization time fo new engine');
                     target[method.originalName],
                     pathNames
                 );
+
             }
+
         }
 
         return target;
+
     }
 
     is.object = function OBJECT(target) {

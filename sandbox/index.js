@@ -1,15 +1,14 @@
-const is = require('./is');
-// const {is: thiis} = require('../dist');
+const is = require('./is/dist');
+const {is: thiis} = require('../dist');
 const is_js = require('./is_js');
 
+console.time('thiis.object.not.empty');
+for (let i = 0; i < 100_000; i++) {
+    if (thiis.object.not.empty({a: 1})) {
 
-// console.time('thiis.object.not.empty');
-// for (let i = 0; i < 100_000; i++) {
-//     if (thiis.object.not.empty({a: 1})) {
-//
-//     }
-// }
-// console.timeEnd('thiis.object.not.empty');
+    }
+}
+console.timeEnd('thiis.object.not.empty');
 
 console.time('is_js.is.object.not.empty');
 for (let i = 0; i < 100_000; i++) {
@@ -27,22 +26,37 @@ for (let i = 0; i < 100_000; i++) {
 }
 console.timeEnd('NEW Engine is.object.not.empty');
 
-
-console.time('is_js.is.string.empty');
+console.time('NATIVE is.object.not.empty');
 for (let i = 0; i < 100_000; i++) {
-    if (is_js.string('Hello world') && is_js.empty('Hello world')) {
+    if (typeof {a: 1} === 'object' && {a: 1} !== null && !Array.isArray({a: 1}) && Object.keys({a: 1})?.length) {
 
     }
 }
-console.timeEnd('is_js.is.string.empty');
+console.timeEnd('NATIVE is.object.not.empty');
 
-console.time('NEW Engine is.string.empty');
-for (let i = 0; i < 100_000; i++) {
-    if (is.string.empty('Hello world')) {
 
-    }
-}
-console.timeEnd('NEW Engine is.string.empty');
+// console.time('is_js.is.string.empty');
+// for (let i = 0; i < 100_000; i++) {
+//     if (is_js.string('Hello world') && is_js.empty('Hello world')) {
+//
+//     }
+// }
+// console.timeEnd('is_js.is.string.empty');
+//
+// console.time('NEW Engine is.string.empty');
+// for (let i = 0; i < 100_000; i++) {
+//     if (is.string.empty('Hello world')) {
+//
+//     }
+// }
+// console.timeEnd('NEW Engine is.string.empty');
+
+// console.time('NEW Engine is.object.not.empty ONE TIME');
+//
+// if (is.object.not.empty({a: 1})) {
+//
+// }
+// console.timeEnd('NEW Engine is.object.not.empty ONE TIME');
 
 console.log(`
 |

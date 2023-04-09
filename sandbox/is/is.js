@@ -1,5 +1,4 @@
-console.time('Initialization time fo new engine');
-;(function (root, factory) {    // eslint-disable-line no-extra-semi
+;(function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD. Register as an anonymous module.
         define(function () {
@@ -31,21 +30,21 @@ console.time('Initialization time fo new engine');
      *
      * @returns {*|boolean}
      */
-    function case1_2Method() {
+    function case1_2() {
 
-        if (this.currentMethod.originalName === 'or') {
-            return this.nextMethod.apply(null, arguments);
+        if (this.isOr) {
+            return this.nextMethod.apply(this, arguments);
         }
 
-        if (this.currentMethod.apply(null, arguments)) {
+        if (this.currentMethod.apply(this, arguments)) {
             return false;
         }
 
-        if (this.nextMethod.originalName === 'not') {
+        if (this.isNot) {
             return true;
         }
 
-        return this.nextMethod.apply(null, arguments);
+        return this.nextMethod.apply(this, arguments);
 
     }
 
@@ -56,14 +55,14 @@ console.time('Initialization time fo new engine');
      *
      * @returns {*|boolean}
      */
-    function case3Method() {
+    function case3() {
 
-        if (['or', 'not'].includes(this.currentMethod.originalName)) {
-            return this.nextMethod.apply(null, arguments);
+        if (this.isNot || this.isOr) {
+            return this.nextMethod.apply(this, arguments);
         }
 
         if (this.currentMethod.apply(this, arguments)) {
-            return this.nextMethod.apply(null, arguments);
+            return this.nextMethod.apply(this, arguments);
         }
 
         return false;
@@ -80,35 +79,31 @@ console.time('Initialization time fo new engine');
      *
      * @returns {*|boolean}
      */
-    function case4_5Method() {
+    function case4_5() {
 
         if (MAX_LEVEL_OF_OR > 1) { // Perhaps we can delete the if and success content if we decide that MAX_LEVEL_OF_OR is always will be 1
 
-            if (this.currentMethod.originalName !== 'or') {
+            if (!this.isOr) {
 
-                if (this.currentMethod.apply(null, arguments)) {
-
+                if (this.currentMethod.apply(this, arguments)) {
                     return true;
-
                 }
 
             }
 
-            return this.nextMethod.apply(null, arguments);
+            return this.nextMethod.apply(this, arguments);
 
         } else {
 
-            if (['or', 'not'].includes(this.currentMethod.originalName)) {
-                return this.nextMethod.apply(null, arguments);
+            if (this.isNot || this.isOr) {
+                return this.nextMethod.apply(this, arguments);
             }
 
-            if (this.currentMethod.apply(null, arguments)) {
-
+            if (this.currentMethod.apply(this, arguments)) {
                 return true;
-
             }
 
-            return this.nextMethod.apply(null, arguments);
+            return this.nextMethod.apply(this, arguments);
 
         }
 
@@ -127,12 +122,12 @@ console.time('Initialization time fo new engine');
      *
      * @returns {*|boolean}
      */
-    function case6_7_8Method() {
+    function case6_7_8() {
 
-        if (this.currentMethod.apply(null, arguments)) {
+        if (this.currentMethod.apply(this, arguments)) {
             return false;
         }
-        return this.nextMethod.apply(null, arguments);
+        return this.nextMethod.apply(this, arguments);
 
     }
 
@@ -168,6 +163,11 @@ console.time('Initialization time fo new engine');
 
         for (const method of target.allowed) {
 
+            const context = {
+                nextMethod: target,
+                currentMethod: method,
+            };
+
             if (!('originalName' in method)) {
                 // If level is 0 we know that all commands don't have originalName property.
                 method.originalName = method.name.toLowerCase();
@@ -180,50 +180,38 @@ console.time('Initialization time fo new engine');
 
 
             if (notMethodIsFirst) {
-
-                target[method.originalName] = defineNewMethod(target, method, case1_2Method).bind({
-                    nextMethod: target,
-                    currentMethod: method,
-                });
-
+                target[method.originalName] = case1_2;
             } else {
-
                 if (indexOfNotMethod > 0) {
-
-                    target[method.originalName] = defineNewMethod(target, method, case6_7_8Method).bind({
-                        nextMethod: target,
-                        currentMethod: method,
-                    });
-
+                    target[method.originalName] = case6_7_8;
                 } else {
-
                     if (indexOfFirstOrMethod > 0) {
-                        target[method.originalName] = defineNewMethod(target, method, case4_5Method).bind({
-                            nextMethod: target,
-                            currentMethod: method,
-                        });
+                        target[method.originalName] = case4_5;
                     } else {
-
-                        target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
-                            nextMethod: target,
-                            currentMethod: method,
-                        });
-
+                        target[method.originalName] = case3;
                     }
                 }
-
             }
 
+            // Additional context params per method
+            if (method.originalName === 'empty') {
+                context.forObject = pathNames.includes('object');
+                context.forString = pathNames.includes('string');
+                context.forArray = pathNames.includes('array');
+            }
+
+            context.isNot = method.originalName === 'not';
+            context.isOr = method.originalName === 'or';
+
+            target[method.originalName] = defineNewMethod(target, method, target[method.originalName]).bind(context);
             target[method.originalName].originalName = method.originalName;
             target[method.originalName].allowed = method.allowed;
 
             if (notExceededOfOr || method.originalName !== 'or') {
-
                 target[method.originalName] = setMethods(
                     target[method.originalName],
                     pathNames
                 );
-
             }
 
         }
@@ -231,6 +219,8 @@ console.time('Initialization time fo new engine');
         return target;
 
     }
+
+    // Methods
 
     is.object = function OBJECT(target) {
         return typeof target === 'object' && target !== null && !Array.isArray(target);
@@ -268,26 +258,47 @@ console.time('Initialization time fo new engine');
         return target === false;
     }
 
+    function emptyObject(target) {
+        for (const key in target) {
+            if (target.hasOwnProperty(key)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function emptyArray(target) {
+        return target.length === 0;
+    }
+
+    function emptyString(target) {
+        return target.trim()[0] === undefined;
+    }
+
     is.empty = function EMPTY(target) {
 
-        if (
-            (is.object(target)) ||
-            (is.array(target))
-        ) {
-            if (Reflect.has(target, 'size')) {
-                // @ts-ignore
-                return target.size <= 0;
-            }
-            for (const key in target) {
-                if (target.hasOwnProperty(key)) {
-                    return false;
-                }
-            }
-            return true;
+        if (this?.forObject) {
+            return emptyObject(target);
+        }
+
+        if (this?.forArray) {
+            return emptyArray(target);
+        }
+
+        if (this?.forString) {
+            return emptyString(target);
+        }
+
+        if (is.object(target)) {
+            return emptyObject(target);
+        }
+
+        if (is.array(target)) {
+            return emptyArray(target);
         }
 
         if (is.string(target)) {
-            return target.trim()[0] === undefined;
+            return emptyString(target);
         }
 
         return false;
@@ -386,6 +397,7 @@ console.time('Initialization time fo new engine');
         or,
     ];
 
+    // Initialization
     setMethods(is.object);
     setMethods(is.boolean);
     setMethods(is.number);
@@ -398,77 +410,7 @@ console.time('Initialization time fo new engine');
     setMethods(is.undefined);
     setMethods(is.not);
 
-
     return is;
+
 }));
 
-console.timeEnd('Initialization time fo new engine');
-
-const is = module.exports;
-
-/**
- * #1 #2
- */
-console.log('Case: #1 #2');
-console.log('true: ', is.not.object([]));
-console.log('true: ', is.not.boolean.or.number(''));
-console.log('false: ', is.not.object({}));
-console.log('false: ', is.not.boolean.or.number(0));
-console.log('');
-
-/**
- * #3
- */
-console.log('Case: #3');
-console.log('true: ', is.object.empty({}));
-console.log('false: ', is.object.empty({a: 1}));
-console.log('true: ', is.string.empty(''));
-console.log('');
-
-/**
- * #4 #5
- */
-console.log('Case: #4 #5');
-console.log('true: ', is.string.or.number(0));
-console.log('true: ', is.string.or.number(''));
-console.log('false: ', is.string.or.number(true));
-// console.log(is.string.or.number.or.boolean(false)); // Only if MAX_LEVEL_OF_OR is more than 1
-console.log('');
-
-/**
- * #6 #7 #8
- */
-console.log('Case: #6 #7 #8');
-console.log('true: ', is.object.not.empty({a: 1}));
-console.log('false: ', is.object.not.empty.or.boolean(true));
-console.log('false: ', is.object.or.string.not.empty(''));
-console.log('');
-
-
-// const MAX_LEVEL = 25;
-// let LAST_LEVEL = 0;
-// let TOTAL = 0;
-//
-// function consoleRec(target, level = 1) {
-//     // if (level === 2) {
-//     //     if (target.originalName !== 'string') {
-//     //         return;
-//     //     }
-//     //     console.log(' ');
-//     // }
-//     console.log('|', [].constructor(level).join('-'), target?.originalName ?? target.name);
-//     TOTAL++;
-//     if (level > LAST_LEVEL) {
-//         LAST_LEVEL = level;
-//     }
-//     if (MAX_LEVEL >= level) {
-//         Object.keys(target).forEach((k) => {
-//             if (target[k] instanceof Function) {
-//                 consoleRec(target[k], level + 1);
-//             }
-//         });
-//     }
-// }
-//
-// consoleRec(is);
-// console.log('LAST_LEVEL: ', LAST_LEVEL, 'TOTAL: ', TOTAL);

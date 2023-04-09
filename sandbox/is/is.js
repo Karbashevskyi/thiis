@@ -244,6 +244,14 @@ console.time('Initialization time fo new engine');
         return typeof target === 'string';
     }
 
+    is.null = function NULL(target) {
+        return target === null;
+    }
+
+    is.undefined = function UNDEFINED(target) {
+        return target === undefined;
+    }
+
     is.number = function NUMBER(target) {
         return typeof target === 'number' && !isNaN(target);
     }
@@ -305,7 +313,9 @@ console.time('Initialization time fo new engine');
         is.boolean,
         is.true,
         is.false,
-        is.number
+        is.number,
+        is.null,
+        is.undefined
     ];
 
     is.object.allowed = [
@@ -361,7 +371,19 @@ console.time('Initialization time fo new engine');
         is.boolean,
         is.true,
         is.false,
-        is.number
+        is.number,
+        is.null,
+        is.undefined
+    ];
+
+    is.null.allowed = [
+        is.not,
+        or,
+    ];
+
+    is.undefined.allowed = [
+        is.not,
+        or,
     ];
 
     setMethods(is.object);
@@ -372,6 +394,8 @@ console.time('Initialization time fo new engine');
     setMethods(is.array);
     setMethods(is.string);
     setMethods(is.empty);
+    setMethods(is.null);
+    setMethods(is.undefined);
     setMethods(is.not);
 
 

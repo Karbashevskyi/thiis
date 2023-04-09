@@ -108,6 +108,8 @@ console.time('Initialization time fo new engine');
 
             }
 
+            return this.nextMethod.apply(null, arguments);
+
         }
 
     }
@@ -160,7 +162,6 @@ console.time('Initialization time fo new engine');
         pathNames = [...pathNames, target.originalName];
         const countOfOr = pathNames.filter(name => name === 'or').length;
 
-        // TODO use below contants to decide which wrapper to use
         const indexOfNotMethod = pathNames.indexOf('not');
         const indexOfFirstOrMethod = pathNames.indexOf('or');
         const notMethodIsFirst = indexOfNotMethod === 0;
@@ -172,7 +173,7 @@ console.time('Initialization time fo new engine');
                 method.originalName = method.name.toLowerCase();
             }
 
-            // Add more than 1 or to target
+            // Add more than 1 "or" to target
             if (pathNames.some(name => name !== 'or' && name === method.originalName)) {
                 continue;
             }
@@ -183,7 +184,6 @@ console.time('Initialization time fo new engine');
                 target[method.originalName] = defineNewMethod(target, method, case1_2Method).bind({
                     nextMethod: target,
                     currentMethod: method,
-                    caseName: '1_2'
                 });
 
             } else {
@@ -193,7 +193,6 @@ console.time('Initialization time fo new engine');
                     target[method.originalName] = defineNewMethod(target, method, case6_7_8Method).bind({
                         nextMethod: target,
                         currentMethod: method,
-                        caseName: '6_7_8'
                     });
 
                 } else {
@@ -202,14 +201,12 @@ console.time('Initialization time fo new engine');
                         target[method.originalName] = defineNewMethod(target, method, case4_5Method).bind({
                             nextMethod: target,
                             currentMethod: method,
-                            caseName: '4_5'
                         });
                     } else {
 
                         target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
                             nextMethod: target,
                             currentMethod: method,
-                            caseName: '3'
                         });
 
                     }
@@ -291,13 +288,14 @@ console.time('Initialization time fo new engine');
     // Interfaces
 
     is.not = function NOT() {
-        // Skip the function in call loop!
         throw new Error("Don't use the method without second command, good example: is.not.object()");
     }
 
     function or() {
         throw new Error("Don't use the command like first!");
     }
+
+    // Linking
 
     or.allowed = [
         is.object,
@@ -315,38 +313,46 @@ console.time('Initialization time fo new engine');
         or,
         is.not
     ];
+
     is.boolean.allowed = [
         is.not,
         or,
     ];
+
     is.number.allowed = [
         is.not,
         or,
     ];
+
     is.true.allowed = [
         is.not,
         or,
     ];
+
     is.false.allowed = [
         is.not,
         or,
     ];
+
     is.array.allowed = [
         is.not,
         or,
         is.empty
     ];
+
     is.string.allowed = [
         is.not,
         or,
         is.empty
     ];
+
     is.empty.allowed = [
         is.not,
         or,
         is.object,
         is.string
     ];
+
     is.not.allowed = [
         is.object,
         is.empty,
@@ -358,7 +364,16 @@ console.time('Initialization time fo new engine');
         is.number
     ];
 
-    Object.values(is).filter(method => 'allowed' in method).forEach((method) => setMethods(method));
+    setMethods(is.object);
+    setMethods(is.boolean);
+    setMethods(is.number);
+    setMethods(is.true);
+    setMethods(is.false);
+    setMethods(is.array);
+    setMethods(is.string);
+    setMethods(is.empty);
+    setMethods(is.not);
+
 
     return is;
 }));
@@ -370,32 +385,40 @@ const is = module.exports;
 /**
  * #1 #2
  */
-// console.log(is.not.object([]));
-// console.log(is.not.boolean.or.number(''));
-// console.log(is.not.object({}));
-// console.log(is.not.boolean.or.number(0));
+console.log('Case: #1 #2');
+console.log('true: ', is.not.object([]));
+console.log('true: ', is.not.boolean.or.number(''));
+console.log('false: ', is.not.object({}));
+console.log('false: ', is.not.boolean.or.number(0));
+console.log('');
 
 /**
  * #3
  */
-// console.log(is.object.empty({}));
-// console.log(is.object.empty({a: 1}));
-// console.log(is.string.empty(''));
+console.log('Case: #3');
+console.log('true: ', is.object.empty({}));
+console.log('false: ', is.object.empty({a: 1}));
+console.log('true: ', is.string.empty(''));
+console.log('');
 
 /**
  * #4 #5
  */
-// console.log(is.string.or.number(0));
-// console.log(is.string.or.number(''));
-// console.log(is.string.or.number(true));
+console.log('Case: #4 #5');
+console.log('true: ', is.string.or.number(0));
+console.log('true: ', is.string.or.number(''));
+console.log('false: ', is.string.or.number(true));
 // console.log(is.string.or.number.or.boolean(false)); // Only if MAX_LEVEL_OF_OR is more than 1
+console.log('');
 
 /**
  * #6 #7 #8
  */
-// console.log(is.object.not.empty({a: 1}));
-// console.log(is.object.not.empty.or.boolean(true));
-// console.log(is.object.or.string.not.empty(''));
+console.log('Case: #6 #7 #8');
+console.log('true: ', is.object.not.empty({a: 1}));
+console.log('false: ', is.object.not.empty.or.boolean(true));
+console.log('false: ', is.object.or.string.not.empty(''));
+console.log('');
 
 
 // const MAX_LEVEL = 25;

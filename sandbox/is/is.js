@@ -21,16 +21,116 @@ console.time('Initialization time fo new engine');
 
     const is = {};
 
+    /**
+     *
+     * 1. [x] is.not.object()
+     * 1. [x] [not, wrapper->object]
+     *
+     * 2. [x] is.not.boolean.or.number()
+     * 2. [x] [not, wrapper->boolean, wrapper->or, wrapper->number]
+     *
+     * @returns {*|boolean}
+     */
+    function case1_2Method() {
+
+        if (this.currentMethod.originalName === 'or') {
+            return this.nextMethod.apply(null, arguments);
+        }
+
+        if (this.currentMethod.apply(null, arguments)) {
+            return false;
+        }
+
+        if (this.nextMethod.originalName === 'not') {
+            return true;
+        }
+
+        return this.nextMethod.apply(null, arguments);
+
+    }
+
+    /**
+     *
+     * 3. [x] is.object.empty()
+     * 3. [x] [object, wrapper->empty]
+     *
+     * @returns {*|boolean}
+     */
     function case3Method() {
 
-        /**
-         * 3. [ ] is.object.empty()
-         * 3. [ ] [object, wrapper->empty]
-         */
-        if (this.currentMethod.apply(this, arguments)) {
-            return this.nextMethod.apply(this, arguments);
+        if (['or', 'not'].includes(this.currentMethod.originalName)) {
+            return this.nextMethod.apply(null, arguments);
         }
+
+        if (this.currentMethod.apply(this, arguments)) {
+            return this.nextMethod.apply(null, arguments);
+        }
+
         return false;
+
+    }
+
+    /**
+     *
+     * 4. [x] is.object.or.string()
+     * 4. [x] [object, wrapper->or, wrapper->string]
+     *
+     * 5. [x] is.null.or.undefined.or.empty()
+     * 5. [x] [null, wrapper->or, wrapper->undefined, wrapper->or, wrapper->empty]
+     *
+     * @returns {*|boolean}
+     */
+    function case4_5Method() {
+
+        if (MAX_LEVEL_OF_OR > 1) { // Perhaps we can delete the if and success content if we decide that MAX_LEVEL_OF_OR is always will be 1
+
+            if (this.currentMethod.originalName !== 'or') {
+
+                if (this.currentMethod.apply(null, arguments)) {
+
+                    return true;
+
+                }
+
+            }
+
+            return this.nextMethod.apply(null, arguments);
+
+        } else {
+
+            if (['or', 'not'].includes(this.currentMethod.originalName)) {
+                return this.nextMethod.apply(null, arguments);
+            }
+
+            if (this.currentMethod.apply(null, arguments)) {
+
+                return true;
+
+            }
+
+        }
+
+    }
+
+    /**
+     *
+     * 6. [x] is.object.not.empty()
+     * 6. [x] [object, wrapper->not, wrapper->empty]
+     *
+     * 7. [x] is.object.not.empty.or.boolean()
+     * 7. [x] [object, wrapper->not, wrapper->empty, wrapper->or, wrapper->boolean]
+     *
+     * 8. [x] is.object.or.string.not.empty()
+     * 8. [x] [object, wrapper->or, wrapper->string, wrapper->not, wrapper->empty]
+     *
+     * @returns {*|boolean}
+     */
+    function case6_7_8Method() {
+
+        if (this.currentMethod.apply(null, arguments)) {
+            return false;
+        }
+        return this.nextMethod.apply(null, arguments);
 
     }
 
@@ -60,7 +160,7 @@ console.time('Initialization time fo new engine');
         pathNames = [...pathNames, target.originalName];
         const countOfOr = pathNames.filter(name => name === 'or').length;
 
-        // TODO use below contants to decive which wrapper to use
+        // TODO use below contants to decide which wrapper to use
         const indexOfNotMethod = pathNames.indexOf('not');
         const indexOfFirstOrMethod = pathNames.indexOf('or');
         const notMethodIsFirst = indexOfNotMethod === 0;
@@ -72,6 +172,7 @@ console.time('Initialization time fo new engine');
                 method.originalName = method.name.toLowerCase();
             }
 
+            // Add more than 1 or to target
             if (pathNames.some(name => name !== 'or' && name === method.originalName)) {
                 continue;
             }
@@ -79,65 +180,36 @@ console.time('Initialization time fo new engine');
 
             if (notMethodIsFirst) {
 
-                /**
-                 * TODO
-                 * 1. [ ] is.not.object()
-                 * 1. [ ] [not, wrapper->object]
-                 *
-                 * 2. [ ] is.not.null.or.undefined()
-                 * 2. [ ] [not, wrapper->null, wrapper->or, wrapper->undefined]
-                 */
-                target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
+                target[method.originalName] = defineNewMethod(target, method, case1_2Method).bind({
                     nextMethod: target,
                     currentMethod: method,
+                    caseName: '1_2'
                 });
-                // TODO
 
             } else {
 
                 if (indexOfNotMethod > 0) {
 
-                    /**
-                     * Examples:
-                     *
-                     *
-                     * 6. [ ] is.object.not.empty()
-                     * 6. [ ] [object, wrapper->not, wrapper->empty]
-                     *
-                     * 7. [ ] is.object.not.empty.or.null()
-                     * 7. [ ] [object, wrapper->not, wrapper->empty, wrapper->or, wrapper->null]
-                     *
-                     * 8. [ ] is.object.or.string.not.empty()
-                     * 8. [ ] [object, wrapper->or, wrapper->string, wrapper->not, wrapper->empty]
-                     */
-
-                    target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
+                    target[method.originalName] = defineNewMethod(target, method, case6_7_8Method).bind({
                         nextMethod: target,
                         currentMethod: method,
+                        caseName: '6_7_8'
                     });
-                    // TODO
 
                 } else {
 
                     if (indexOfFirstOrMethod > 0) {
-                        /**
-                         * 4. [ ] is.object.or.string()
-                         * 4. [ ] [object, wrapper->or, wrapper->string]
-                         *
-                         * 5. [ ] is.null.or.undefined.or.empty()
-                         * 5. [ ] [null, wrapper->or, wrapper->undefined, wrapper->or, wrapper->empty]
-                         */
-
-                        target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
+                        target[method.originalName] = defineNewMethod(target, method, case4_5Method).bind({
                             nextMethod: target,
                             currentMethod: method,
+                            caseName: '4_5'
                         });
-                        // TODO
                     } else {
 
                         target[method.originalName] = defineNewMethod(target, method, case3Method).bind({
                             nextMethod: target,
                             currentMethod: method,
+                            caseName: '3'
                         });
 
                     }
@@ -148,7 +220,7 @@ console.time('Initialization time fo new engine');
             target[method.originalName].originalName = method.originalName;
             target[method.originalName].allowed = method.allowed;
 
-            if (countOfOr < MAX_LEVEL_OF_OR) {
+            if (countOfOr < MAX_LEVEL_OF_OR || method.originalName !== 'or') {
 
                 target[method.originalName] = setMethods(
                     target[method.originalName],
@@ -296,28 +368,34 @@ console.timeEnd('Initialization time fo new engine');
 const is = module.exports;
 
 /**
+ * #1 #2
+ */
+// console.log(is.not.object([]));
+// console.log(is.not.boolean.or.number(''));
+// console.log(is.not.object({}));
+// console.log(is.not.boolean.or.number(0));
+
+/**
  * #3
  */
-console.log(is.object.empty({}));
-console.log(is.object.empty({a: 1}));
-console.log(is.string.empty(''));
+// console.log(is.object.empty({}));
+// console.log(is.object.empty({a: 1}));
+// console.log(is.string.empty(''));
 
-// console.log(is.object.not.empty({a: 1}));
-// console.log(is.object.not.empty({}));
-// console.log(is.object.not.empty([]));
-
-// console.log(is.object.or.string(0));
-// console.log(is.string.or.number([]));
-// console.log(is.string.or.number({}));
-// console.log(is.string.or.number(''));
+/**
+ * #4 #5
+ */
 // console.log(is.string.or.number(0));
-// console.log(is.string.or.number(false));
-// console.log(is.string.or.number.or.boolean([]));
-// console.log(is.string.or.number.or.boolean.or.object({}));
-// console.log(is.string.or.number.or.boolean.or.object(''));
-// console.log(is.string.or.number.or.boolean.or.object(0));
-// console.log(is.string.or.number.or.boolean.or.object(false));
-// console.log(is.not.string.or.number.or.boolean({}));
+// console.log(is.string.or.number(''));
+// console.log(is.string.or.number(true));
+// console.log(is.string.or.number.or.boolean(false)); // Only if MAX_LEVEL_OF_OR is more than 1
+
+/**
+ * #6 #7 #8
+ */
+// console.log(is.object.not.empty({a: 1}));
+// console.log(is.object.not.empty.or.boolean(true));
+// console.log(is.object.or.string.not.empty(''));
 
 
 // const MAX_LEVEL = 25;

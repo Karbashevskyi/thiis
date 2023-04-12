@@ -1,4 +1,4 @@
-const is = require('./is/dist');
+// const is = require('./is/dist');
 const {is: thiis} = require('../dist');
 const is_js = require('./is_js');
 
@@ -18,13 +18,13 @@ for (let i = 0; i < 100_000; i++) {
 }
 console.timeEnd('is_js.is.object.not.empty');
 
-console.time('NEW Engine is.object.not.empty');
-for (let i = 0; i < 100_000; i++) {
-    if (is.object.not.empty({a: 1})) {
-
-    }
-}
-console.timeEnd('NEW Engine is.object.not.empty');
+// console.time('NEW Engine is.object.not.empty');
+// for (let i = 0; i < 100_000; i++) {
+//     if (is.object.not.empty({a: 1})) {
+//
+//     }
+// }
+// console.timeEnd('NEW Engine is.object.not.empty');
 
 console.time('NATIVE is.object.not.empty');
 for (let i = 0; i < 100_000; i++) {

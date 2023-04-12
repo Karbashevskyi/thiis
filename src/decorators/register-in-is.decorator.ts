@@ -3,7 +3,6 @@ import {
   registerInIsConstructorDecoratorType,
 } from '../types/decorators/register-in-is.decorator.type';
 import { RegisterInIsDecoratorInterface } from '../interfaces/decorators/register-in-is.decorator.interface';
-import { predefinedMethods } from '../methods';
 
 export function registerInIsDecorator(configuration?: RegisterInIsDecoratorInterface): any {
   return (constructor: registerInIsConstructorDecoratorType): void => {
@@ -25,11 +24,12 @@ export function registerInIsDecorator(configuration?: RegisterInIsDecoratorInter
       const object: registerInIsArgumentDecoratorType = new constructor();
       className = object.constructor.name;
     }
-    Object.defineProperty(predefinedMethods, className, {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value,
-    });
+    // TODO
+    // Object.defineProperty(predefinedMethods, className, {
+    //   configurable: true,
+    //   enumerable: true,
+    //   writable: true,
+    //   value,
+    // });
   };
 }

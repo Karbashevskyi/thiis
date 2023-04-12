@@ -1,168 +1,171 @@
-import { ArrayMethod } from './array.method';
-import { BigIntMethod } from './number/bigInt.method';
-import { BooleanMethod } from './boolean/boolean.method';
-import { CompareMethod } from './compare.method';
-import { EmptyMethod } from './empty.method';
-import { FalseMethod } from './boolean/false.method';
-import { FalsyMethod } from './boolean/falsy.method';
-import { InstanceofMethod } from './instanceof.method';
-import { NullMethod } from './null.method';
-import { NumberMethod } from './number/number.method';
-import { ObjectMethod } from './object.method';
-import { StringMethod } from './string/string.method';
-import { SymbolMethod } from './symbol.method';
-import { TrueMethod } from './boolean/true.method';
-import { TruthyMethod } from './boolean/truthy.method';
-import { UndefinedMethod } from './undefined.method';
-import { ZeroMethod } from './number/zero.method';
-import { PrimitiveMethod } from './primitive.method';
-import { PromiseMethod } from './promise.method';
-import { AsyncFunctionMethod, FunctionMethod, GeneratorFunctionMethod } from './function.method';
-import { PositiveMethod } from './number/positive.method';
-import { NegativeMethod } from './number/negative.method';
-import { InfinityMethod } from './number/infinity.method';
-import { HTMLElementsMethodsInterface } from '../interfaces/methods/HTML-elements.methods.interface';
-import { ExternalMethodsInterface } from '../interfaces/methods/external.methods.interface';
-import { Ipv6Method } from './string/ipv6.method';
-import { Ipv4Method } from './string/ipv4.method';
-import { MacAddressMethod } from './string/mac-address.method';
-import { WordMethod } from './string/word.method';
-import { OddMethod } from './number/odd.method';
-import { EvenMethod } from './number/even.method';
-import { LenMethod } from './len.method';
-import { NumericMethod } from './number/numeric.method';
-import { IntMethod } from './number/int.method';
-import { CharMethod } from './string/char.method';
-import { PascalCaseMethod } from './string/register/pascal-case.method';
-import { KebabCaseMethod } from './string/register/kebab-case.method';
-import { CamelCaseMethod } from './string/register/camel-case.method';
-import { SnakeCaseMethod } from './string/register/snake-case.method';
-import { UpperCaseMethod } from './string/register/upper-case.method';
-import { LowerCaseMethod } from './string/register/lower-case.method';
-import { SafariMethod } from './browser/safari.method';
-import { FirefoxMethod } from './browser/firefox.method';
-import { AndroidMethod } from './system/android.method';
-import { PhoneMethod } from './hardware/phone.method';
-import { WindowsMethod } from './system/windows.method';
-import { OperaMethod } from './browser/opera.method';
-import { IpodMethod } from './hardware/ipod.method';
-import { IphoneMethod } from './hardware/iphone.method';
-import { IpadMethod } from './hardware/ipad.method';
-import { IosMethod } from './system/ios.method';
-import { IeMethod } from './browser/ie.method';
-import { EdgeMethod } from './browser/edge.method';
-import { BrowserMethod } from './browser/browser.method';
-import { MacMethod } from './system/mac.method';
-import { ChromeMethod } from './browser/chrome.method';
-import { WindowsPhoneMethod } from './hardware/windows-phone.method';
-import {BlackberryMethod} from './hardware/blackberry.method';
-import {AndroidPhoneMethod} from './hardware/android-phone.method';
-import {MobileMethod} from './hardware/mobile.method';
+export {ARRAY as array} from './ARRAY';
+export {BIG_INT as bigInt} from './number/BIG_INT';
+export {BOOLEAN as boolean} from './boolean/BOOLEAN';
+export {COMPARE as compare} from './COMPARE';
+export {EMPTY as empty} from './EMPTY';
+export {FALSE as false} from './boolean/FALSE';
+export {FALSY as falsy} from './boolean/FALSY';
+export {INSTANCEOF as instanceof} from './INSTANCEOF';
+export {NULL as null} from './NULL';
+export {NUMBER as number} from './number/NUMBER';
+export {OBJECT as object} from './OBJECT';
+export {STRING as string} from './string/STRING';
+export {SYMBOL as symbol} from './SYMBOL';
+export {TRUE as true} from './boolean/TRUE';
+export {TRUTHY as truthy} from './boolean/TRUTHY';
+export {UNDEFINED as undefined} from './UNDEFINED';
+export {ZERO as zero} from './number/ZERO';
+export {PRIMITIVE as primitive} from './PRIMITIVE';
+export {PROMISE as promise} from './PROMISE';
+export {FUNCTION as function} from './FUNCTION';
+export {GENERATOR_FUNCTION as generatorFunction} from './GENERATOR_FUNCTION';
+export {ASYNC_FUNCTION as asyncFunction} from './ASYNC_FUNCTION';
+export {POSITIVE as positive} from './number/POSITIVE';
+export {NEGATIVE as negative} from './number/NEGATIVE';
+export {INFINITY as infinity} from './number/INFINITY';
+export {IPV6 as ipv6} from './string/IPV6';
+export {IPV4 as ipv4} from './string/IPV4';
+export {MAC_ADDRESS as macAddress} from './string/MAC_ADDRESS';
+export {WORD as word} from './string/WORD';
+export {ODD as odd} from './number/ODD';
+export {EVEN as even} from './number/EVEN';
+export {LEN as len} from './LEN';
+export {NUMERIC as numeric} from './number/NUMERIC';
+export {INT as int} from './number/INT';
+export {CHAR as char} from './string/CHAR';
+export {PASCAL_CASE as pascalCase} from './string/register/PASCAL_CASE';
+export {KEBAB_CASE as kebabCase} from './string/register/KEBAB_CASE';
+export {CAMEL_CASE as camelCase} from './string/register/CAMEL_CASE';
+export {SNAKE_CASE as snakeCase} from './string/register/SNAKE_CASE';
+export {UPPER_CASE as upperCase} from './string/register/UPPER_CASE';
+export {LOWER_CASE as lowerCase} from './string/register/LOWER_CASE';
+export {SAFARI as safari} from './browser/SAFARI';
+export {FIREFOX as firefox} from './browser/FIREFOX';
+export {ANDROID as android} from './system/ANDROID';
+export {PHONE as phone} from './hardware/PHONE';
+export {WINDOWS as windows} from './system/WINDOWS';
+export {OPERA as opera} from './browser/OPERA';
+export {IPOD as ipod} from './hardware/IPOD';
+export {IPHONE as iphone} from './hardware/IPHONE';
+export {IPAD as ipad} from './hardware/IPAD';
+export {IOS as ios} from './system/IOS';
+export {IE as ie} from './browser/IE';
+export {EDGE as edge} from './browser/EDGE';
+export {BROWSER as browser} from './browser/BROWSER';
+export {MAC as mac} from './system/MAC';
+export {CHROME as chrome} from './browser/CHROME';
+export {WINDOWS_PHONE as windowsPhone} from './hardware/WINDOWS_PHONE';
+export {BLACKBERRY as blackberry} from './hardware/BLACKBERRY';
+export {ANDROID_PHONE as androidPhone} from './hardware/ANDROID_PHONE';
+export {MOBILE as mobile} from './hardware/MOBILE';
+export {NOT as not} from './NOT';
+// export { HTMLElementsMethodsInterface } from '../interfaces/methods/HTML-elements.methods.interface';
+// export { ExternalMethodsInterface } from '../interfaces/methods/external.methods.interface';
 
-type mixTypes<T> = T & AllMethodsInterface;
+// type mixTypes<T> = T & AllMethodsInterface;
+//
+// export type ConvertTypeToGenericMixTypes<T> = {
+//   [key in keyof T]: mixTypes<T[key]>;
+// };
+//
+// type instanceofType<T = () => void> = (target: unknown) => target is T;
+// type instanceofTypeMix<T = () => void> = mixTypes<instanceofType<T>>;
+//
+// export type ConvertTypeToGenericInstanceOf<T> = {
+//   [key in keyof T]: instanceofTypeMix<T[key]>;
+// };
 
-export type ConvertTypeToGenericMixTypes<T> = {
-  [key in keyof T]: mixTypes<T[key]>;
-};
+// type LengthMethodType = typeof LEN;
 
-type instanceofType<T = () => void> = (target: unknown) => target is T;
-type instanceofTypeMix<T = () => void> = mixTypes<instanceofType<T>>;
+// export const predefinedMethods = {
+//   // Browser
+//   firefox: FIREFOX,
+//   opera: OPERA,
+//   ie: IE,
+//   edge: EDGE,
+//   safari: SAFARI,
+//   browser: BROWSER,
+//   chrome: CHROME,
+//   // System
+//   ios: IOS,
+//   android: ANDROID,
+//   windows: WINDOWS,
+//   mac: MAC,
+//   // Hardware
+//   phone: PHONE,
+//   ipod: IPOD,
+//   iphone: IPHONE,
+//   ipad: IPAD,
+//   windowsPhone: WINDOWS_PHONE,
+//   blackberry: BLACKBERRY,
+//   androidPhone: ANDROID_PHONE,
+//   mobile: MOBILE,
+//   // Boolean
+//   boolean: BOOLEAN,
+//   false: FALSE,
+//   falsy: FALSY,
+//   true: TRUE,
+//   truthy: TRUTHY,
+//   // Number
+//   odd: ODD,
+//   positive: POSITIVE,
+//   zero: ZERO,
+//   int: INT,
+//   infinity: INFINITY,
+//   number: NUMBER,
+//   numeric: NUMERIC,
+//   // String
+//   string: STRING,
+//   pascalCase: PASCAL_CASE,
+//   upperCase: UPPER_CASE,
+//   kebabCase: KEBAB_CASE,
+//   macAddress: MAC_ADDRESS,
+//   camelCase: CAMEL_CASE,
+//   word: WORD,
+//   snakeCase: SNAKE_CASE,
+//   ipv4: IPV4,
+//   ipv6: IPV6,
+//   char: CHAR,
+//   lowerCase: LOWER_CASE,
+//   // Other
+//   len: LEN,
+//   array: ARRAY,
+//   asyncFunction: ASYNC_FUNCTION,
+//   bigInt: BIG_INT,
+//   compare: COMPARE,
+//   empty: EMPTY,
+//   even: EVEN,
+//   function: FUNCTION,
+//   generatorFunction: GENERATOR_FUNCTION,
+//   instanceof: INSTANCEOF,
+//   negative: NEGATIVE,
+//   null: NULL,
+//   object: OBJECT,
+//   primitive: PRIMITIVE,
+//   promise: PROMISE,
+//   symbol: SYMBOL,
+//   undefined: UNDEFINED,
+// };
 
-export type ConvertTypeToGenericInstanceOf<T> = {
-  [key in keyof T]: instanceofTypeMix<T[key]>;
-};
-
-type LengthMethodType = typeof LenMethod;
-
-export const predefinedMethods = {
-  // Browser
-  firefox: FirefoxMethod,
-  opera: OperaMethod,
-  ie: IeMethod,
-  edge: EdgeMethod,
-  safari: SafariMethod,
-  browser: BrowserMethod,
-  chrome: ChromeMethod,
-  // System
-  ios: IosMethod,
-  android: AndroidMethod,
-  windows: WindowsMethod,
-  mac: MacMethod,
-  // Hardware
-  phone: PhoneMethod,
-  ipod: IpodMethod,
-  iphone: IphoneMethod,
-  ipad: IpadMethod,
-  windowsPhone: WindowsPhoneMethod,
-  blackberry: BlackberryMethod,
-  androidPhone: AndroidPhoneMethod,
-  mobile: MobileMethod,
-  // Boolean
-  boolean: BooleanMethod,
-  false: FalseMethod,
-  falsy: FalsyMethod,
-  true: TrueMethod,
-  truthy: TruthyMethod,
-  // Number
-  odd: OddMethod,
-  positive: PositiveMethod,
-  zero: ZeroMethod,
-  int: IntMethod,
-  infinity: InfinityMethod,
-  number: NumberMethod,
-  numeric: NumericMethod,
-  // String
-  string: StringMethod,
-  pascalCase: PascalCaseMethod,
-  upperCase: UpperCaseMethod,
-  kebabCase: KebabCaseMethod,
-  macAddress: MacAddressMethod,
-  camelCase: CamelCaseMethod,
-  word: WordMethod,
-  snakeCase: SnakeCaseMethod,
-  ipv4: Ipv4Method,
-  ipv6: Ipv6Method,
-  char: CharMethod,
-  lowerCase: LowerCaseMethod,
-  // Other
-  len: LenMethod,
-  array: ArrayMethod,
-  asyncFunction: AsyncFunctionMethod,
-  bigInt: BigIntMethod,
-  compare: CompareMethod,
-  empty: EmptyMethod,
-  even: EvenMethod,
-  function: FunctionMethod,
-  generatorFunction: GeneratorFunctionMethod,
-  instanceof: InstanceofMethod,
-  negative: NegativeMethod,
-  null: NullMethod,
-  object: ObjectMethod,
-  primitive: PrimitiveMethod,
-  promise: PromiseMethod,
-  symbol: SymbolMethod,
-  undefined: UndefinedMethod,
-};
-
-export interface AllMethodsInterface
-  extends ConvertTypeToGenericMixTypes<typeof predefinedMethods>,
-    ConvertTypeToGenericInstanceOf<ExternalMethodsInterface>,
-    ConvertTypeToGenericInstanceOf<HTMLElementsMethodsInterface>,
-    Omit<CallableFunction, 'length'> {
-  Function: instanceofType;
-  or: AllMethodsInterface;
-  not: AllMethodsInterface;
-
-  // Predefined interfaces of methods which has some options
-  len_N: LengthMethodType;
-  len_gt_N_lt_N: LengthMethodType;
-  len_lt_N: LengthMethodType;
-  len_gt_N: LengthMethodType;
-  len_gte_N_lt_N: LengthMethodType;
-  len_gte_N_lte_N: LengthMethodType;
-  len_lte_N: LengthMethodType;
-  len_gte_N: LengthMethodType;
-  len_gt_N_lte_N: LengthMethodType;
-
-  [key: string]: instanceofType | AllMethodsInterface | any;
-}
+// export interface AllMethodsInterface
+//   extends ConvertTypeToGenericMixTypes<typeof predefinedMethods>,
+//     ConvertTypeToGenericInstanceOf<ExternalMethodsInterface>,
+//     ConvertTypeToGenericInstanceOf<HTMLElementsMethodsInterface>,
+//     Omit<CallableFunction, 'length'> {
+//   Function: instanceofType;
+//   or: AllMethodsInterface;
+//   not: AllMethodsInterface;
+//
+//   // Predefined interfaces of methods which has some options
+//   len_N: LengthMethodType;
+//   len_gt_N_lt_N: LengthMethodType;
+//   len_lt_N: LengthMethodType;
+//   len_gt_N: LengthMethodType;
+//   len_gte_N_lt_N: LengthMethodType;
+//   len_gte_N_lte_N: LengthMethodType;
+//   len_lte_N: LengthMethodType;
+//   len_gte_N: LengthMethodType;
+//   len_gt_N_lte_N: LengthMethodType;
+//
+//   [key: string]: instanceofType | AllMethodsInterface | any;
+// }

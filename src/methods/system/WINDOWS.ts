@@ -1,5 +1,7 @@
-import { isConfig } from '../../config';
-import { STRING } from '../string/STRING';
+import {isConfig} from '../../config';
+import {STRING} from '../string/STRING';
+import {not} from '../not';
+import {or} from '../or';
 
 export function WINDOWS(target: unknown = isConfig.state.platform): boolean {
   if (STRING(target)) {
@@ -7,3 +9,6 @@ export function WINDOWS(target: unknown = isConfig.state.platform): boolean {
   }
   return false;
 }
+
+WINDOWS.allowed = [];
+WINDOWS.originalName = 'windows';

@@ -1,5 +1,7 @@
-import { isConfig } from '../../config';
-import { STRING } from '../string/STRING';
+import {isConfig} from '../../config';
+import {STRING} from '../string/STRING';
+import {not} from '../not';
+import {or} from '../or';
 
 export function ANDROID(target: unknown = isConfig.state.userAgent): boolean {
   if (STRING(target)) {
@@ -7,3 +9,6 @@ export function ANDROID(target: unknown = isConfig.state.userAgent): boolean {
   }
   return false;
 }
+
+ANDROID.allowed = [];
+ANDROID.originalName = 'android';

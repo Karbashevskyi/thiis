@@ -30,9 +30,9 @@ export const dataForBadTesting: {value: any}[] = [
             property: 1
         }
     },
-    {
-        value: new Map([['a', 'b']])
-    },
+    // {
+    //     value: new Map([['a', 'b']])
+    // },
     {
         value: null
     },

@@ -58,22 +58,9 @@ export {WINDOWS_PHONE as windowsPhone} from './hardware/WINDOWS_PHONE';
 export {BLACKBERRY as blackberry} from './hardware/BLACKBERRY';
 export {ANDROID_PHONE as androidPhone} from './hardware/ANDROID_PHONE';
 export {MOBILE as mobile} from './hardware/MOBILE';
-export {NOT as not} from './NOT';
-// export { HTMLElementsMethodsInterface } from '../interfaces/methods/HTML-elements.methods.interface';
-// export { ExternalMethodsInterface } from '../interfaces/methods/external.methods.interface';
-
-// type mixTypes<T> = T & AllMethodsInterface;
-//
-// export type ConvertTypeToGenericMixTypes<T> = {
-//   [key in keyof T]: mixTypes<T[key]>;
-// };
-//
-// type instanceofType<T = () => void> = (target: unknown) => target is T;
-// type instanceofTypeMix<T = () => void> = mixTypes<instanceofType<T>>;
-//
-// export type ConvertTypeToGenericInstanceOf<T> = {
-//   [key in keyof T]: instanceofTypeMix<T[key]>;
-// };
+export {not} from './not';
+export {HTMLElementsMethodsInterface} from '../interfaces/methods/HTML-elements.methods.interface';
+export {ExternalMethodsInterface} from '../interfaces/methods/external.methods.interface';
 
 // type LengthMethodType = typeof LEN;
 
@@ -146,26 +133,3 @@ export {NOT as not} from './NOT';
 //   symbol: SYMBOL,
 //   undefined: UNDEFINED,
 // };
-
-// export interface AllMethodsInterface
-//   extends ConvertTypeToGenericMixTypes<typeof predefinedMethods>,
-//     ConvertTypeToGenericInstanceOf<ExternalMethodsInterface>,
-//     ConvertTypeToGenericInstanceOf<HTMLElementsMethodsInterface>,
-//     Omit<CallableFunction, 'length'> {
-//   Function: instanceofType;
-//   or: AllMethodsInterface;
-//   not: AllMethodsInterface;
-//
-//   // Predefined interfaces of methods which has some options
-//   len_N: LengthMethodType;
-//   len_gt_N_lt_N: LengthMethodType;
-//   len_lt_N: LengthMethodType;
-//   len_gt_N: LengthMethodType;
-//   len_gte_N_lt_N: LengthMethodType;
-//   len_gte_N_lte_N: LengthMethodType;
-//   len_lte_N: LengthMethodType;
-//   len_gte_N: LengthMethodType;
-//   len_gt_N_lte_N: LengthMethodType;
-//
-//   [key: string]: instanceofType | AllMethodsInterface | any;
-// }

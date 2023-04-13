@@ -5,3 +5,6 @@ export function GENERATOR_FUNCTION(target: unknown): target is '[object Generato
         return false;
     }
 }
+
+GENERATOR_FUNCTION.allowed = [];
+GENERATOR_FUNCTION.originalName = 'generatorFunction';

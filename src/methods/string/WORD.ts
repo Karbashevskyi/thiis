@@ -1,5 +1,7 @@
-import { STRING } from './STRING';
-import { isConfig } from '../../config';
+import {STRING} from './STRING';
+import {isConfig} from '../../config';
+import {not} from '../not';
+import {or} from '../or';
 
 export function WORD(target: string): target is string {
   if (STRING(target)) {
@@ -7,3 +9,6 @@ export function WORD(target: string): target is string {
   }
   return false;
 }
+
+WORD.allowed = [];
+WORD.originalName = 'word';

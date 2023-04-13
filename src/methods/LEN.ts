@@ -1,11 +1,11 @@
-import { NUMBER } from './number/NUMBER';
-import { isConfig } from '../config';
-import { NUMERIC } from './number/NUMERIC';
+import {NUMBER} from './number/NUMBER';
+import {isConfig} from '../config';
+import {NUMERIC} from './number/NUMERIC';
 
 function toNumber(target: any): number {
-  target = +target;
-  if (!NUMBER(target) && isConfig.error.enabled) {
-    console?.error?.(`
+    target = +target;
+    if (!NUMBER(target) && isConfig.error.enabled) {
+        console?.error?.(`
             Bad data in the method name, good examples: 
             is.len_10
             is.len_gt_10
@@ -17,21 +17,21 @@ function toNumber(target: any): number {
             is.len_lte_10
             is.len_gt_8_lte_10
         `);
-  }
-  return target;
+    }
+    return target;
 }
 
 function operation(command: string, target: number, value: number): boolean {
-  if (command === 'gt') {
-    return target > value;
-  } else if (command === 'gte') {
-    return target >= value;
-  } else if (command === 'lt') {
-    return target < value;
-  } else if (command === 'lte') {
-    return target <= value;
-  }
-  return false;
+    if (command === 'gt') {
+        return target > value;
+    } else if (command === 'gte') {
+        return target >= value;
+    } else if (command === 'lt') {
+        return target < value;
+    } else if (command === 'lte') {
+        return target <= value;
+    }
+    return false;
 }
 
 /**
@@ -53,21 +53,25 @@ function operation(command: string, target: number, value: number): boolean {
  * @param configList - ['10'] || ['gt', '10']
  */
 export function LEN(target: string, ...configList: string[]): boolean {
-  const length: number = target?.length ?? 0;
-  if (NUMERIC(configList[0])) {
-    return length === toNumber(configList[0]);
-  } else {
-    for (let index = 0; index < configList.length; index++) {
-      if (operation(configList[index], length, toNumber(configList[index + 1]))) {
-        if (index + 2 === configList.length) {
-          return true;
-        } else {
-          index++;
+    const length: number = target?.length ?? 0;
+    if (NUMERIC(configList[0])) {
+        return length === toNumber(configList[0]);
+    } else {
+        for (let index = 0; index < configList.length; index++) {
+            if (operation(configList[index], length, toNumber(configList[index + 1]))) {
+                if (index + 2 === configList.length) {
+                    return true;
+                } else {
+                    index++;
+                }
+            } else {
+                return false;
+            }
         }
-      } else {
-        return false;
-      }
     }
-  }
-  return false;
+    return false;
 }
+
+
+LEN.allowed = [];
+LEN.originalName = 'len'; // TODO PROXY

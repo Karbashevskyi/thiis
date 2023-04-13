@@ -1,11 +1,14 @@
 import {registerInIsDecorator} from './decorators/register-in-is.decorator';
 import * as thiis from './methods';
 import {isConfig} from './config';
+import {or} from './methods/or';
+import {AllMethodsInterface} from './interfaces/methods/all-methods.interface';
 
+console.time('initialize');
 export const RegisterInIs = registerInIsDecorator;
 export const IsConfig = isConfig;
 
-export const is = thiis;
+export const is: AllMethodsInterface = thiis as any;
 
 /**
  *
@@ -26,7 +29,7 @@ function case1_2() {
         return false;
     }
 
-    if (this.isNot) {
+    if (this.isNot || this.nextMethod.originalName === 'not') {
         return true;
     }
 
@@ -122,7 +125,15 @@ function defineNewMethod(target, method, caseMethod) {
          * !!! ONE CONTEXT FOR ALL EXECUTION !!!
          */
 
-        return caseMethod.apply(this, arguments);
+        try {
+
+            return caseMethod.apply(this, arguments);
+
+        } catch (e) {
+
+            return false;
+
+        }
 
     };
 
@@ -130,18 +141,7 @@ function defineNewMethod(target, method, caseMethod) {
 
 const MAX_LEVEL_OF_OR = 1; // is.array.or.map.or.set
 
-function setOriginalName(target: any): void {
-
-    if (!('originalName' in target)) {
-        // If level is 0 we target that all commands don't have originalName property.
-        target.originalName = target.name.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
-    }
-
-}
-
 function setMethods(target, pathNames: string[] = []) {
-
-    setOriginalName(target);
 
     pathNames = [...pathNames, target.originalName];
     const notExceededOfOr = pathNames.filter(name => name === 'or').length < MAX_LEVEL_OF_OR;
@@ -164,8 +164,6 @@ function setMethods(target, pathNames: string[] = []) {
             nextMethod: target,
             currentMethod: method,
         };
-
-        setOriginalName(method);
 
         // Add more than 1 "or" to target
         if (pathNames.some(name => name !== 'or' && name === method.originalName)) {
@@ -214,117 +212,48 @@ function setMethods(target, pathNames: string[] = []) {
 
 }
 
-
-
-// Interfaces
-
-function or() {
-    throw new Error('Don\'t use the command like first!');
-}
-
 // Linking
 
-or.allowed = [
-    is.object,
-    is.string,
-    is.array,
-    is.empty,
-    is.boolean,
-    is.true,
-    is.false,
-    is.number,
-    is.null,
-    is.undefined
-];
+const allowedList = Object.values(is);
 
-// @ts-ignore
-is.object.allowed = [
-    is.empty,
-    or,
-    is.not
-];
+or.allowed = is.not.allowed = allowedList.filter((method) => method !== is.not);
 
-// @ts-ignore
-is.boolean.allowed = [
-    is.not,
-    or,
-];
+const specialAllowedListPerMethod = {
+    string: [
+        is.empty,
+        is.not,
+        or
+    ],
+    array: [
+        is.empty,
+        is.not,
+        or
+    ],
+    object: [
+        is.empty,
+        is.not,
+        or
+    ],
+    empty: [
+        is.string,
+        is.object,
+        is.array,
+        is.not,
+        or
+    ]
+};
 
-// @ts-ignore
-is.number.allowed = [
-    is.not,
-    or,
-];
+allowedList.forEach((method) => {
+    if (!['not', 'or'].includes(method.originalName)) {
 
-// @ts-ignore
-is.true.allowed = [
-    is.not,
-    or,
-];
+        if (method.originalName in specialAllowedListPerMethod) {
+            method.allowed = specialAllowedListPerMethod[method.originalName];
+        } else {
+            method.allowed = [is.not, or];
+        }
 
-// @ts-ignore
-is.false.allowed = [
-    is.not,
-    or,
-];
+    }
+    setMethods(method);
+});
 
-// @ts-ignore
-is.array.allowed = [
-    is.not,
-    or,
-    is.empty
-];
-
-// @ts-ignore
-is.string.allowed = [
-    is.not,
-    or,
-    is.empty
-];
-
-// @ts-ignore
-is.empty.allowed = [
-    is.not,
-    or,
-    is.object,
-    is.string
-];
-
-// @ts-ignore
-is.not.allowed = [
-    is.object,
-    is.empty,
-    is.string,
-    is.array,
-    is.boolean,
-    is.true,
-    is.false,
-    is.number,
-    is.null,
-    is.undefined
-];
-
-// @ts-ignore
-is.null.allowed = [
-    is.not,
-    or,
-];
-
-// @ts-ignore
-is.undefined.allowed = [
-    is.not,
-    or,
-];
-
-// Initialization
-setMethods(is.object);
-setMethods(is.boolean);
-setMethods(is.number);
-setMethods(is.true);
-setMethods(is.false);
-setMethods(is.array);
-setMethods(is.string);
-setMethods(is.empty);
-setMethods(is.null);
-setMethods(is.undefined);
-setMethods(is.not);
+console.timeEnd('initialize');

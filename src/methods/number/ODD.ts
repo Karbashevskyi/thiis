@@ -1,5 +1,7 @@
-import { NUMBER } from './NUMBER';
-import { BIG_INT } from './BIG_INT';
+import {not} from '../not';
+import {or} from '../or';
+import {NUMBER} from './NUMBER';
+import {BIG_INT} from './BIG_INT';
 
 export function ODD(target: unknown): target is number {
   if (NUMBER(target)) {
@@ -9,3 +11,6 @@ export function ODD(target: unknown): target is number {
   }
   return false;
 }
+
+ODD.allowed = [];
+ODD.originalName = 'odd';

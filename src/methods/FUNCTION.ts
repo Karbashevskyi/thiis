@@ -15,3 +15,6 @@ export function FUNCTION<T extends typeof Function>(target: unknown): target is 
         return false;
     }
 }
+
+FUNCTION.allowed = [];
+FUNCTION.originalName = 'function';

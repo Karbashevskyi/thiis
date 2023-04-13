@@ -2,11 +2,15 @@
   "name": "thiis",
   "version": "1.0.1-beta.0",
   "description": "A package that helps validate data at runtime",
-  "main": "dist/index.js",
-  "module": "dist/index.m.js",
   "umd:main": "dist/index.umd.js",
   "types": "dist/index.d.ts",
   "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/foo.cjs",
+    "default": "./dist/foo.modern.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
   "scripts": {
     "prepare": "npm run build",
     "prepare:test": "npm run build && npm test",

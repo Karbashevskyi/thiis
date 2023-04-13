@@ -1,6 +1,7 @@
-import { isConfig } from '../../config';
-import { NUMBER } from '../number/NUMBER';
-import { STRING } from '../string/STRING';
+import {not} from '../not';
+import {or} from '../or';
+import {isConfig} from '../../config';
+import {STRING} from '../string/STRING';
 
 export function ANDROID_PHONE(target: unknown = isConfig.state.userAgent): boolean {
   if (STRING(target)) {
@@ -8,3 +9,7 @@ export function ANDROID_PHONE(target: unknown = isConfig.state.userAgent): boole
   }
   return false;
 }
+
+
+ANDROID_PHONE.allowed = [];
+ANDROID_PHONE.originalName = 'androidPhone';

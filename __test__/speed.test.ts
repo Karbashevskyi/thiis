@@ -1,9 +1,10 @@
-import {is} from '../src';
+import {is} from '../dist';
 const is_js = require('../sandbox/is_js/is');
 
 describe('Speed Test', () => {
     it('Speed Test is.string()', () => {
         let variable = {a: 1};
+        console.log(is.object.not.empty(variable));
         console.time('is.object.not.empty()');
         for (let i = 0; i < 100_000; i++) {
             // @ts-ignore

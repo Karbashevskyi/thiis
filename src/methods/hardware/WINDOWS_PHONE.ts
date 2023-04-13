@@ -1,7 +1,8 @@
-import { isConfig } from '../../config';
-import { NUMBER } from '../number/NUMBER';
-import { STRING } from '../string/STRING';
-import { WINDOWS } from '../system/WINDOWS';
+import {not} from '../not';
+import {or} from '../or';
+import {isConfig} from '../../config';
+import {STRING} from '../string/STRING';
+import {WINDOWS} from '../system/WINDOWS';
 
 export function WINDOWS_PHONE(target: unknown = isConfig.state.userAgent): boolean {
   if (STRING(target)) {
@@ -9,3 +10,6 @@ export function WINDOWS_PHONE(target: unknown = isConfig.state.userAgent): boole
   }
   return false;
 }
+
+WINDOWS_PHONE.allowed = [];
+WINDOWS_PHONE.originalName = 'windowsPhone';

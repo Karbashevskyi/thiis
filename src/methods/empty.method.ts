@@ -3,7 +3,6 @@ import { ObjectMethod } from './object.method';
 import { ArrayMethod } from './array.method';
 
 export function EmptyMethod<T extends object>(target: unknown): boolean {
-
   if (ObjectMethod<T>(target) || ArrayMethod<T>(target)) {
     if ('size' in target) {
       // @ts-ignore

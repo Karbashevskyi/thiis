@@ -1,11 +1,11 @@
 import { registerInIsDecorator } from './decorators/register-in-is.decorator';
-import {AllMethodsInterface, predefinedMethods} from './methods';
+import { AllMethodsInterface, predefinedMethods } from './methods';
 import { isConfig } from './config';
-import {SymbolMethod} from './methods/symbol.method';
-import {ParamsProxyEngineInterface} from './interfaces/engine/proxy/params.proxy.engine.interface';
-import {CommandMixType} from './types/commands.type';
-import {getDecide} from './engine';
-import {InstanceofMethod} from './methods/instanceof.method';
+import { SymbolMethod } from './methods/symbol.method';
+import { ParamsProxyEngineInterface } from './interfaces/engine/proxy/params.proxy.engine.interface';
+import { CommandMixType } from './types/commands.type';
+import { getDecide } from './engine';
+import { InstanceofMethod } from './methods/instanceof.method';
 
 export const RegisterInIs = registerInIsDecorator;
 export const IsConfig = isConfig;
@@ -30,7 +30,6 @@ export const is: AllMethodsInterface = new Proxy<any>(predefinedMethods, {
     });
   },
 });
-
 
 function proxyRecursive(target: object | string, name: string, params: ParamsProxyEngineInterface): object {
   target = predefinedMethods[name] ?? name;

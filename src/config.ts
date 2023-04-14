@@ -1,3 +1,4 @@
+const glb = typeof window !== 'undefined' ? window : undefined;
 export const isConfig = {
   packageName: 'thiis',
   useGlobalContext: true,
@@ -8,13 +9,13 @@ export const isConfig = {
     phone: 768,
   },
   state: {
-    vendor: window?.navigator?.vendor ?? '',
-    navigator: window?.navigator ?? '',
-    userAgent: window?.navigator?.userAgent ?? '',
+    vendor: glb?.navigator?.vendor ?? '',
+    navigator: glb?.navigator ?? undefined,
+    userAgent: glb?.navigator?.userAgent ?? '',
     // @ts-ignore
-    platform: window?.navigator?.platform ?? window?.navigator?.userAgentData?.platform ?? process?.platform ?? '',
+    platform: glb?.navigator?.platform ?? glb?.navigator?.userAgentData?.platform ?? process?.platform ?? '',
     screen: {
-      width: window?.screen?.width ?? '',
+      width: glb?.screen?.width ?? 0,
     },
   },
   regex: {
@@ -27,8 +28,8 @@ export const isConfig = {
     kebabCase: /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/,
     camelCase: /^[a-z][a-zA-Z0-9]*([A-Z][a-zA-Z0-9]*)*$/,
     snakeCase: /^(?!^[0-9]+$)[a-z0-9]+(_[a-z0-9]+)*$/,
-    lowerCase: /[a-z]/, // Example how to use: !isConfig.regex.lowerCase.text('HELO WORLd') => false
-    upperCase: /[A-Z]/, // Example how to use: !isConfig.regex.upperCase.text('hello worlD') => false
+    lowerCase: /[a-z]/,
+    upperCase: /[A-Z]/,
     safari: /^((?!chrome|android).)*safari/i,
     firefox: /firefox|fxios/i,
     android: /android/i,
@@ -44,6 +45,6 @@ export const isConfig = {
     googleInc: /Google Inc/i,
     phone: /phone/i,
     blackberry: /blackberry|bb10/i,
-    androidPhone: /Android.*Mobile/i,
+    androidPhone: /Android.*Mobile/i
   },
 };

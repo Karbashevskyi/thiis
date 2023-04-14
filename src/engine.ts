@@ -1,8 +1,8 @@
-import { ParamsProxyEngineInterface } from '../../interfaces/engine/proxy/params.proxy.engine.interface';
-import { InstanceofMethod } from '../../methods/instanceof.method';
-import { CommandType } from '../../types/commands.type';
-import { predefinedMethods } from '../../methods';
-import { isConfig } from '../../config';
+import { ParamsProxyEngineInterface } from './interfaces/engine/proxy/params.proxy.engine.interface';
+import { InstanceofMethod } from './methods/instanceof.method';
+import { CommandType } from './types/commands.type';
+import { predefinedMethods } from './methods';
+import { isConfig } from './config';
 
 const APPLY_COMMAND = 'apply';
 const CALL_COMMAND = 'call';

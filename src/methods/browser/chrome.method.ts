@@ -8,8 +8,8 @@ export function ChromeMethod(
   target: unknown = isConfig.state.userAgent,
   vendor: unknown = isConfig.state.vendor,
 ): boolean {
-  if (StringMethod(target) && StringMethod(vendor)) {
-    return isConfig.regex.chrome.test(target) && isConfig.regex.googleInc.test(vendor);
+  if (StringMethod.apply(this, [target]) && StringMethod.apply(this, [vendor])) {
+    return isConfig.regex.chrome.test(target as string) && isConfig.regex.googleInc.test(vendor as string);
   }
   return false;
 }

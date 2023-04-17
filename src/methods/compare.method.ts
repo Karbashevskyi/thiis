@@ -9,7 +9,7 @@ export function CompareMethod<T>(target: T, source: T): boolean {
     const keysOfTarget: string[] = Object.keys(target ?? {}) ?? [];
     const keysOfSource: string[] = Object.keys(source ?? {}) ?? [];
 
-    if (!ArrayMethod(keysOfTarget) || !ArrayMethod(keysOfSource)) {
+    if (!ArrayMethod.apply(this, [keysOfTarget]) || !ArrayMethod.apply(this, [keysOfSource])) {
       return false;
     }
 
@@ -24,7 +24,7 @@ export function CompareMethod<T>(target: T, source: T): boolean {
     for (const keyOfObjectTwo of keysOfSource) {
       switch (typeof (target as any)[keyOfObjectTwo]) {
         case TypeOfValueEnum.object:
-          if (!CompareMethod((target as any)[keyOfObjectTwo], (source as any)[keyOfObjectTwo])) {
+          if (!CompareMethod.apply(this, [(target as any)[keyOfObjectTwo], (source as any)[keyOfObjectTwo]])) {
             return false;
           }
           break;

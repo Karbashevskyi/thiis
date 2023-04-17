@@ -5,8 +5,8 @@ import { StringMethod } from '../string/string.method';
  * If you need to check custom userAgent use argument "target" if you check your browser, please use with BrowserMethod: is.browser.safari
  */
 export function IeMethod(target: unknown = isConfig.state.userAgent): boolean {
-  if (StringMethod(target)) {
-    return isConfig.regex.ie.test(target);
+  if (StringMethod.apply(this, [target])) {
+    return isConfig.regex.ie.test(target as string);
   }
   return false;
 }

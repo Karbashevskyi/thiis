@@ -1,22 +1,43 @@
-import { StringMethod } from './string/string.method';
-import { ObjectMethod } from './object.method';
-import { ArrayMethod } from './array.method';
+import {StringMethod} from './string/string.method';
+import {ObjectMethod} from './object.method';
+import {ArrayMethod} from './array.method';
 
-export function EmptyMethod<T extends object>(target: unknown): boolean {
-  if (ObjectMethod<T>(target) || ArrayMethod<T>(target)) {
-    if ('size' in target) {
-      // @ts-ignore
-      return target.size <= 0;
-    }
+function ObjectIsEmpty(target: {}): boolean {
     for (const key in target) {
-      if (target.hasOwnProperty(key)) {
-        return false;
-      }
+        if (target.hasOwnProperty(key)) {
+            return false;
+        }
     }
     return true;
-  }
-  if (StringMethod(target)) {
+}
+
+function ArrayIsEmpty(target: []): boolean {
+    return target?.length === 0;
+}
+
+function StringIsEmpty(target: string): boolean {
     return target.trim()[0] === undefined;
-  }
-  return false;
+}
+
+export function EmptyMethod<T extends object>(target: unknown): boolean {
+
+    if (this?.isObject || ObjectMethod.apply(this, [target])) {
+        return this.isEmpty = ObjectIsEmpty(target as {});
+    }
+
+    if (this?.isArray || ArrayMethod.apply(this, [target])) {
+        return this.isEmpty = ArrayIsEmpty(target as []);
+    }
+
+    if (this?.isString || StringMethod.apply(this, [target])) {
+        return this.isEmpty = StringIsEmpty(target as string);
+    }
+
+    // @ts-ignore
+    if (target?.size !== undefined) {
+        // @ts-ignore
+        return target.size <= 0;
+    }
+
+    return false;
 }

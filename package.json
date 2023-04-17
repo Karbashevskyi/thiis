@@ -48,6 +48,7 @@
   "author": "Ivan Karbashevskyi",
   "license": "MIT",
   "devDependencies": {
+    "@types/is": "^0.0.21",
     "@types/jest": "^29.2.5",
     "codelyzer": "6.0.2",
     "jest": "^29.3.1",
@@ -66,5 +67,8 @@
       "url": "https://github.com/karbashevskyi",
       "githubUsername": "karbashevskyi"
     }
-  ]
+  ],
+  "dependencies": {
+    "is": "^3.3.0"
+  }
 }

@@ -54,7 +54,7 @@ function operation(command: string, target: number, value: number): boolean {
  */
 export function LenMethod(target: string, ...configList: string[]): boolean {
   const length: number = target?.length ?? 0;
-  if (NumericMethod(configList[0])) {
+  if (NumericMethod.apply(this, [configList[0]])) {
     return length === toNumber(configList[0]);
   } else {
     for (let index = 0; index < configList.length; index++) {

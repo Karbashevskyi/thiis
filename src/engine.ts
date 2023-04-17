@@ -40,7 +40,12 @@ function getResult(command: CommandType | string, argumentList: unknown[]): bool
             return tryTodoWithTheCommand.apply(this, [command, argumentList]);
         }
     } else {
-        return command.apply(this, argumentList);
+        const result: any = command.apply(this, argumentList);
+        if (typeof result === 'boolean') {
+            return result;
+        } else {
+            command = result.classRef; // Need for custom model validation case: is.Person()
+        }
     }
     return InstanceofMethod.apply(this, [argumentList[0], command as unknown as any]);
 }
@@ -65,9 +70,17 @@ function recursive(command: CommandMixType | undefined, commandList: CommandMixT
 
         if (this.isUnderNot) {
 
-            if (!this.result) {
+            if (commandList.length) {
 
-                return true;
+                if (this.result) {
+
+                    return false;
+
+                }
+
+            } else {
+
+                return !this.result;
 
             }
 
@@ -83,9 +96,17 @@ function recursive(command: CommandMixType | undefined, commandList: CommandMixT
 
             } else {
 
-                if (!this.result) {
+                if (commandList.length) {
 
-                    return false;
+                    if (!this.result) {
+
+                        return false;
+
+                    }
+
+                } else  {
+
+                    return this.result;
 
                 }
 
@@ -100,12 +121,8 @@ function recursive(command: CommandMixType | undefined, commandList: CommandMixT
 
 export function getDecide(commandList: ParamsProxyEngineInterface['commandList'], argumentList: unknown[], context = {}): boolean {
     let lastCommandIndex = commandList.length - 1;
+    let appliedContext: any = context;
     if (lastCommandIndex) {
-        let appliedContext: any = context;
-
-        // const indexNot: number = commandList.indexOf('not');
-        // const foundIndexNot: boolean = indexNot > -1;
-        // let result: boolean;
 
         switch (commandList[lastCommandIndex]) {
             case APPLY_COMMAND:
@@ -130,59 +147,6 @@ export function getDecide(commandList: ParamsProxyEngineInterface['commandList']
             return recursive.apply(appliedContext, [commandList.shift(), commandList, argumentList]);
         }
 
-        // for (let index = 0; index < commandList.length; index++) {
-        //   if (indexNot === index) {
-        //     continue;
-        //   }
-        //   /**
-        //    * Examples:
-        //    * 1. [v] is.object()
-        //    * 2. [v] is.not.object()
-        //    * 3. [v] is.object.empty()
-        //    * 4. [v] is.object.or.string()
-        //    * 5. [v] is.not.object.or.string()
-        //    * 6. [v] is.object.not.empty.or.null({a: 1})
-        //    * 7. [v] is.null.or.undefined.or.empty()
-        //    * 8. [v] is.object.or.string.not.empty()
-        //    */
-        //   result = getResult(commandList[index], argumentList, appliedContext);
-        //   if (commandList.length - 1 === index) {
-        //     // Is last interaction
-        //     // Negative cases for examples #1 and #2.
-        //     // And
-        //     // Success cases for examples: #1, #2, #3.
-        //     return foundIndexNot && index > indexNot ? !result : result;
-        //   } else {
-        //     // Negative case for example #3.
-        //     if (commandList[index + 1] === 'or') {
-        //       // If we have "not" before "or" then we need to have only one negative result
-        //       // If we don't have "not" before "or" then we need to have only one positive
-        //       if (result) {
-        //         if (foundIndexNot) {
-        //           if (index > indexNot) {
-        //             return false;
-        //           } else {
-        //             index = indexNot;
-        //           }
-        //         } else {
-        //           return true;
-        //         }
-        //       } else {
-        //         index = index + 1;
-        //       }
-        //     } else {
-        //       if (result) {
-        //         if (foundIndexNot) {
-        //           // Example #6
-        //           index = indexNot;
-        //         }
-        //       } else {
-        //         return false;
-        //       }
-        //     }
-        //   }
-        // }
-        // return true;
     }
-    return getResult.apply(context, [commandList[lastCommandIndex], argumentList]);
+    return getResult.apply(appliedContext, [commandList[lastCommandIndex], argumentList]);
 }

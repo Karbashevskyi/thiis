@@ -3,6 +3,13 @@ import {ObjectMethod} from './object.method';
 import {ArrayMethod} from './array.method';
 
 function ObjectIsEmpty(target: {}): boolean {
+
+    // @ts-ignore
+    if (target?.size !== undefined) {
+        // @ts-ignore
+        return target.size <= 0;
+    }
+
     for (const key in target) {
         if (target.hasOwnProperty(key)) {
             return false;

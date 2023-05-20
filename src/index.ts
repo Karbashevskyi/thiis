@@ -4,7 +4,7 @@ import {isConfig} from './config';
 import {or} from './methods/or';
 import {AllMethodsInterface} from './interfaces/methods/all-methods.interface';
 
-console.time('initialize');
+// console.time('initialize');
 export const RegisterInIs = registerInIsDecorator;
 export const IsConfig = isConfig;
 
@@ -139,7 +139,7 @@ function defineNewMethod(target, method, caseMethod) {
 
 }
 
-const MAX_LEVEL_OF_OR = 1; // is.array.or.map.or.set
+const MAX_LEVEL_OF_OR = 0; // is.array.or.map.or.set
 
 function setMethods(target, pathNames: string[] = []) {
 
@@ -256,48 +256,48 @@ allowedList.forEach((method) => {
     setMethods(method);
 });
 
-console.timeEnd('initialize');
+// console.timeEnd('initialize');
+//
+// const MAX_LEVEL = 25;
+// let LAST_LEVEL = 0;
+// let TOTAL = 0;
+// let strIs = '';
+//
+// function consoleRec(target, level = 1) {
+//     // if (level === 2) {
+//     //     if (target.originalName !== 'string') {
+//     //         return;
+//     //     }
+//     //     console.log(' ');
+//     // }
+//     // console.log('|', [].constructor(level).join('-'), target?.originalName ?? target.name);
+//     TOTAL++;
+//     let strTarget = '{';
+//     if (level > LAST_LEVEL) {
+//         LAST_LEVEL = level;
+//     }
+//     if (MAX_LEVEL >= level) {
+//         Object.keys(target).forEach((k) => {
+//             if (target[k] instanceof Function) {
+//                 strTarget += `${target[k]?.originalName ?? target[k].name}: ${consoleRec(target[k], level + 1)}`;
+//             }
+//         });
+//     }
+//     return strTarget + '},';
+// }
+//
+// strIs = consoleRec(is);
+// console.log('LAST_LEVEL: ', LAST_LEVEL, 'TOTAL: ', TOTAL);
 
-const MAX_LEVEL = 25;
-let LAST_LEVEL = 0;
-let TOTAL = 0;
-let strIs = '';
-
-function consoleRec(target, level = 1) {
-    // if (level === 2) {
-    //     if (target.originalName !== 'string') {
-    //         return;
-    //     }
-    //     console.log(' ');
-    // }
-    // console.log('|', [].constructor(level).join('-'), target?.originalName ?? target.name);
-    TOTAL++;
-    let strTarget = '{';
-    if (level > LAST_LEVEL) {
-        LAST_LEVEL = level;
-    }
-    if (MAX_LEVEL >= level) {
-        Object.keys(target).forEach((k) => {
-            if (target[k] instanceof Function) {
-                strTarget += `${target[k]?.originalName ?? target[k].name}: ${consoleRec(target[k], level + 1)}`;
-            }
-        });
-    }
-    return strTarget + '},';
-}
-
-strIs = consoleRec(is);
-console.log('LAST_LEVEL: ', LAST_LEVEL, 'TOTAL: ', TOTAL);
-
-import fs from 'fs';
-
-const filename = 'myfile.ts';
-const content = `
-const is = ${strIs}
-`;
-
-fs.writeFile(filename, content, (err) => {
-    if (err) throw err;
-    console.log(`The file ${filename} has been saved!`);
-});
+// import fs from 'fs';
+//
+// const filename = 'myfile.ts';
+// const content = `
+// const is = ${strIs}
+// `;
+//
+// fs.writeFile(filename, content, (err) => {
+//     if (err) throw err;
+//     console.log(`The file ${filename} has been saved!`);
+// });
 

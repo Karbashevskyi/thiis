@@ -4,7 +4,7 @@ import {isConfig} from './config';
 import {or} from './methods/or';
 import {AllMethodsInterface} from './interfaces/methods/all-methods.interface';
 
-// console.time('initialize');
+console.time('initialize');
 export const RegisterInIs = registerInIsDecorator;
 export const IsConfig = isConfig;
 
@@ -117,7 +117,7 @@ function case6_7_8() {
 
 }
 
-function defineNewMethod(target, method, caseMethod) {
+function defineNewMethod(caseMethod) {
 
     return function () {
 
@@ -195,7 +195,7 @@ function setMethods(target, pathNames: string[] = []) {
         context.isNot = method.originalName === 'not';
         context.isOr = method.originalName === 'or';
 
-        target[method.originalName] = defineNewMethod(target, method, target[method.originalName]).bind(context);
+        target[method.originalName] = defineNewMethod(target[method.originalName]).bind(context);
         target[method.originalName].originalName = method.originalName;
         target[method.originalName].allowed = method.allowed;
 
@@ -256,7 +256,19 @@ allowedList.forEach((method) => {
     setMethods(method);
 });
 
-// console.timeEnd('initialize');
+console.timeEnd('initialize');
+
+
+const data = {a: 1};
+
+console.time('thiis.is.object.not.empty');
+for (let i = 0; i < 100_000; i++) {
+    if (is.object.not.empty(data)) {
+
+    }
+}
+console.timeEnd('thiis.is.object.not.empty');
+
 //
 // const MAX_LEVEL = 25;
 // let LAST_LEVEL = 0;

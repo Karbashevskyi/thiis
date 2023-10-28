@@ -1,6 +1,6 @@
-import { NumberMethod } from './number/number.method';
-import { isConfig } from '../config';
-import { NumericMethod } from './number/numeric.method';
+import {NumberMethod} from './number/number.method';
+import {isConfig} from '../config';
+import {NumericMethod} from './number/numeric.method';
 
 function toNumber(target: any): number {
   target = +target;
@@ -52,7 +52,7 @@ function operation(command: string, target: number, value: number): boolean {
  * @param target - string
  * @param configList - ['10'] || ['gt', '10']
  */
-export function LenMethod(target: string, ...configList: string[]): boolean {
+export function LenMethod(target: string, configList: string[]): boolean {
   const length: number = target?.length ?? 0;
   if (NumericMethod(configList[0])) {
     return length === toNumber(configList[0]);

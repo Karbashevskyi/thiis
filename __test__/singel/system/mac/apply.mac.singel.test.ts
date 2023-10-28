@@ -14,14 +14,14 @@ describe('mac singel: apply', () => {
         expect(is.mac.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.mac: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_mac: Should false for $value', ({value}) => {
         IsConfig.state.platform = value;
-        expect(is.not.mac.apply({}, [])).toBe(false);
+        expect(is.not_mac.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.mac: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_mac: Should true for $value', ({value}) => {
         IsConfig.state.platform = value;
-        expect(is.not.mac.apply({}, [])).toBe(true);
+        expect(is.not_mac.apply({}, [])).toBe(true);
     });
 
 });

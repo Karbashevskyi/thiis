@@ -11,12 +11,12 @@ describe('Date singel: call', () => {
         expect(is.Date.call({} ,value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.Date: Should false for $value', ({value}) => {
-        expect(is.not.Date.call({} ,value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_Date: Should false for $value', ({value}) => {
+        expect(is.not_Date.call({} ,value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.Date: Should true for $value', ({value}) => {
-        expect(is.not.Date.call({} ,value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_Date: Should true for $value', ({value}) => {
+        expect(is.not_Date.call({} ,value)).toBe(true);
     });
 
 });

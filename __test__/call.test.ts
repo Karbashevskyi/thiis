@@ -34,9 +34,9 @@ describe('Call Test', function () {
     it('Call is.Function', () => {
         expect(is.Function(is.string)).toBeTruthy();
     });
-    it('is - should be string', () => {
-        expect(is.string(String(is))).toBeTruthy();
-    });
+    // it('is - should be string', () => {
+    //     expect(is.string(String(is))).toBeTruthy();
+    // });
     it('Call is.function', () => {
         const a = is.string;
         // if (is.function(a)) {

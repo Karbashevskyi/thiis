@@ -12,12 +12,12 @@ describe('object singel: apply', () => {
         expect(is.object.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.object: Should false for $value', ({value}) => {
-        expect(is.not.object.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_object: Should false for $value', ({value}) => {
+        expect(is.not_object.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.object: Should true for $value', ({value}) => {
-        expect(is.not.object.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_object: Should true for $value', ({value}) => {
+        expect(is.not_object.apply({}, [value])).toBe(true);
     });
 
 });

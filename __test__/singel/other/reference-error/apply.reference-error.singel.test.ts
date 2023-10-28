@@ -11,12 +11,12 @@ describe('ReferenceError singel: apply', () => {
         expect(is.ReferenceError.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.ReferenceError: Should false for $value', ({value}) => {
-        expect(is.not.ReferenceError.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_ReferenceError: Should false for $value', ({value}) => {
+        expect(is.not_ReferenceError.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.ReferenceError: Should true for $value', ({value}) => {
-        expect(is.not.ReferenceError.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_ReferenceError: Should true for $value', ({value}) => {
+        expect(is.not_ReferenceError.apply({}, [value])).toBe(true);
     });
 
 });

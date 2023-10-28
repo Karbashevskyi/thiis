@@ -12,12 +12,12 @@ describe('truthy singel: call', () => {
         expect(is.truthy.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.truthy: Should false for $value', ({value}) => {
-        expect(is.not.truthy.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_truthy: Should false for $value', ({value}) => {
+        expect(is.not_truthy.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.truthy: Should true for $value', ({value}) => {
-        expect(is.not.truthy.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_truthy: Should true for $value', ({value}) => {
+        expect(is.not_truthy.call({}, value)).toBe(true);
     });
 
 });

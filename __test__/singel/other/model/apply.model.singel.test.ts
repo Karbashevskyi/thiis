@@ -12,12 +12,12 @@ describe('Model singel: apply', () => {
         expect(is.Person.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.Person: Should false for $value', ({value}) => {
-        expect(is.not.Person.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_Person: Should false for $value', ({value}) => {
+        expect(is.not_Person.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.Person: Should true for $value', ({value}) => {
-        expect(is.not.Person.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_Person: Should true for $value', ({value}) => {
+        expect(is.not_Person.apply({}, [value])).toBe(true);
     });
 
 });

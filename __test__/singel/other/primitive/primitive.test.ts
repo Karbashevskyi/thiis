@@ -12,12 +12,12 @@ describe('Primitive singel', () => {
         expect(is.primitive(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.primitive: Should false for $value', ({value}) => {
-        expect(is.not.primitive(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_primitive: Should false for $value', ({value}) => {
+        expect(is.not_primitive(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.primitive: Should true for $value', ({value}) => {
-        expect(is.not.primitive(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_primitive: Should true for $value', ({value}) => {
+        expect(is.not_primitive(value)).toBe(true);
     });
 
 });

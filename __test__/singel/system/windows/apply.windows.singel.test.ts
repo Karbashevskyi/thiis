@@ -14,14 +14,14 @@ describe('windows singel: apply', () => {
         expect(is.windows.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.windows: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_windows: Should false for $value', ({value}) => {
         IsConfig.state.platform = value;
-        expect(is.not.windows.apply({}, [])).toBe(false);
+        expect(is.not_windows.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.windows: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_windows: Should true for $value', ({value}) => {
         IsConfig.state.platform = value;
-        expect(is.not.windows.apply({}, [])).toBe(true);
+        expect(is.not_windows.apply({}, [])).toBe(true);
     });
 
 });

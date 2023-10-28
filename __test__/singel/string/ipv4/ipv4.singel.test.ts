@@ -12,12 +12,12 @@ describe('ipv4 singel', () => {
         expect(is.ipv4(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.ipv4: Should false for $value', ({value}) => {
-        expect(is.not.ipv4(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_ipv4: Should false for $value', ({value}) => {
+        expect(is.not_ipv4(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.ipv4: Should true for $value', ({value}) => {
-        expect(is.not.ipv4(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_ipv4: Should true for $value', ({value}) => {
+        expect(is.not_ipv4(value)).toBe(true);
     });
 
 });

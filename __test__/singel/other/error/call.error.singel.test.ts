@@ -12,12 +12,12 @@ describe('Error singel: call', () => {
         expect(is.Error.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.Error: Should false for $value', ({value}) => {
-        expect(is.not.Error.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_Error: Should false for $value', ({value}) => {
+        expect(is.not_Error.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.Error: Should true for $value', ({value}) => {
-        expect(is.not.Error.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_Error: Should true for $value', ({value}) => {
+        expect(is.not_Error.call({}, value)).toBe(true);
     });
 
 });

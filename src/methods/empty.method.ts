@@ -3,12 +3,8 @@ import { ObjectMethod } from './object.method';
 import { ArrayMethod } from './array.method';
 
 export function EmptyMethod<T extends object>(target: unknown): boolean {
-  if (StringMethod(target)) {
-    return target.trim()[0] === undefined;
-  }
-
   if (ObjectMethod<T>(target) || ArrayMethod<T>(target)) {
-    if (Reflect.has(target, 'size')) {
+    if ('size' in target) {
       // @ts-ignore
       return target.size <= 0;
     }
@@ -18,6 +14,9 @@ export function EmptyMethod<T extends object>(target: unknown): boolean {
       }
     }
     return true;
+  }
+  if (StringMethod(target)) {
+    return target.trim()[0] === undefined;
   }
   return false;
 }

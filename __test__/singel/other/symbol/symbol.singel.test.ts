@@ -11,12 +11,12 @@ describe('symbol singel', () => {
         expect(is.symbol(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.symbol: Should false for $value', ({value}) => {
-        expect(is.not.symbol(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_symbol: Should false for $value', ({value}) => {
+        expect(is.not_symbol(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.symbol: Should true for $value', ({value}) => {
-        expect(is.not.symbol(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_symbol: Should true for $value', ({value}) => {
+        expect(is.not_symbol(value)).toBe(true);
     });
 
 });

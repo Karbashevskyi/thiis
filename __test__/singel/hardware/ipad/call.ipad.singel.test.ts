@@ -13,14 +13,14 @@ describe('ipad singel: call', () => {
         expect(is.ipad.call({})).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.ipad: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_ipad: Should false for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.ipad.call({})).toBe(false);
+        expect(is.not_ipad.call({})).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.ipad: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_ipad: Should true for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.ipad.call({})).toBe(true);
+        expect(is.not_ipad.call({})).toBe(true);
     });
 
 });

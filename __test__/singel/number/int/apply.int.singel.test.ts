@@ -12,12 +12,12 @@ describe('int singel: apply', () => {
         expect(is.int.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.int: Should false for $value', ({value}) => {
-        expect(is.not.int.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_int: Should false for $value', ({value}) => {
+        expect(is.not_int.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.int: Should true for $value', ({value}) => {
-        expect(is.not.int.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_int: Should true for $value', ({value}) => {
+        expect(is.not_int.apply({}, [value])).toBe(true);
     });
 
 });

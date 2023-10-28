@@ -11,12 +11,12 @@ describe('lowerCase singel', () => {
         expect(is.lowerCase(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.lowerCase: Should false for $value', ({value}) => {
-        expect(is.not.lowerCase(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_lowerCase: Should false for $value', ({value}) => {
+        expect(is.not_lowerCase(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.lowerCase: Should true for $value', ({value}) => {
-        expect(is.not.lowerCase(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_lowerCase: Should true for $value', ({value}) => {
+        expect(is.not_lowerCase(value)).toBe(true);
     });
 
 });

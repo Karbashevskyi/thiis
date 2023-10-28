@@ -12,12 +12,12 @@ describe('odd singel: apply', () => {
         expect(is.odd.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.odd: Should false for $value', ({value}) => {
-        expect(is.not.odd.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_odd: Should false for $value', ({value}) => {
+        expect(is.not_odd.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.odd: Should true for $value', ({value}) => {
-        expect(is.not.odd.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_odd: Should true for $value', ({value}) => {
+        expect(is.not_odd.apply({}, [value])).toBe(true);
     });
 
 });

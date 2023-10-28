@@ -11,12 +11,12 @@ describe('Set singel: apply', () => {
         expect(is.Set.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.Set: Should false for $value', ({value}) => {
-        expect(is.not.Set.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_Set: Should false for $value', ({value}) => {
+        expect(is.not_Set.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.Set: Should true for $value', ({value}) => {
-        expect(is.not.Set.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_Set: Should true for $value', ({value}) => {
+        expect(is.not_Set.apply({}, [value])).toBe(true);
     });
 
 });

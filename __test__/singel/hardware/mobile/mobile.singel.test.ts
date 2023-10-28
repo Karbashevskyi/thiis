@@ -13,14 +13,14 @@ describe('mobile singel', () => {
         expect(is.mobile()).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.mobile: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_mobile: Should false for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.mobile()).toBe(false);
+        expect(is.not_mobile()).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.mobile: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_mobile: Should true for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.mobile()).toBe(true);
+        expect(is.not_mobile()).toBe(true);
     });
 
 });

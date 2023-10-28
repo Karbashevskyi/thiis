@@ -14,14 +14,14 @@ describe('opera singel: apply', () => {
         expect(is.opera.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.opera: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_opera: Should false for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.opera.apply({}, [])).toBe(false);
+        expect(is.not_opera.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.opera: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_opera: Should true for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.opera.apply({}, [])).toBe(true);
+        expect(is.not_opera.apply({}, [])).toBe(true);
     });
 
 });

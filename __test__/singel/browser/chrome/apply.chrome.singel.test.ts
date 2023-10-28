@@ -16,16 +16,16 @@ describe('chrome singel: apply', () => {
         expect(is.chrome.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.chrome: Should false for $target', ({target, vendor}) => {
+    it.each(dataForGoodTesting)('is.not_chrome: Should false for $target', ({target, vendor}) => {
         IsConfig.state.userAgent = target;
         IsConfig.state.vendor = vendor;
-        expect(is.not.chrome.apply({}, [])).toBe(false);
+        expect(is.not_chrome.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.chrome: Should true for $target', ({target, vendor}) => {
+    it.each(dataForBadTesting)('is.not_chrome: Should true for $target', ({target, vendor}) => {
         IsConfig.state.userAgent = target;
         IsConfig.state.vendor = vendor;
-        expect(is.not.chrome.apply({}, [])).toBe(true);
+        expect(is.not_chrome.apply({}, [])).toBe(true);
     });
 
 });

@@ -12,12 +12,12 @@ describe('empty singel: call', () => {
         expect(is.empty.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.empty: Should false for $value', ({value}) => {
-        expect(is.not.empty.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_empty: Should false for $value', ({value}) => {
+        expect(is.not_empty.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.empty: Should true for $value', ({value}) => {
-        expect(is.not.empty.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_empty: Should true for $value', ({value}) => {
+        expect(is.not_empty.call({}, value)).toBe(true);
     });
 
 });

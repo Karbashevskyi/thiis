@@ -1,7 +1,7 @@
 import {is} from '../../dist';
 
 
-describe('string.or.number.or.true or', () => {
+describe('string_or_number_or_true or', () => {
 
     const dataForGoodTesting: { value: any }[] = [
         {
@@ -67,20 +67,20 @@ describe('string.or.number.or.true or', () => {
         },
     ];
 
-    it.each(dataForGoodTesting)('is.string.or.number.or.true: Should true for $value', ({value}) => {
-        expect(is.string.or.number.or.true(value)).toBe(true);
+    it.each(dataForGoodTesting)('is.string_or_number_or_true: Should true for $value', ({value}) => {
+        expect(is.string_or_number_or_true(value)).toBe(true);
     });
 
-    it.each(dataForBadTesting)('is.string.or.number.or.true: Should false for $value', ({value}) => {
-        expect(is.string.or.number.or.true(value)).toBe(false);
+    it.each(dataForBadTesting)('is.string_or_number_or_true: Should false for $value', ({value}) => {
+        expect(is.string_or_number_or_true(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.string.or.number.or.true: Should false for $value', ({value}) => {
-        expect(is.not.string.or.number.or.true(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_string_or_number_or_true: Should false for $value', ({value}) => {
+        expect(is.not_string_or_number_or_true(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.string.or.number.or.true: Should true for $value', ({value}) => {
-        expect(is.not.string.or.number.or.true(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_string_or_number_or_true: Should true for $value', ({value}) => {
+        expect(is.not_string_or_number_or_true(value)).toBe(true);
     });
 
 });

@@ -11,20 +11,20 @@ describe('string singel', () => {
         expect(is.string(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.string: Should false for $value', ({value}) => {
-        expect(is.not.string(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_string: Should false for $value', ({value}) => {
+        expect(is.not_string(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.string: Should true for $value', ({value}) => {
-        expect(is.not.string(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_string: Should true for $value', ({value}) => {
+        expect(is.not_string(value)).toBe(true);
     });
 
     it('is.Map(new Map()) should true', () => {
         expect(is.Map(new Map())).toBe(true);
     });
 
-    it('is.not.Map(new Map()) should false', () => {
-        expect(is.not.Map(new Map())).toBe(false);
+    it('is.not_Map(new Map()) should false', () => {
+        expect(is.not_Map(new Map())).toBe(false);
     });
 
     it('is.Map.apply({}, [new Map()]) should true', () => {
@@ -35,12 +35,12 @@ describe('string singel', () => {
         expect(is.Map.call({}, new Map())).toBe(true);
     });
 
-    it('is.not.Map.apply({}, [new Map()]) should true', () => {
-        expect(is.not.Map.apply({}, [new Map()])).toBe(false);
+    it('is.not_Map.apply({}, [new Map()]) should true', () => {
+        expect(is.not_Map.apply({}, [new Map()])).toBe(false);
     });
 
-    it('is.not.Map.call({}, new Map()) should true', () => {
-        expect(is.not.Map.call({}, new Map())).toBe(false);
+    it('is.not_Map.call({}, new Map()) should true', () => {
+        expect(is.not_Map.call({}, new Map())).toBe(false);
     });
 
 });

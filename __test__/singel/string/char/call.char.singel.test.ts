@@ -11,12 +11,12 @@ describe('char singel: call', () => {
         expect(is.char.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.char: Should false for $value', ({value}) => {
-        expect(is.not.char.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_char: Should false for $value', ({value}) => {
+        expect(is.not_char.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.char: Should true for $value', ({value}) => {
-        expect(is.not.char.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_char: Should true for $value', ({value}) => {
+        expect(is.not_char.call({}, value)).toBe(true);
     });
 
 });

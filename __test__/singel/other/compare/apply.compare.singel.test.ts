@@ -12,12 +12,12 @@ describe('Object singel: apply', () => {
         expect(is.compare.apply({}, [first, second] as any)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.compare: Should false for $first === $second', ({first, second}) => {
-        expect(is.not.compare.apply({}, [first, second] as any)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_compare: Should false for $first === $second', ({first, second}) => {
+        expect(is.not_compare.apply({}, [first, second] as any)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.compare: Should true for $first === $second', ({first, second}) => {
-        expect(is.not.compare.apply({}, [first, second] as any)).toBe(true);
+    it.each(dataForBadTesting)('is.not_compare: Should true for $first === $second', ({first, second}) => {
+        expect(is.not_compare.apply({}, [first, second] as any)).toBe(true);
     });
 
 });

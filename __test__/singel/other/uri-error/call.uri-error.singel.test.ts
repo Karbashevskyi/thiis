@@ -12,12 +12,12 @@ describe('URIError singel: call', () => {
         expect(is.URIError.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.URIError: Should false for $value', ({value}) => {
-        expect(is.not.URIError.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_URIError: Should false for $value', ({value}) => {
+        expect(is.not_URIError.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.URIError: Should true for $value', ({value}) => {
-        expect(is.not.URIError.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_URIError: Should true for $value', ({value}) => {
+        expect(is.not_URIError.call({}, value)).toBe(true);
     });
 
 });

@@ -11,12 +11,12 @@ describe('Zero singel: apply', () => {
         expect(is.zero.apply([], [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.zero: Should false for $value', ({value}) => {
-        expect(is.not.zero.apply([], [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_zero: Should false for $value', ({value}) => {
+        expect(is.not_zero.apply([], [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.zero: Should true for $value', ({value}) => {
-        expect(is.not.zero.apply([], [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_zero: Should true for $value', ({value}) => {
+        expect(is.not_zero.apply([], [value])).toBe(true);
     });
 
 });

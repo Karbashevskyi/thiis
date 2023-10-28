@@ -20,7 +20,7 @@ class AnotherModel {
 
 }
 
-describe('Person.or.Address or', () => {
+describe('Person_or_Address or', () => {
 
     const dataForGoodTesting: { value: any }[] = [
         {
@@ -98,20 +98,20 @@ describe('Person.or.Address or', () => {
         },
     ];
 
-    it.each(dataForGoodTesting)('is.Person.or.Address: Should true for $value', ({value}) => {
-        expect(is.Person.or.Address(value)).toBe(true);
+    it.each(dataForGoodTesting)('is.Person_or_Address: Should true for $value', ({value}) => {
+        expect(is.Person_or_Address(value)).toBe(true);
     });
 
-    it.each(dataForBadTesting)('is.Person.or.Address: Should false for $value', ({value}) => {
-        expect(is.Person.or.Address(value)).toBe(false);
+    it.each(dataForBadTesting)('is.Person_or_Address: Should false for $value', ({value}) => {
+        expect(is.Person_or_Address(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.Person.or.Address: Should false for $value', ({value}) => {
-        expect(is.not.Person.or.Address(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_Person_or_Address: Should false for $value', ({value}) => {
+        expect(is.not_Person_or_Address(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.Person.or.Address: Should true for $value', ({value}) => {
-        expect(is.not.Person.or.Address(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_Person_or_Address: Should true for $value', ({value}) => {
+        expect(is.not_Person_or_Address(value)).toBe(true);
     });
 
 });

@@ -13,14 +13,14 @@ describe('windowsPhone singel', () => {
         expect(is.windowsPhone()).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.windowsPhone: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_windowsPhone: Should false for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.windowsPhone()).toBe(false);
+        expect(is.not_windowsPhone()).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.windowsPhone: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_windowsPhone: Should true for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.windowsPhone()).toBe(true);
+        expect(is.not_windowsPhone()).toBe(true);
     });
 
 });

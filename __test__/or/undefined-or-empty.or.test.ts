@@ -1,7 +1,7 @@
 import {is} from '../../dist';
 
 
-describe('undefined.or.empty or', () => {
+describe('undefined_or_empty or', () => {
 
     const dataForGoodTesting: { value: any }[] = [
         {
@@ -67,20 +67,20 @@ describe('undefined.or.empty or', () => {
         },
     ];
 
-    it.each(dataForGoodTesting)('is.undefined.or.empty: Should true for $value', ({value}) => {
-        expect(is.undefined.or.empty(value)).toBe(true);
+    it.each(dataForGoodTesting)('is.undefined_or_empty: Should true for $value', ({value}) => {
+        expect(is.undefined_or_empty(value)).toBe(true);
     });
 
-    it.each(dataForBadTesting)('is.undefined.or.empty: Should false for $value', ({value}) => {
-        expect(is.undefined.or.empty(value)).toBe(false);
+    it.each(dataForBadTesting)('is.undefined_or_empty: Should false for $value', ({value}) => {
+        expect(is.undefined_or_empty(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.undefined.or.empty: Should false for $value', ({value}) => {
-        expect(is.not.undefined.or.empty(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_undefined_or_empty: Should false for $value', ({value}) => {
+        expect(is.not_undefined_or_empty(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.undefined.or.empty: Should true for $value', ({value}) => {
-        expect(is.not.undefined.or.empty(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_undefined_or_empty: Should true for $value', ({value}) => {
+        expect(is.not_undefined_or_empty(value)).toBe(true);
     });
 
 });

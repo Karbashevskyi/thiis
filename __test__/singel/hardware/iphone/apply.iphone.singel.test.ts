@@ -14,14 +14,14 @@ describe('iphone singel: apply', () => {
         expect(is.iphone.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.iphone: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_iphone: Should false for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.iphone.apply({}, [])).toBe(false);
+        expect(is.not_iphone.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.iphone: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_iphone: Should true for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.iphone.apply({}, [])).toBe(true);
+        expect(is.not_iphone.apply({}, [])).toBe(true);
     });
 
 });

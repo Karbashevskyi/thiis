@@ -12,12 +12,12 @@ describe('macAddress singel: apply', () => {
         expect(is.macAddress.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.macAddress: Should false for $value', ({value}) => {
-        expect(is.not.macAddress.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_macAddress: Should false for $value', ({value}) => {
+        expect(is.not_macAddress.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.macAddress: Should true for $value', ({value}) => {
-        expect(is.not.macAddress.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_macAddress: Should true for $value', ({value}) => {
+        expect(is.not_macAddress.apply({}, [value])).toBe(true);
     });
 
 });

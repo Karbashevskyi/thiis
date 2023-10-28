@@ -11,12 +11,12 @@ describe('camelCase singel', () => {
         expect(is.camelCase(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.camelCase: Should false for $value', ({value}) => {
-        expect(is.not.camelCase(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_camelCase: Should false for $value', ({value}) => {
+        expect(is.not_camelCase(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.camelCase: Should true for $value', ({value}) => {
-        expect(is.not.camelCase(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_camelCase: Should true for $value', ({value}) => {
+        expect(is.not_camelCase(value)).toBe(true);
     });
 
 });

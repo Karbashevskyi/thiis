@@ -1,4 +1,4 @@
-import {is} from '../../../../dist';
+import {is} from '../../../../dist/';
 import {dataForBadTesting, dataForGoodTesting} from './fixtures';
 
 describe('Map singel: apply', () => {
@@ -11,12 +11,12 @@ describe('Map singel: apply', () => {
         expect(is.Map.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.Map: Should false for $value', ({value}) => {
-        expect(is.not.Map.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_Map: Should false for $value', ({value}) => {
+        expect(is.not_Map.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.Map: Should true for $value', ({value}) => {
-        expect(is.not.Map.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_Map: Should true for $value', ({value}) => {
+        expect(is.not_Map.apply({}, [value])).toBe(true);
     });
 
 });

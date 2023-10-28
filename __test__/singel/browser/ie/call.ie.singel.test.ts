@@ -13,14 +13,14 @@ describe('ie singel: call', () => {
         expect(is.ie.call({})).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.ie: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_ie: Should false for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.ie.call({})).toBe(false);
+        expect(is.not_ie.call({})).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.ie: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_ie: Should true for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.ie.call({})).toBe(true);
+        expect(is.not_ie.call({})).toBe(true);
     });
 
 });

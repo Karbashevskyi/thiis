@@ -12,12 +12,12 @@ describe('WeakMap singel: call', () => {
         expect(is.WeakMap.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.WeakMap: Should false for $value', ({value}) => {
-        expect(is.not.WeakMap.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_WeakMap: Should false for $value', ({value}) => {
+        expect(is.not_WeakMap.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.WeakMap: Should true for $value', ({value}) => {
-        expect(is.not.WeakMap.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_WeakMap: Should true for $value', ({value}) => {
+        expect(is.not_WeakMap.call({}, value)).toBe(true);
     });
 
 });

@@ -12,12 +12,12 @@ describe('ipv6 singel: call', () => {
         expect(is.ipv6.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.ipv6: Should false for $value', ({value}) => {
-        expect(is.not.ipv6.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_ipv6: Should false for $value', ({value}) => {
+        expect(is.not_ipv6.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.ipv6: Should true for $value', ({value}) => {
-        expect(is.not.ipv6.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_ipv6: Should true for $value', ({value}) => {
+        expect(is.not_ipv6.call({}, value)).toBe(true);
     });
 
 });

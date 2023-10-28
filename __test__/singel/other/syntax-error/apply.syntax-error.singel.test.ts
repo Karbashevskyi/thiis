@@ -12,12 +12,12 @@ describe('SyntaxError singel: apply', () => {
         expect(is.SyntaxError.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.SyntaxError: Should false for $value', ({value}) => {
-        expect(is.not.SyntaxError.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_SyntaxError: Should false for $value', ({value}) => {
+        expect(is.not_SyntaxError.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.SyntaxError: Should true for $value', ({value}) => {
-        expect(is.not.SyntaxError.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_SyntaxError: Should true for $value', ({value}) => {
+        expect(is.not_SyntaxError.apply({}, [value])).toBe(true);
     });
 
 });

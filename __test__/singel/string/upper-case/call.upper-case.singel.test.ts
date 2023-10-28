@@ -11,12 +11,12 @@ describe('upperCase singel: call', () => {
         expect(is.upperCase.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.upperCase: Should false for $value', ({value}) => {
-        expect(is.not.upperCase.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_upperCase: Should false for $value', ({value}) => {
+        expect(is.not_upperCase.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.upperCase: Should true for $value', ({value}) => {
-        expect(is.not.upperCase.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_upperCase: Should true for $value', ({value}) => {
+        expect(is.not_upperCase.call({}, value)).toBe(true);
     });
 
 });

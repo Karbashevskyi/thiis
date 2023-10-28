@@ -12,12 +12,12 @@ describe('falsy singel', () => {
         expect(is.falsy(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.falsy: Should false for $value', ({value}) => {
-        expect(is.not.falsy(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_falsy: Should false for $value', ({value}) => {
+        expect(is.not_falsy(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.falsy: Should true for $value', ({value}) => {
-        expect(is.not.falsy(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_falsy: Should true for $value', ({value}) => {
+        expect(is.not_falsy(value)).toBe(true);
     });
 
 });

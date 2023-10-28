@@ -24,16 +24,16 @@ describe('android singel: apply', () => {
         expect(is.android.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.android: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_android: Should false for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.not.android.apply({}, [])).toBe(false);
+        expect(is.not_android.apply({}, [])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.android: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_android: Should true for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.not.android.apply({}, [])).toBe(true);
+        expect(is.not_android.apply({}, [])).toBe(true);
     });
 
 });

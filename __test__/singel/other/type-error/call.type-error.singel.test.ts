@@ -12,12 +12,12 @@ describe('TypeError singel: call', () => {
         expect(is.TypeError.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.TypeError: Should false for $value', ({value}) => {
-        expect(is.not.TypeError.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_TypeError: Should false for $value', ({value}) => {
+        expect(is.not_TypeError.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.TypeError: Should true for $value', ({value}) => {
-        expect(is.not.TypeError.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_TypeError: Should true for $value', ({value}) => {
+        expect(is.not_TypeError.call({}, value)).toBe(true);
     });
 
 });

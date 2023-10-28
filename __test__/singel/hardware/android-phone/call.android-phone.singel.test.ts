@@ -13,14 +13,14 @@ describe('androidPhone singel: call', () => {
         expect(is.androidPhone.call({})).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.androidPhone: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_androidPhone: Should false for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.androidPhone.call({})).toBe(false);
+        expect(is.not_androidPhone.call({})).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.androidPhone: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_androidPhone: Should true for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.androidPhone.call({})).toBe(true);
+        expect(is.not_androidPhone.call({})).toBe(true);
     });
 
 });

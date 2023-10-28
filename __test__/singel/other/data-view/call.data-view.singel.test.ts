@@ -11,12 +11,12 @@ describe('DataView singel: call', () => {
         expect(is.DataView.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.DataView: Should false for $value', ({value}) => {
-        expect(is.not.DataView.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_DataView: Should false for $value', ({value}) => {
+        expect(is.not_DataView.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.DataView: Should true for $value', ({value}) => {
-        expect(is.not.DataView.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_DataView: Should true for $value', ({value}) => {
+        expect(is.not_DataView.call({}, value)).toBe(true);
     });
 
 });

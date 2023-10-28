@@ -12,12 +12,12 @@ describe('Infinity singel: call', () => {
         expect(is.infinity.call([], value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.infinity: Should false for $value', ({value}) => {
-        expect(is.not.infinity.call([], value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_infinity: Should false for $value', ({value}) => {
+        expect(is.not_infinity.call([], value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.infinity: Should true for $value', ({value}) => {
-        expect(is.not.infinity.call([], value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_infinity: Should true for $value', ({value}) => {
+        expect(is.not_infinity.call([], value)).toBe(true);
     });
 
 });

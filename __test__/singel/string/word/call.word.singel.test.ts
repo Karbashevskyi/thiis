@@ -12,12 +12,12 @@ describe('word singel: call', () => {
         expect(is.word.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.word: Should false for $value', ({value}) => {
-        expect(is.not.word.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_word: Should false for $value', ({value}) => {
+        expect(is.not_word.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.word: Should true for $value', ({value}) => {
-        expect(is.not.word.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_word: Should true for $value', ({value}) => {
+        expect(is.not_word.call({}, value)).toBe(true);
     });
 
 });

@@ -12,12 +12,12 @@ describe('function singel', () => {
         expect(is.function(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.function: Should false for $value', ({value}) => {
-        expect(is.not.function(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_function: Should false for $value', ({value}) => {
+        expect(is.not_function(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.function: Should true for $value', ({value}) => {
-        expect(is.not.function(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_function: Should true for $value', ({value}) => {
+        expect(is.not_function(value)).toBe(true);
     });
 
 });

@@ -23,16 +23,16 @@ describe('safari singel: call', () => {
         expect(is.safari.call({})).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.safari: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_safari: Should false for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.not.safari.call({})).toBe(false);
+        expect(is.not_safari.call({})).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.safari: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_safari: Should true for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.not.safari.call({})).toBe(true);
+        expect(is.not_safari.call({})).toBe(true);
     });
 
 });

@@ -12,12 +12,12 @@ describe('undefined singel: call', () => {
         expect(is.undefined.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.undefined: Should false for $value', ({value}) => {
-        expect(is.not.undefined.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_undefined: Should false for $value', ({value}) => {
+        expect(is.not_undefined.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.undefined: Should true for $value', ({value}) => {
-        expect(is.not.undefined.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_undefined: Should true for $value', ({value}) => {
+        expect(is.not_undefined.call({}, value)).toBe(true);
     });
 
 });

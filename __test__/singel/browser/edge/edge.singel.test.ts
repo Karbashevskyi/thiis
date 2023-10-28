@@ -13,14 +13,14 @@ describe('edge singel', () => {
         expect(is.edge()).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.edge: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_edge: Should false for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.edge()).toBe(false);
+        expect(is.not_edge()).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.edge: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_edge: Should true for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.edge()).toBe(true);
+        expect(is.not_edge()).toBe(true);
     });
 
 });

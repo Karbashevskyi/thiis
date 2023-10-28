@@ -13,12 +13,12 @@ describe('boolean singel: call', () => {
         expect(is.boolean.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.boolean: Should false for $value', ({value}) => {
-        expect(is.not.boolean.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_boolean: Should false for $value', ({value}) => {
+        expect(is.not_boolean.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.boolean: Should true for $value', ({value}) => {
-        expect(is.not.boolean.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_boolean: Should true for $value', ({value}) => {
+        expect(is.not_boolean.call({}, value)).toBe(true);
     });
 
 });

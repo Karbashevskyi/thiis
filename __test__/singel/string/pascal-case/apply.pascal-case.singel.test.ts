@@ -12,12 +12,12 @@ describe('pascalCase singel: apply', () => {
         expect(is.pascalCase.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.pascalCase: Should false for $value', ({value}) => {
-        expect(is.not.pascalCase.apply({}, [value])).toBe(false);
+    it.each(dataForGoodTesting)('is.not_pascalCase: Should false for $value', ({value}) => {
+        expect(is.not_pascalCase.apply({}, [value])).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.pascalCase: Should true for $value', ({value}) => {
-        expect(is.not.pascalCase.apply({}, [value])).toBe(true);
+    it.each(dataForBadTesting)('is.not_pascalCase: Should true for $value', ({value}) => {
+        expect(is.not_pascalCase.apply({}, [value])).toBe(true);
     });
 
 });

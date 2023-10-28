@@ -11,12 +11,12 @@ describe('URIError singel', () => {
         expect(is.URIError(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.URIError: Should false for $value', ({value}) => {
-        expect(is.not.URIError(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_URIError: Should false for $value', ({value}) => {
+        expect(is.not_URIError(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.URIError: Should true for $value', ({value}) => {
-        expect(is.not.URIError(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_URIError: Should true for $value', ({value}) => {
+        expect(is.not_URIError(value)).toBe(true);
     });
 
 });

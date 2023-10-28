@@ -11,12 +11,12 @@ describe('Infinity singel', () => {
         expect(is.infinity(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.infinity: Should false for $value', ({value}) => {
-        expect(is.not.infinity(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_infinity: Should false for $value', ({value}) => {
+        expect(is.not_infinity(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.infinity: Should true for $value', ({value}) => {
-        expect(is.not.infinity(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_infinity: Should true for $value', ({value}) => {
+        expect(is.not_infinity(value)).toBe(true);
     });
 
 });

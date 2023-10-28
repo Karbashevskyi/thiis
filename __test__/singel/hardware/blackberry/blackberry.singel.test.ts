@@ -13,14 +13,14 @@ describe('blackberry singel', () => {
         expect(is.blackberry()).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.blackberry: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_blackberry: Should false for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.blackberry()).toBe(false);
+        expect(is.not_blackberry()).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.blackberry: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_blackberry: Should true for $value', ({value}) => {
         IsConfig.state.userAgent = value;
-        expect(is.not.blackberry()).toBe(true);
+        expect(is.not_blackberry()).toBe(true);
     });
 
 });

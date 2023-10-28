@@ -12,12 +12,12 @@ describe('bigInt singel', () => {
         expect(is.bigInt(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.bigInt: Should false for $value', ({value}) => {
-        expect(is.not.bigInt(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_bigInt: Should false for $value', ({value}) => {
+        expect(is.not_bigInt(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.bigInt: Should true for $value', ({value}) => {
-        expect(is.not.bigInt(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_bigInt: Should true for $value', ({value}) => {
+        expect(is.not_bigInt(value)).toBe(true);
     });
 
 });

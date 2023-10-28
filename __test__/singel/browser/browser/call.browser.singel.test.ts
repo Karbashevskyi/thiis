@@ -13,14 +13,14 @@ describe('browser singel: call', () => {
         expect(is.browser.call({})).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.browser: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_browser: Should false for $value', ({value}) => {
         IsConfig.state.navigator = value;
-        expect(is.not.browser.call({})).toBe(false);
+        expect(is.not_browser.call({})).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.browser: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_browser: Should true for $value', ({value}) => {
         IsConfig.state.navigator = value;
-        expect(is.not.browser.call({})).toBe(true);
+        expect(is.not_browser.call({})).toBe(true);
     });
 
 });

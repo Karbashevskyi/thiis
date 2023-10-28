@@ -1,7 +1,7 @@
 import {is} from '../../dist';
 
 
-describe('undefined.or.null or', () => {
+describe('undefined_or_null or', () => {
 
     const dataForGoodTesting: { value: any }[] = [
         {
@@ -67,28 +67,28 @@ describe('undefined.or.null or', () => {
         },
     ];
 
-    it.each(dataForGoodTesting)('is.undefined.or.null: Should true for $value', ({value}) => {
-        expect(is.undefined.or.null(value)).toBe(true);
+    it.each(dataForGoodTesting)('is.undefined_or_null: Should true for $value', ({value}) => {
+        expect(is.undefined_or_null(value)).toBe(true);
     });
 
-    it.each(dataForGoodTesting)('is.undefined.null: Should false for $value', ({value}) => {
-        expect(is.undefined.null(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.undefined_null: Should false for $value', ({value}) => {
+        expect(is.undefined_null(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.undefined.or.null: Should false for $value', ({value}) => {
-        expect(is.undefined.or.null(value)).toBe(false);
+    it.each(dataForBadTesting)('is.undefined_or_null: Should false for $value', ({value}) => {
+        expect(is.undefined_or_null(value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.undefined.or.null: Should false for $value', ({value}) => {
-        expect(is.not.undefined.or.null(value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_undefined_or_null: Should false for $value', ({value}) => {
+        expect(is.not_undefined_or_null(value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.undefined.or.null: Should true for $value', ({value}) => {
-        expect(is.not.undefined.or.null(value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_undefined_or_null: Should true for $value', ({value}) => {
+        expect(is.not_undefined_or_null(value)).toBe(true);
     });
 
-    it('"1.0.0" should true for is.not.null.or.undefined', () => {
-        expect(is.not.null.or.undefined('"1.0.0"')).toBe(true);
+    it('"1.0.0" should true for is.not_null_or_undefined', () => {
+        expect(is.not_null_or_undefined('"1.0.0"')).toBe(true);
     });
 
 });

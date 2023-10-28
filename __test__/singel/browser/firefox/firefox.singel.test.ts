@@ -23,16 +23,16 @@ describe('firefox singel', () => {
         expect(is.firefox()).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.firefox: Should false for $value', ({value}) => {
+    it.each(dataForGoodTesting)('is.not_firefox: Should false for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.not.firefox()).toBe(false);
+        expect(is.not_firefox()).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.firefox: Should true for $value', ({value}) => {
+    it.each(dataForBadTesting)('is.not_firefox: Should true for $value', ({value}) => {
         // navigator.userAgent = value;
         IsConfig.state.userAgent = value;
-        expect(is.not.firefox()).toBe(true);
+        expect(is.not_firefox()).toBe(true);
     });
 
 });

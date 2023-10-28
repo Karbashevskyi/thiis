@@ -12,12 +12,12 @@ describe('Model singel: call', () => {
         expect(is.Person.call({}, value)).toBe(false);
     });
 
-    it.each(dataForGoodTesting)('is.not.Person: Should false for $value', ({value}) => {
-        expect(is.not.Person.call({}, value)).toBe(false);
+    it.each(dataForGoodTesting)('is.not_Person: Should false for $value', ({value}) => {
+        expect(is.not_Person.call({}, value)).toBe(false);
     });
 
-    it.each(dataForBadTesting)('is.not.Person: Should true for $value', ({value}) => {
-        expect(is.not.Person.call({}, value)).toBe(true);
+    it.each(dataForBadTesting)('is.not_Person: Should true for $value', ({value}) => {
+        expect(is.not_Person.call({}, value)).toBe(true);
     });
 
 });

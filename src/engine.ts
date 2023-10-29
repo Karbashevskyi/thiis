@@ -14,7 +14,7 @@ function findInGlobalContext(command: string): undefined | CommandType {
     return undefined;
 }
 
-export function getMethod(commandName: string, context: { any?: boolean; } = {}): CommandType {
+export function getMethod(commandName: string, context: { strict?: boolean; } = {}): CommandType {
     return predefinedMethods[commandName]?.bind?.(context) ?? InstanceofMethod.bind({classRef: findInGlobalContext(commandName)});
 }
 
@@ -46,7 +46,7 @@ export function proxyGet(target: typeof predefinedMethods, name: string, receive
             everyBad: CommandType[];
             underOr: boolean;
             context: {
-                any?: boolean;
+                strict?: boolean;
             };
             convertToMethod: (methodName: string) => CommandType;
             filterMethods: (methods: string) => boolean;
@@ -62,11 +62,11 @@ export function proxyGet(target: typeof predefinedMethods, name: string, receive
                     commandByLogic.underOr = true;
                     return false;
                 }
-                if (method === 'any') {
-                    commandByLogic.context.any = true;
+                if (method === 'strict') {
+                    commandByLogic.context.strict = true;
                     return false;
                 }
-                return true;
+                return method !== 'not';
             }
         };
 

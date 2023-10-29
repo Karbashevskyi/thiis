@@ -14,7 +14,7 @@ function findInGlobalContext(command: string): undefined | CommandType {
     return undefined;
 }
 
-export function getMethod(commandName: string, context: {any?: boolean;} = {}): CommandType {
+export function getMethod(commandName: string, context: { any?: boolean; } = {}): CommandType {
     return predefinedMethods[commandName]?.bind?.(context) ?? InstanceofMethod.bind({classRef: findInGlobalContext(commandName)});
 }
 
@@ -49,18 +49,15 @@ export function proxyGet(target: typeof predefinedMethods, name: string, receive
                 any?: boolean;
             };
             convertToMethod: (methodName: string) => CommandType;
+            filterMethods: (methods: string) => boolean;
         } = {
             every: [],
             some: [],
             everyBad: [],
             underOr: false,
             context: {},
-            convertToMethod: (methodName) => getMethod(methodName, commandByLogic.context)
-        };
-
-        if (commandNamesStr) {
-
-            const commandNames = commandNamesStr.split('_').filter((method) => {
+            convertToMethod: (methodName) => getMethod(methodName, commandByLogic.context),
+            filterMethods: (method) => {
                 if (method === 'or') {
                     commandByLogic.underOr = true;
                     return false;
@@ -70,7 +67,12 @@ export function proxyGet(target: typeof predefinedMethods, name: string, receive
                     return false;
                 }
                 return true;
-            });
+            }
+        };
+
+        if (commandNamesStr) {
+
+            const commandNames = commandNamesStr.split('_').filter(commandByLogic.filterMethods);
 
             if (commandByLogic.underOr) {
                 commandByLogic.some = commandNames.map(commandByLogic.convertToMethod);
@@ -81,7 +83,7 @@ export function proxyGet(target: typeof predefinedMethods, name: string, receive
         }
 
         if (commandNamesUnderNot) {
-            const methodsUnderNot = commandNamesUnderNot.split('_').filter((methodUnderNot) => methodUnderNot !== 'or');
+            const methodsUnderNot = commandNamesUnderNot.split('_').filter(commandByLogic.filterMethods);
             commandByLogic.everyBad = methodsUnderNot.map(commandByLogic.convertToMethod);
         }
 

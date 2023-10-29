@@ -58,6 +58,7 @@ import {WindowsPhoneMethod} from './hardware/windows-phone.method';
 import {BlackberryMethod} from './hardware/blackberry.method';
 import {AndroidPhoneMethod} from './hardware/android-phone.method';
 import {MobileMethod} from './hardware/mobile.method';
+import {SpaceMethod} from './string/space.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -113,6 +114,7 @@ export const predefinedMethods = {
     numeric: NumericMethod,
     // String
     string: StringMethod,
+    space: SpaceMethod,
     pascalCase: PascalCaseMethod,
     upperCase: UpperCaseMethod,
     kebabCase: KebabCaseMethod,

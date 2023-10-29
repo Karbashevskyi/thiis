@@ -26,6 +26,8 @@ export const regexp = {
     phone: /phone/i,
     blackberry: /blackberry|bb10/i,
     androidPhone: /Android.*Mobile/i,
+    space: /^\s*$/,
+    anySpace: /\s/,
 };
 
 export default regexp;

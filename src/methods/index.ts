@@ -60,7 +60,7 @@ import {AndroidPhoneMethod} from './hardware/android-phone.method';
 import {MobileMethod} from './hardware/mobile.method';
 import {OnlySpaceMethod, SpaceMethod} from './string/space.method';
 
-type mixTypes<T> = T & AllMethodsInterface;
+type mixTypes<T> = T;
 
 export type ConvertTypeToGenericMixTypes<T> = {
     [key in keyof T]: mixTypes<T[key]>;

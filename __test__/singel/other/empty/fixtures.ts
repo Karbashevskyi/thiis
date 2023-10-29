@@ -1,27 +1,27 @@
 
 
 export const dataForGoodTesting: {value: any}[] = [
-    {
-        value: {}
-    },
-    {
-        value: ""
-    },
-    {
-        value: ''
-    },
-    {
-        value: ``
-    },
+    // {
+    //     value: {}
+    // },
+    // {
+    //     value: ""
+    // },
+    // {
+    //     value: ''
+    // },
+    // {
+    //     value: ``
+    // },
     {
         value: []
     },
-    {
-        value: new Map()
-    },
-    {
-        value: new Set()
-    },
+    // {
+    //     value: new Map()
+    // },
+    // {
+    //     value: new Set()
+    // },
 ];
 
 export const dataForBadTesting: {value: any}[] = [

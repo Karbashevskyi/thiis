@@ -3,9 +3,5 @@ export function PrimitiveMethod(target: unknown): boolean {
     return true;
   }
 
-  if (typeof target === 'object' || typeof target === 'function') {
-    return false;
-  } else {
-    return true;
-  }
+  return !(typeof target === 'object' || typeof target === 'function');
 }

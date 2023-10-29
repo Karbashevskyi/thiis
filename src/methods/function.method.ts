@@ -1,9 +1,11 @@
-const toString: typeof Object.prototype.toString = Object.prototype.toString;
+import { isConfig } from '../config';
 
 export function FunctionMethod<T extends typeof Function>(target: unknown): target is T {
   try {
     return (
-      toString.call(target) === '[object Function]' || AsyncFunctionMethod(target) || GeneratorFunctionMethod(target)
+      isConfig.state.toString.call(target) === '[object Function]' ||
+      AsyncFunctionMethod(target) ||
+      GeneratorFunctionMethod(target)
     );
   } catch (e) {
     if (e instanceof TypeError) {
@@ -17,7 +19,7 @@ export function FunctionMethod<T extends typeof Function>(target: unknown): targ
 
 export function AsyncFunctionMethod(target: unknown): target is '[object AsyncFunction]' {
   try {
-    return toString.call(target) === '[object AsyncFunction]';
+    return isConfig.state.toString.call(target) === '[object AsyncFunction]';
   } catch (e) {
     return false;
   }
@@ -25,7 +27,7 @@ export function AsyncFunctionMethod(target: unknown): target is '[object AsyncFu
 
 export function GeneratorFunctionMethod(target: unknown): target is '[object Generator]' {
   try {
-    return toString.call(target) === '[object Generator]';
+    return isConfig.state.toString.call(target) === '[object Generator]';
   } catch (e) {
     return false;
   }

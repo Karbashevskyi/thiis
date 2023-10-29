@@ -19,6 +19,7 @@ export const isConfig = {
     screen: {
       width: glb?.screen?.width ?? 0,
     },
+    toString: Object.prototype.toString,
   },
   regexp,
 };

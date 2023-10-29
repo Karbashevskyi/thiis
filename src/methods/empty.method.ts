@@ -3,6 +3,7 @@ import { ObjectMethod } from './object.method';
 import { ArrayMethod } from './array.method';
 
 export function EmptyMethod<T extends object>(target: unknown): boolean {
+  // TODO find way to if prev method was ObjectMethod: is.object_not_empty
   if (ObjectMethod<T>(target) || ArrayMethod<T>(target)) {
     if ('size' in target) {
       // @ts-ignore

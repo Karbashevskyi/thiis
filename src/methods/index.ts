@@ -148,14 +148,13 @@ export const predefinedMethods = {
     undefined: UndefinedMethod,
 };
 
-type DefaultType = <RETURN_TYPE>(target: unknown) => target is RETURN_TYPE;
+type DefaultType = <RETURN_TYPE>(target?: unknown, ...args: unknown[]) => target is RETURN_TYPE;
 
-export interface AllMethodsInterface
-    extends ConvertTypeToGenericMixTypes<typeof predefinedMethods>,
-        ConvertTypeToGenericInstanceOf<ExternalMethodsInterface>,
-        ConvertTypeToGenericInstanceOf<HTMLElementsMethodsInterface>,
-        Omit<CallableFunction, 'length'> {
-
+type AggregateType =
+    ConvertTypeToGenericMixTypes<typeof predefinedMethods>
+    & ConvertTypeToGenericInstanceOf<ExternalMethodsInterface>
+    & ConvertTypeToGenericInstanceOf<HTMLElementsMethodsInterface>
+    & {
     Function: instanceofType;
 
     // Predefined interfaces of methods which has some options
@@ -175,18 +174,12 @@ export interface AllMethodsInterface
     string_empty: (target: unknown) => target is string;
     array_not_empty: DefaultType;
     array_empty: DefaultType;
+};
 
-    // TODO Declare most popular methods combinations
+type AggregateKeys = keyof AggregateType;
 
-    /**
-     * @description This is for custom methods, which you can add to is or combine with other methods, for example:
-     * ```ts
-     * is.string_not_empty('hello world');
-     * ```
-     * Depending on your tsconfig settings, you may get an error that you are not calling the object property correctly,
-     * for example you wrote is.string_not_empty, and you are prompted to change to is['string_not_empty']
-     * if you want to keep your implementation and don't want to see this kind of error,
-     * I suggest setting noPropertyAccessFromIndexSignature to false in compilerOptions in your tsconfig.json
-     */
-    [key: string]: any;
-}
+export type AllMethodsInterface = AggregateType & {
+    [key in `not_${AggregateKeys}`]: DefaultType;
+} & {
+    [key: string]: DefaultType
+};

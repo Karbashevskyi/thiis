@@ -8,7 +8,7 @@ import {FalsyMethod} from './boolean/falsy.method';
 import {InstanceofMethod} from './instanceof.method';
 import {NullMethod} from './null.method';
 import {NumberMethod} from './number/number.method';
-import {ObjectMethod} from './object.method';
+import {ObjectMethod, StrictObjectMethod} from './object.method';
 import {StringMethod} from './string/string.method';
 import {SymbolMethod} from './symbol.method';
 import {TrueMethod} from './boolean/true.method';
@@ -58,7 +58,7 @@ import {WindowsPhoneMethod} from './hardware/windows-phone.method';
 import {BlackberryMethod} from './hardware/blackberry.method';
 import {AndroidPhoneMethod} from './hardware/android-phone.method';
 import {MobileMethod} from './hardware/mobile.method';
-import {SpaceMethod} from './string/space.method';
+import {OnlySpaceMethod, SpaceMethod} from './string/space.method';
 
 type mixTypes<T> = T & AllMethodsInterface;
 
@@ -114,6 +114,7 @@ export const predefinedMethods = {
     numeric: NumericMethod,
     // String
     string: StringMethod,
+    onlySpace: OnlySpaceMethod,
     space: SpaceMethod,
     pascalCase: PascalCaseMethod,
     upperCase: UpperCaseMethod,
@@ -140,6 +141,7 @@ export const predefinedMethods = {
     negative: NegativeMethod,
     null: NullMethod,
     object: ObjectMethod,
+    strictObject: StrictObjectMethod,
     primitive: PrimitiveMethod,
     promise: PromiseMethod,
     symbol: SymbolMethod,

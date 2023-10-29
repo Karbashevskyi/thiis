@@ -45,9 +45,7 @@ export function proxyGet(target: typeof predefinedMethods, name: string, receive
             some: CommandType[];
             everyBad: CommandType[];
             underOr: boolean;
-            context: {
-                strict?: boolean;
-            };
+            context: {};
             convertToMethod: (methodName: string) => CommandType;
             filterMethods: (methods: string) => boolean;
         } = {
@@ -60,10 +58,6 @@ export function proxyGet(target: typeof predefinedMethods, name: string, receive
             filterMethods: (method) => {
                 if (method === 'or') {
                     commandByLogic.underOr = true;
-                    return false;
-                }
-                if (method === 'strict') {
-                    commandByLogic.context.strict = true;
                     return false;
                 }
                 return method !== 'not';

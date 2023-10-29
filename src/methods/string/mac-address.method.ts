@@ -1,9 +1,9 @@
-import { SymbolMethod } from '../symbol.method';
 import regexp from '../../regexp';
+import {StringMethod} from './string.method';
 
 export function MacAddressMethod(target: string): target is string {
-  if (SymbolMethod(target)) {
+    if (StringMethod(target)) {
+        return regexp.macAddress.test(target);
+    }
     return false;
-  }
-  return regexp.macAddress.test(target);
 }

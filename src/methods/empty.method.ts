@@ -1,9 +1,9 @@
-import { StringMethod } from './string/string.method';
-import { ObjectMethod } from './object.method';
-import { ArrayMethod } from './array.method';
+import {StringMethod} from './string/string.method';
+import {ObjectMethod} from './object.method';
+import {ArrayMethod} from './array.method';
 
 export function EmptyMethod<T extends object>(target: unknown): boolean {
-  if (ObjectMethod<T>(target) || ArrayMethod<T>(target)) {
+  if (ObjectMethod<T>(target, true) || ArrayMethod<T>(target)) {
     if ('size' in target) {
       // @ts-ignore
       return target.size <= 0;

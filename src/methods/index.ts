@@ -148,14 +148,15 @@ export const predefinedMethods = {
     undefined: UndefinedMethod,
 };
 
+type DefaultType = <RETURN_TYPE>(target: unknown) => target is RETURN_TYPE;
+
 export interface AllMethodsInterface
     extends ConvertTypeToGenericMixTypes<typeof predefinedMethods>,
         ConvertTypeToGenericInstanceOf<ExternalMethodsInterface>,
         ConvertTypeToGenericInstanceOf<HTMLElementsMethodsInterface>,
         Omit<CallableFunction, 'length'> {
+
     Function: instanceofType;
-    or: AllMethodsInterface;
-    not: AllMethodsInterface;
 
     // Predefined interfaces of methods which has some options
     len_N: LengthMethodType;
@@ -168,6 +169,15 @@ export interface AllMethodsInterface
     len_gte_N: LengthMethodType;
     len_gt_N_lte_N: LengthMethodType;
 
+    object_not_empty: DefaultType;
+    object_empty: DefaultType;
+    string_not_empty: (target: unknown) => target is string;
+    string_empty: (target: unknown) => target is string;
+    array_not_empty: DefaultType;
+    array_empty: DefaultType;
+
+    // TODO Declare most popular methods combinations
+
     /**
      * @description This is for custom methods, which you can add to is or combine with other methods, for example:
      * ```ts
@@ -178,5 +188,5 @@ export interface AllMethodsInterface
      * if you want to keep your implementation and don't want to see this kind of error,
      * I suggest setting noPropertyAccessFromIndexSignature to false in compilerOptions in your tsconfig.json
      */
-    [key: string]: instanceofType | AllMethodsInterface | any;
+    [key: string]: any;
 }

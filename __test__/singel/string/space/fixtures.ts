@@ -2,13 +2,60 @@
 
 export const dataForGoodTesting: {value: any}[] = [
     {
-        value: " "
-    },
-    {
         value: ' '
     },
     {
+        value: ' string'
+    },
+    {
+        value: 'string '
+    },
+    {
+        value: 'string string'
+    },
+    {
+        value: 'string string '
+    },
+    {
+        value: ' string string '
+    },
+
+    {
+        value: " "
+    },
+    {
+        value: " string"
+    },
+    {
+        value: "string "
+    },
+    {
+        value: "string string"
+    },
+    {
+        value: "string string "
+    },
+    {
+        value: " string string "
+    },
+
+    {
         value: ` `
+    },
+    {
+        value: ` string`
+    },
+    {
+        value: `string `
+    },
+    {
+        value: `string string`
+    },
+    {
+        value: `string string `
+    },
+    {
+        value: ` string string `
     },
 ];
 
@@ -18,15 +65,6 @@ export const dataForBadTesting: {value: any}[] = [
     },
     {
         value: 'null'
-    },
-    {
-        value: "2 "
-    },
-    {
-        value: `2 `
-    },
-    {
-        value: ` 3`
     },
     {
         value: `3`

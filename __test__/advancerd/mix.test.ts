@@ -2,15 +2,15 @@ import {is} from '../../dist';
 
 describe('Mix', () => {
 
-    // it('is.object.empty.null({})', () => {
-    //     // typeof {} === 'object' && Object.keys({}).len === 0 && {} === null
-    //     expect(is.object.empty.null({})).toBe(false);
-    // });
+    it('is.object_empty_null({})', () => {
+        // typeof {} === 'object' && Object.keys({}).len === 0 && {} === null
+        expect(is.object_empty_null({})).toBe(false);
+    });
 
-    // it('is.object.empty.or.null({})', () => {
-    //     // typeof {} === 'object' && (Object.keys({}).len === 0 || {} === null)
-    //     expect(is.object.empty.or.null({})).toBe(true);
-    // });
+    it('is.object_empty_or_null({})', () => {
+        // typeof {} === 'object' && (Object.keys({}).len === 0 || {} === null)
+        expect(is.object_empty_or_null({})).toBe(true);
+    });
 
     it('is.object_empty_or_null({})', () => {
         // console.time('object_empty_or_null');
@@ -33,16 +33,16 @@ describe('Mix', () => {
         expect(is.object_empty_or_null({})).toBe(true);
     });
 
-    // it('is.object.not.empty.null({})', () => {
-    //     // typeof {} === 'object' && (Object.keys({}).len !== 0 && {} !== null)
-    //     expect(is.object.not.empty.null({})).toBe(false);
-    // });
+    it('is.object_not_empty_null({})', () => {
+        // typeof {} === 'object' && (Object.keys({}).len !== 0 && {} !== null)
+        expect(is.object_not_empty_null({})).toBe(false);
+    });
 
-    // it('is.object.not.empty.or.null({})', () => {
-    //     // typeof {} === 'object' && (Object.keys({}).len !== 0 || {} !== null)
-    //     // typeof {} === 'object' && !(Object.keys({}).len === 0 || {} === null)
-    //     expect(is.object.not.empty.or.null({})).toBe(true);
-    // });
+    it('is.object_not_empty_or_null({a: 1})', () => {
+        // typeof {} === 'object' && (Object.keys({}).len !== 0 || {} !== null)
+        // typeof {} === 'object' && !(Object.keys({}).len === 0 || {} === null)
+        expect(is.object_not_empty_or_null({a: 1})).toBe(true);
+    });
 
 
 });

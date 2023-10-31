@@ -1,7 +1,7 @@
 import {ArrayMethod} from './array.method';
 import {BigIntMethod} from './number/bigInt.method';
 import {BooleanMethod} from './boolean/boolean.method';
-import {CompareMethod} from './compare.method';
+import {SameMethod} from './same.method';
 import {EmptyMethod} from './empty.method';
 import {FalseMethod} from './boolean/false.method';
 import {FalsyMethod} from './boolean/falsy.method';
@@ -132,7 +132,8 @@ export const predefinedMethods = {
     array: ArrayMethod,
     asyncFunction: AsyncFunctionMethod,
     bigInt: BigIntMethod,
-    compare: CompareMethod,
+    compare: SameMethod, // Deprecated, delete in the future, use 'same' instead
+    same: SameMethod,
     empty: EmptyMethod,
     even: EvenMethod,
     function: FunctionMethod,

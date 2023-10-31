@@ -53,14 +53,11 @@ export function proxyGet(target: typeof predefinedMethods, name: string) {
 
         if (commandNamesStr) {
 
-            const indexOfFirstOr = commandNamesStr.indexOf('or');
-            commandNamesStr.forEach((commandName, index) => {
-                if (index + 1 === indexOfFirstOr) {
+            commandNamesStr.forEach((commandName, index, array) => {
+                if (array[index + 1] === 'or') {
                     commandByLogic.underOr = true;
                 }
-                if (commandName === 'or') {
-                    // Skip this iteration
-                } else {
+                if (commandName !== 'or') {
                     if (commandByLogic.underOr) {
                         commandByLogic.some.push(getMethod(commandName));
                     } else {
@@ -85,10 +82,8 @@ export function proxyGet(target: typeof predefinedMethods, name: string) {
                         return false;
                     }
                 }
-                if (commandByLogic.everyBad.length) {
-                    return !commandByLogic.everyBad.some((command) => command(...args));
-                }
-                return true;
+                // Empty array return false
+                return !commandByLogic.everyBad.some((command) => command(...args));
             };
 
         }

@@ -3,23 +3,23 @@ import {CommandType} from './types/commands.type';
 import {predefinedMethods} from './methods';
 import {isConfig} from './config';
 
-function findInGlobalContext(command: string): undefined | CommandType {
-    try {
-        if (isConfig.useGlobalContext) {
-            return globalThis?.[command] ?? self?.[command] ?? window?.[command] ?? global?.[command] ?? command;
-        }
-    } catch (e) {
-        return undefined;
+function findInGlobalContext(command: string): CommandType {
+    if (isConfig.useGlobalContext) {
+        return isConfig.globalContext[command] || (() => {
+            return false;
+        });
     }
-    return undefined;
+    return (() => {
+        return false;
+    });
 }
 
-export function getMethod(commandName: string, context: { strict?: boolean; } = {}): CommandType {
-    return predefinedMethods[commandName]?.bind?.(context) ?? InstanceofMethod.bind({classRef: findInGlobalContext(commandName)});
+export function getMethod(commandName: string): CommandType {
+    return predefinedMethods[commandName] || InstanceofMethod.bind({classRef: findInGlobalContext(commandName)});
 }
 
 
-export function proxyGet(target: typeof predefinedMethods, name: string, receiver) {
+export function proxyGet(target: typeof predefinedMethods, name: string) {
 
     if (name in target) {
         return target[name];
@@ -32,11 +32,10 @@ export function proxyGet(target: typeof predefinedMethods, name: string, receive
         };
     }
 
-    let [commandNamesStr, commandNamesUnderNot] = name.split('_not_');
-    if (name[0] === 'n' && name[1] === 'o' && name[2] === 't') { // first 3 letters is "not"
-        // reverse commandNamesStr and commandNamesUnderNot
-        [commandNamesUnderNot, commandNamesStr] = [commandNamesStr, commandNamesUnderNot];
-    }
+    const methodsName = name.split('_');
+    const indexOfNot = methodsName.indexOf('not');
+    const [commandNamesStr, commandNamesUnderNot] =
+        indexOfNot > -1 ? [methodsName.slice(0, indexOfNot), methodsName.slice(indexOfNot)] : [methodsName, []];
 
     const listOfCommands = () => {
 
@@ -45,67 +44,66 @@ export function proxyGet(target: typeof predefinedMethods, name: string, receive
             some: CommandType[];
             everyBad: CommandType[];
             underOr: boolean;
-            context: {};
-            convertToMethod: (methodName: string) => CommandType;
-            filterMethods: (methods: string) => boolean;
         } = {
             every: [],
             some: [],
             everyBad: [],
             underOr: false,
-            context: {},
-            convertToMethod: (methodName) => getMethod(methodName, commandByLogic.context),
-            filterMethods: (method) => {
-                if (method === 'or') {
-                    commandByLogic.underOr = true;
-                    return false;
-                }
-                return method !== 'not';
-            }
         };
 
         if (commandNamesStr) {
 
-            const commandNames = commandNamesStr.split('_').filter(commandByLogic.filterMethods);
+            const indexOfFirstOr = commandNamesStr.indexOf('or');
+            commandNamesStr.forEach((commandName, index) => {
+                if (index + 1 === indexOfFirstOr) {
+                    commandByLogic.underOr = true;
+                }
+                if (commandName === 'or') {
+                    // Skip this iteration
+                } else {
+                    if (commandByLogic.underOr) {
+                        commandByLogic.some.push(getMethod(commandName));
+                    } else {
+                        commandByLogic.every.push(getMethod(commandName));
+                    }
+                }
+            });
 
-            if (commandByLogic.underOr) {
-                commandByLogic.some = commandNames.map(commandByLogic.convertToMethod);
-            } else {
-                commandByLogic.every = commandNames.map(commandByLogic.convertToMethod);
+            if (commandNamesUnderNot) {
+                const methodsUnderNot = commandNamesUnderNot.filter((method) => method !== 'not' && method !== 'or');
+                commandByLogic.everyBad = methodsUnderNot.map(getMethod);
             }
+
+            return (...args: unknown[]) => {
+                if (commandByLogic.every.length) {
+                    if (!commandByLogic.every.every((command) => command(...args))) {
+                        return false;
+                    }
+                }
+                if (commandByLogic.some.length) {
+                    if (!commandByLogic.some.some((command) => command(...args))) {
+                        return false;
+                    }
+                }
+                if (commandByLogic.everyBad.length) {
+                    return !commandByLogic.everyBad.some((command) => command(...args));
+                }
+                return true;
+            };
 
         }
 
-        if (commandNamesUnderNot) {
-            const methodsUnderNot = commandNamesUnderNot.split('_').filter(commandByLogic.filterMethods);
-            commandByLogic.everyBad = methodsUnderNot.map(commandByLogic.convertToMethod);
-        }
+        // Case: is.not_[comment]
 
-        return (...args: any[]) => {
+        const methodsUnderNot = commandNamesUnderNot.filter((method) => method !== 'not' && method !== 'or');
+        commandByLogic.everyBad = methodsUnderNot.map(getMethod);
 
-            let result = false;
-            if (commandByLogic.every.length) {
-                result = commandByLogic.every.every((command) => command(...args));
-                if (!result) {
-                    return false;
-                }
-            }
-            if (commandByLogic.some.length) {
-                result = commandByLogic.some.some((command) => command(...args));
-                if (!result) {
-                    return false;
-                }
-            }
-            if (commandByLogic.everyBad.length) {
-                result = commandByLogic.everyBad.every((command) => !command(...args));
-            }
-            return result;
-
+        return (...args: unknown[]) => {
+            return !commandByLogic.everyBad.some((command) => command(...args));
         };
-
     };
 
-    target[name] = listOfCommands();
+    return target[name] = listOfCommands();
 
-    return target[name];
 }
+

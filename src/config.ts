@@ -4,6 +4,7 @@ const glb = typeof window !== 'undefined' ? window : undefined;
 export const isConfig = {
   packageName: 'thiis',
   useGlobalContext: true,
+  globalContext: globalThis || self || window || global,
   error: {
     enabled: true,
   },

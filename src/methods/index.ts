@@ -1,7 +1,7 @@
 import {ArrayMethod} from './array.method';
 import {BigIntMethod} from './number/bigInt.method';
 import {BooleanMethod} from './boolean/boolean.method';
-import {SameMethod} from './same.method';
+import {CompareMethod} from './compare.method';
 import {EmptyMethod} from './empty.method';
 import {FalseMethod} from './boolean/false.method';
 import {FalsyMethod} from './boolean/falsy.method';
@@ -59,12 +59,6 @@ import {BlackberryMethod} from './hardware/blackberry.method';
 import {AndroidPhoneMethod} from './hardware/android-phone.method';
 import {MobileMethod} from './hardware/mobile.method';
 import {OnlySpaceMethod, SpaceMethod} from './string/space.method';
-import {TodayMethod} from './string/date/today.method';
-import {IsoFutureMethod} from './string/date/iso/iso-future.method';
-import {IsoPastMethod} from './string/date/iso/iso-past.method';
-import {IsoMethod} from './string/date/iso/iso.method';
-import {TomorrowMethod} from './string/date/tomorrow.method';
-import {YesterdayMethod} from './string/date/yesterday.method';
 
 type mixTypes<T> = T;
 
@@ -133,19 +127,12 @@ export const predefinedMethods = {
     ipv6: Ipv6Method,
     char: CharMethod,
     lowerCase: LowerCaseMethod,
-    today: TodayMethod,
-    tomorrow: TomorrowMethod,
-    yesterday: YesterdayMethod,
-    isoFuture: IsoFutureMethod,
-    isoPast: IsoPastMethod,
-    iso: IsoMethod,
     // Other
     len: LenMethod,
     array: ArrayMethod,
     asyncFunction: AsyncFunctionMethod,
     bigInt: BigIntMethod,
-    compare: SameMethod, // Deprecated, delete in the future, use 'same' instead
-    same: SameMethod,
+    compare: CompareMethod,
     empty: EmptyMethod,
     even: EvenMethod,
     function: FunctionMethod,

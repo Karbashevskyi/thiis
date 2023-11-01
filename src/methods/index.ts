@@ -63,6 +63,7 @@ import {TodayMethod} from './string/date/today.method';
 import {IsoFutureMethod} from './string/date/iso/iso-future.method';
 import {IsoPastMethod} from './string/date/iso/iso-past.method';
 import {IsoMethod} from './string/date/iso/iso.method';
+import {TomorrowMethod} from './string/date/tomorrow.method';
 
 type mixTypes<T> = T;
 
@@ -132,6 +133,7 @@ export const predefinedMethods = {
     char: CharMethod,
     lowerCase: LowerCaseMethod,
     today: TodayMethod,
+    tomorrow: TomorrowMethod,
     isoFuture: IsoFutureMethod,
     isoPast: IsoPastMethod,
     iso: IsoMethod,

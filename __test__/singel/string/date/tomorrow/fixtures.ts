@@ -1,25 +1,17 @@
 export const dataForGoodTesting: { value: any }[] = [
     {
-        value: new Date(Date.now() + 10_000).toISOString(),
-    },
-    {
-        value: new Date().toISOString(),
-    },
-    {
-        value: '2022-01-15T12:34:56.789Z'
-    },
-    {
-        value: '2022-01-15'
-    },
-    {
-        value: '12:34:56.789Z'
-    },
-    {
-        value: '12:34:56'
+        value: (() => {
+            const currentDate = new Date();
+            currentDate.setDate(currentDate.getDate() + 1);
+            return currentDate.toISOString();
+        })(),
     }
 ];
 
 export const dataForBadTesting: { value: any }[] = [
+    {
+        value: '2022-01-15T12:34:56.789Z'
+    },
     {
         value: 'undefined'
     },

@@ -38,9 +38,9 @@ export const dataForBadTesting: { value: any }[] = [
     {
         value: `2`
     },
-    // {
-    //     value: Symbol()
-    // },
+    {
+        value: Symbol()
+    },
     {
         value: {}
     },

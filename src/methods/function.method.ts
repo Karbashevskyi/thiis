@@ -1,9 +1,11 @@
-import {isConfig} from '../config';
+import { isConfig } from '../config';
 
 export function FunctionMethod<T extends typeof Function>(target: unknown): target is T {
   try {
     return (
-        isConfig.state.toString.call(target) === '[object Function]' || AsyncFunctionMethod(target) || GeneratorFunctionMethod(target)
+      isConfig.state.toString.call(target) === '[object Function]' ||
+      AsyncFunctionMethod(target) ||
+      GeneratorFunctionMethod(target)
     );
   } catch (e) {
     if (e instanceof TypeError) {

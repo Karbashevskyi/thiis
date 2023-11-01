@@ -15,9 +15,10 @@ export const isConfig = {
     vendor: globalContext.navigator?.vendor ?? '',
     navigator: globalContext.navigator,
     userAgent: globalContext.navigator?.userAgent ?? '',
-    // @ts-ignore
-    platform:
-      globalContext.navigator?.platform ?? globalContext.navigator?.userAgentData?.platform ?? process?.platform ?? '',
+    platform: globalContext.navigator?.platform ??
+        // @ts-ignore
+        globalContext.navigator?.userAgentData?.platform ??
+        process?.platform ?? '',
     screen: {
       width: globalContext.screen?.width ?? 0,
     },

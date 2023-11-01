@@ -20,11 +20,10 @@ export function getMethod(commandName: string): CommandType {
 
 
 export function proxyGet(target: typeof predefinedMethods, name: string) {
+    return target[name] || notFoundMethodCase(target, name);
+}
 
-    if (name in target) {
-        return target[name];
-    }
-
+function notFoundMethodCase(target: typeof predefinedMethods, name: string) {
     if (name[0] === 'l' && name[1] === 'e' && name[2] === 'n') { // first 3 letters is "len"
         return (targetValue: string) => {
             // TODO push to predefinedMethods
@@ -99,6 +98,5 @@ export function proxyGet(target: typeof predefinedMethods, name: string) {
     };
 
     return target[name] = listOfCommands();
-
 }
 

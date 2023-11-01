@@ -1,7 +1,7 @@
-import {StringMethod} from '../string.method';
+import {IsoMethod} from './iso/iso.method';
 
 export function TodayMethod(dateString: string): boolean {
-    if (!StringMethod(dateString)) {
+    if (!IsoMethod(dateString)) {
         return false;
     }
 

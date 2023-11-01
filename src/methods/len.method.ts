@@ -1,6 +1,6 @@
-import { NumberMethod } from './number/number.method';
-import { isConfig } from '../config';
-import { NumericMethod } from './number/numeric.method';
+import {NumberMethod} from './number/number.method';
+import {isConfig} from '../config';
+import {NumericMethod} from './number/numeric.method';
 
 function toNumber(target: any): number {
   target = +target;

@@ -60,7 +60,9 @@ import {AndroidPhoneMethod} from './hardware/android-phone.method';
 import {MobileMethod} from './hardware/mobile.method';
 import {OnlySpaceMethod, SpaceMethod} from './string/space.method';
 import {TodayMethod} from './string/date/today.method';
-import {IsoFutureMethod} from './string/date/iso-future.method';
+import {IsoFutureMethod} from './string/date/iso/iso-future.method';
+import {IsoPastMethod} from './string/date/iso/iso-past.method';
+import {IsoMethod} from './string/date/iso/iso.method';
 
 type mixTypes<T> = T;
 
@@ -131,6 +133,8 @@ export const predefinedMethods = {
     lowerCase: LowerCaseMethod,
     today: TodayMethod,
     isoFuture: IsoFutureMethod,
+    isoPast: IsoPastMethod,
+    iso: IsoMethod,
     // Other
     len: LenMethod,
     array: ArrayMethod,

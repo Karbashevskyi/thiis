@@ -1,4 +1,4 @@
-import {is} from '../../../../../dist';
+import {is} from '../../../../../../dist';
 import {dataForBadTesting, dataForGoodTesting} from './fixtures';
 
 describe('isoFuture singel', () => {

@@ -2,7 +2,7 @@ export const dataForGoodTesting: { value: any }[] = [
     {
         value: (() => {
             const currentDate = new Date();
-            currentDate.setDate(currentDate.getDate() + 1);
+            currentDate.setDate(currentDate.getDate() - 1);
             return currentDate.toISOString();
         })(),
     }
@@ -12,7 +12,7 @@ export const dataForBadTesting: { value: any }[] = [
     {
         value: (() => {
             const currentDate = new Date();
-            currentDate.setDate(currentDate.getDate() - 1);
+            currentDate.setDate(currentDate.getDate() + 1);
             return currentDate.toISOString();
         })(),
     },

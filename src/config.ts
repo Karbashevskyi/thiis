@@ -1,10 +1,10 @@
 import regexp from './regexp';
 
-const glb = typeof window !== 'undefined' ? window : undefined;
+const globalContext = globalThis || self || window || global || {};
 export const isConfig = {
   packageName: 'thiis',
   useGlobalContext: true,
-  globalContext: globalThis || self || window || global,
+  globalContext,
   error: {
     enabled: true,
   },
@@ -12,13 +12,13 @@ export const isConfig = {
     phone: 768,
   },
   state: {
-    vendor: glb?.navigator?.vendor ?? '',
-    navigator: glb?.navigator ?? undefined,
-    userAgent: glb?.navigator?.userAgent ?? '',
+    vendor: globalContext.navigator?.vendor ?? '',
+    navigator: globalContext.navigator,
+    userAgent: globalContext.navigator?.userAgent ?? '',
     // @ts-ignore
-    platform: glb?.navigator?.platform ?? glb?.navigator?.userAgentData?.platform ?? process?.platform ?? '',
+    platform: globalContext.navigator?.platform ?? globalContext.navigator?.userAgentData?.platform ?? process?.platform ?? '',
     screen: {
-      width: glb?.screen?.width ?? 0,
+      width: globalContext.screen?.width ?? 0,
     },
     toString: Object.prototype.toString,
   },

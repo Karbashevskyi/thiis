@@ -59,6 +59,7 @@ import {BlackberryMethod} from './hardware/blackberry.method';
 import {AndroidPhoneMethod} from './hardware/android-phone.method';
 import {MobileMethod} from './hardware/mobile.method';
 import {OnlySpaceMethod, SpaceMethod} from './string/space.method';
+import {TodayMethod} from './string/date/today.method';
 
 type mixTypes<T> = T;
 
@@ -127,6 +128,7 @@ export const predefinedMethods = {
     ipv6: Ipv6Method,
     char: CharMethod,
     lowerCase: LowerCaseMethod,
+    today: TodayMethod,
     // Other
     len: LenMethod,
     array: ArrayMethod,

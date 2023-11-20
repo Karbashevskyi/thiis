@@ -6,5 +6,5 @@ export function BrowserMethod(target: unknown = isConfig.state.navigator): boole
   if (this.BrowserMethod) {
     return true;
   }
-  return this.BrowserMethod = (ObjectMethod.call(this, target) && !EmptyMethod.call(this, target));
+  return (this.BrowserMethod = ObjectMethod.call(this, target) && !EmptyMethod.call(this, target));
 }

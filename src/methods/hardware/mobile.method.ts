@@ -8,9 +8,10 @@ export function MobileMethod(): boolean {
   if (this.MobileMethod) {
     return true;
   }
-  return this.MobileMethod = (IphoneMethod.call(this) ||
-      IpodMethod.call(this) ||
-      AndroidPhoneMethod.call(this) ||
-      BlackberryMethod.call(this) ||
-      WindowsPhoneMethod.call(this));
+  return (this.MobileMethod =
+    IphoneMethod.call(this) ||
+    IpodMethod.call(this) ||
+    AndroidPhoneMethod.call(this) ||
+    BlackberryMethod.call(this) ||
+    WindowsPhoneMethod.call(this));
 }

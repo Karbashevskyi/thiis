@@ -1,17 +1,15 @@
-import {ArrayMethod} from './array.method';
+import { ArrayMethod } from './array.method';
 
 export enum TypeOfValueEnum {
   object = 'object',
 }
 
 export function SameMethod<T>(target: T, source: T): boolean {
-
   if (this.SameMethod) {
     return true;
   }
 
   try {
-
     const keysOfTarget: string[] = Object.keys(target ?? {}) ?? [];
     const keysOfSource: string[] = Object.keys(source ?? {}) ?? [];
 
@@ -41,7 +39,7 @@ export function SameMethod<T>(target: T, source: T): boolean {
           break;
       }
     }
-    return this.SameMethod = true;
+    return (this.SameMethod = true);
   } catch (e) {
     return false;
   }

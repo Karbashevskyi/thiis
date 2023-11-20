@@ -1,5 +1,5 @@
-import {isConfig} from '../../config';
-import {StringMethod} from '../string/string.method';
+import { isConfig } from '../../config';
+import { StringMethod } from '../string/string.method';
 import regexp from '../../regexp';
 
 /**
@@ -10,11 +10,11 @@ import regexp from '../../regexp';
  * @returns - Returns true if the userAgent matches the Opera pattern, false otherwise.
  */
 export function OperaMethod(target: unknown = isConfig.state.userAgent): boolean {
-    if (this.OperaMethod) {
-        return true;
-    }
-    if (StringMethod.call(this, target)) {
-        return this.OperaMethod = regexp.opera.test(target as string);
-    }
-    return false;
+  if (this.OperaMethod) {
+    return true;
+  }
+  if (StringMethod.call(this, target)) {
+    return (this.OperaMethod = regexp.opera.test(target as string));
+  }
+  return false;
 }

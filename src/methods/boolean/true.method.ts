@@ -1,3 +1,6 @@
 export function TrueMethod(target: unknown): target is true {
-  return target === true;
+    if (this.TrueMethod) {
+        return true;
+    }
+    return this.TrueMethod = target === true;
 }

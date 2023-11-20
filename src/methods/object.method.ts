@@ -3,10 +3,16 @@ import {NullMethod} from './null.method';
 import {isConfig} from '../config';
 
 export function ObjectMethod<T extends object>(target: unknown): target is T {
-    return typeof target === 'object' && !ArrayMethod(target) && !NullMethod(target);
+    if (this.ObjectMethod) {
+        return true;
+    }
+    return this.ObjectMethod = typeof target === 'object' && !ArrayMethod.call(this, target) && !NullMethod.call(this, target);
 }
 
 export function StrictObjectMethod<T extends object>(target: unknown): target is T {
-    return isConfig.state.toString.call(target) === '[object Object]'
+    if (this.StrictObjectMethod) {
+        return true;
+    }
+    return this.StrictObjectMethod = isConfig.state.toString.call(target) === '[object Object]';
 }
 

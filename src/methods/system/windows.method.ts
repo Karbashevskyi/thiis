@@ -3,8 +3,11 @@ import {StringMethod} from '../string/string.method';
 import regexp from '../../regexp';
 
 export function WindowsMethod(target: unknown = isConfig.state.platform): boolean {
-  if (StringMethod(target)) {
-    return regexp.windows.test(target);
-  }
-  return false;
+    if (this.WindowsMethod) {
+        return true;
+    }
+    if (StringMethod.call(this, target)) {
+        return this.WindowsMethod = regexp.windows.test(target as string);
+    }
+    return false;
 }

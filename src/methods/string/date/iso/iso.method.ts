@@ -5,8 +5,11 @@ import {StringMethod} from '../../string.method';
  * ISO 8601 format.
  */
 export function IsoMethod(iso: string): boolean {
-    if (!StringMethod(iso)) {
+    if (this.IsoMethod) {
+        return true;
+    }
+    if (!StringMethod.call(this, iso)) {
         return false;
     }
-    return regexp.iso.any.test(iso);
+    return this.IsoMethod = regexp.iso.any.test(iso);
 }

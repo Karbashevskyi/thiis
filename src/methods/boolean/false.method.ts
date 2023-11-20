@@ -1,3 +1,6 @@
 export function FalseMethod(target: unknown): target is false {
-  return target === false;
+    if (this.FalseMethod) {
+        return true;
+    }
+    return this.FalseMethod = target === false;
 }

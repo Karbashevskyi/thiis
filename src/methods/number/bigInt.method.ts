@@ -1,3 +1,6 @@
 export function BigIntMethod(target: unknown): target is bigint {
-  return typeof target === 'bigint';
+    if (this.BigIntMethod) {
+        return true;
+    }
+    return this.BigIntMethod = typeof target === 'bigint';
 }

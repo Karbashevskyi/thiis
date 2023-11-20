@@ -1,5 +1,8 @@
-import { FalsyMethod } from './falsy.method';
+import {FalsyMethod} from './falsy.method';
 
 export function TruthyMethod(target: unknown): target is true {
-  return !FalsyMethod(target);
+    if (this.TruthyMethod) {
+        return true;
+    }
+    return this.TruthyMethod = !FalsyMethod.call(this, target);
 }

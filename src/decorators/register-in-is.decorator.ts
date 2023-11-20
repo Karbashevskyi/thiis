@@ -15,8 +15,8 @@ export function registerInIsDecorator(configuration?: RegisterInIsDecoratorInter
         throw new Error(`Not found customMethod with name: ${configuration.customMethod}`);
       }
     } else {
-      value = (targetValue) => {
-        return InstanceofMethod(targetValue, constructor);
+      value = (targetValue: unknown) => {
+        return InstanceofMethod.call({}, targetValue, constructor);
       };
     }
     let className: string | undefined = configuration?.className;
@@ -30,5 +30,6 @@ export function registerInIsDecorator(configuration?: RegisterInIsDecoratorInter
       writable: true,
       value,
     });
+    predefinedMethods[className].thiisExternal = true;
   };
 }

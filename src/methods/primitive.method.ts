@@ -1,8 +1,13 @@
 export function PrimitiveMethod(target: unknown): boolean {
-  if (target === null) {
+
+  if (this.PrimitiveMethod) {
     return true;
   }
 
-  return !(typeof target === 'object' || typeof target === 'function');
+  if (target === null) {
+    return this.PrimitiveMethod = true;
+  }
+
+  return this.PrimitiveMethod = !(typeof target === 'object' || typeof target === 'function');
 
 }

@@ -1,4 +1,7 @@
 export function ArrayMethod<T>(target: unknown, classRef?: new () => T): target is Array<T> {
+    if (this.ArrayMethod) {
+        return true;
+    }
     if (target instanceof Array) {
         if (typeof classRef === 'function') {
             if (target.length) {
@@ -7,7 +10,7 @@ export function ArrayMethod<T>(target: unknown, classRef?: new () => T): target 
                 return false;
             }
         }
-        return true;
+        return this.ArrayMethod = true;
     }
     return false;
 }

@@ -1,3 +1,6 @@
 export function FalsyMethod(target: unknown): target is false {
-  return !target;
+    if (this.FalsyMethod) {
+        return true;
+    }
+    return this.FalsyMethod = !target;
 }

@@ -1,3 +1,6 @@
 export function BooleanMethod(target: unknown): target is boolean {
-  return typeof target === 'boolean';
+  if (this.BooleanMethod) {
+    return true;
+  }
+  return this.BooleanMethod = typeof target === 'boolean';
 }

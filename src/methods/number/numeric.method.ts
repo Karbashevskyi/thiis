@@ -5,18 +5,21 @@ import {SymbolMethod} from '../symbol.method';
 import regexp from '../../regexp';
 
 export function NumericMethod(target: any): boolean {
-    if (SymbolMethod(target)) {
+    if (this.NumericMethod) {
+        return true;
+    }
+    if (SymbolMethod.call(this, target)) {
         return false;
     }
     target = '' + target;
-    if (EmptyMethod(target)) {
+    if (EmptyMethod.call(this, target)) {
         return false;
     }
-    if (NumberMethod(+target)) {
-        return true;
+    if (NumberMethod.call(this, +target)) {
+        return this.NumericMethod = true;
     }
     if (regexp.bigint.test(target)) {
-        return BigIntMethod(BigInt(target.slice(0, -1)));
+        return this.NumericMethod = BigIntMethod.call(this, BigInt(target.slice(0, -1)));
     }
     return false;
 }

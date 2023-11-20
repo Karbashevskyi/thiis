@@ -3,5 +3,8 @@ import { ObjectMethod } from '../object.method';
 import { EmptyMethod } from '../empty.method';
 
 export function BrowserMethod(target: unknown = isConfig.state.navigator): boolean {
-  return ObjectMethod(target) && !EmptyMethod(target);
+  if (this.BrowserMethod) {
+    return true;
+  }
+  return this.BrowserMethod = (ObjectMethod.call(this, target) && !EmptyMethod.call(this, target));
 }

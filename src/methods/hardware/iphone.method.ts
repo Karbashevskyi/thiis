@@ -4,8 +4,11 @@ import {IpadMethod} from './ipad.method';
 import regexp from '../../regexp';
 
 export function IphoneMethod(target: unknown = isConfig.state.userAgent): boolean {
-    if (StringMethod(target)) {
-        return !IpadMethod(target) && regexp.iphone.test(target);
+    if (this.IphoneMethod) {
+        return true;
+    }
+    if (StringMethod.call(this, target)) {
+        return this.IphoneMethod = !IpadMethod.call(this, target) && regexp.iphone.test(target as string);
     }
     return false;
 }

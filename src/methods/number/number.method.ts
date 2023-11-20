@@ -1,5 +1,8 @@
-import { InfinityMethod } from './infinity.method';
+import {InfinityMethod} from './infinity.method';
 
 export function NumberMethod(target: unknown): target is number {
-  return typeof target === 'number' && !isNaN(target) && !InfinityMethod(target);
+    if (this.NumberMethod) {
+        return true;
+    }
+    return this.NumberMethod = typeof target === 'number' && !isNaN(target) && !InfinityMethod.call(this, target);
 }

@@ -5,11 +5,17 @@ export enum TypeOfValueEnum {
 }
 
 export function SameMethod<T>(target: T, source: T): boolean {
+
+  if (this.SameMethod) {
+    return true;
+  }
+
   try {
+
     const keysOfTarget: string[] = Object.keys(target ?? {}) ?? [];
     const keysOfSource: string[] = Object.keys(source ?? {}) ?? [];
 
-    if (!ArrayMethod(keysOfTarget) || !ArrayMethod(keysOfSource)) {
+    if (!ArrayMethod.call(this, keysOfTarget) || !ArrayMethod.call(this, keysOfSource)) {
       return false;
     }
 
@@ -24,7 +30,7 @@ export function SameMethod<T>(target: T, source: T): boolean {
     for (const keyOfObjectTwo of keysOfSource) {
       switch (typeof (target as any)[keyOfObjectTwo]) {
         case TypeOfValueEnum.object:
-          if (!SameMethod((target as any)[keyOfObjectTwo], (source as any)[keyOfObjectTwo])) {
+          if (!SameMethod.call(this, (target as any)[keyOfObjectTwo], (source as any)[keyOfObjectTwo])) {
             return false;
           }
           break;
@@ -35,7 +41,7 @@ export function SameMethod<T>(target: T, source: T): boolean {
           break;
       }
     }
-    return true;
+    return this.SameMethod = true;
   } catch (e) {
     return false;
   }

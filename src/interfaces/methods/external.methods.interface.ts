@@ -246,7 +246,6 @@ export interface ExternalMethodsInterface {
   DataTransferItemList: DataTransferItemList;
   DeviceMotionEventAcceleration: DeviceMotionEventAcceleration;
   DeviceMotionEventRotationRate: DeviceMotionEventRotationRate;
-  DocumentAndElementEventHandlers: DocumentAndElementEventHandlers;
   DocumentOrShadowRoot: DocumentOrShadowRoot;
   EXT_blend_minmax: EXT_blend_minmax;
   EXT_color_buffer_float: EXT_color_buffer_float;

@@ -1,3 +1,6 @@
 export function UndefinedMethod(target: unknown): target is undefined {
-  return target === undefined;
+  if (this.UndefinedMethod) {
+    return true;
+  }
+  return this.UndefinedMethod = target === undefined;
 }

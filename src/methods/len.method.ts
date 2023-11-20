@@ -4,7 +4,7 @@ import {NumericMethod} from './number/numeric.method';
 
 function toNumber(target: any): number {
   target = +target;
-  if (!NumberMethod(target) && isConfig.error.enabled) {
+  if (!NumberMethod.call(this, target) && isConfig.error.enabled) {
     console?.error?.(`
             Bad data in the method name, good examples: 
             is.len_10
@@ -54,11 +54,11 @@ function operation(command: string, target: number, value: number): boolean {
  */
 export function LenMethod(target: string, configList: string[]): boolean {
   const length: number = target?.length ?? 0;
-  if (NumericMethod(configList[0])) {
-    return length === toNumber(configList[0]);
+  if (NumericMethod.call(this, configList[0])) {
+    return length === toNumber.call(this, configList[0]);
   } else {
     for (let index = 0; index < configList.length; index++) {
-      if (operation(configList[index], length, toNumber(configList[index + 1]))) {
+      if (operation(configList[index], length, toNumber.call(this, configList[index + 1]))) {
         if (index + 2 === configList.length) {
           return true;
         } else {

@@ -1,7 +1,11 @@
 import {IsoMethod} from './iso/iso.method';
 
 export function YesterdayMethod(target: string): boolean {
-    if (!IsoMethod(target)) {
+    if (this.YesterdayMethod) {
+        return true;
+    }
+
+    if (!IsoMethod.call(this, target)) {
         return false;
     }
 
@@ -9,5 +13,5 @@ export function YesterdayMethod(target: string): boolean {
     const parsedDate = new Date(target);
     parsedDate.setDate(parsedDate.getDate() + 1);
 
-    return parsedDate.toDateString() === today.toDateString();
+    return this.YesterdayMethod = parsedDate.toDateString() === today.toDateString();
 }

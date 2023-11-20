@@ -169,12 +169,12 @@ export const predefinedMethods = {
     undefined: UndefinedMethod,
 
     // Predefined combinations of methods
-    object_not_empty: function <T>(target: unknown): target is T { return ObjectMethod(target) && !ObjectEmptyMethodExecute(target);},
-    object_empty: function <T>(target: unknown): target is T { return ObjectEmptyMethod(target);},
-    string_not_empty: function <T>(target: unknown): target is T { return StringMethod(target) && !StringEmptyMethodExecute(target);},
-    string_empty: function <T>(target: unknown): target is T { return StringEmptyMethod(target);},
-    array_not_empty: function <T>(target: unknown): target is T { return ArrayMethod(target) && !ArrayEmptyMethodExecute(target);},
-    array_empty: function <T>(target: unknown): target is T { return ArrayEmptyMethod(target);},
+    object_not_empty<T>(target: unknown): target is T { return ObjectMethod(target) && !ObjectEmptyMethodExecute(target);},
+    object_empty<T>(target: unknown): target is T { return ObjectEmptyMethod(target);},
+    string_not_empty<T>(target: unknown): target is T { return StringMethod(target) && !StringEmptyMethodExecute(target);},
+    string_empty<T>(target: unknown): target is T { return StringEmptyMethod(target);},
+    array_not_empty<T>(target: unknown): target is T { return ArrayMethod(target) && !ArrayEmptyMethodExecute(target);},
+    array_empty<T>(target: unknown): target is T { return ArrayEmptyMethod(target);},
 
 };
 

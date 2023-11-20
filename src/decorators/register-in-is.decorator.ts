@@ -15,7 +15,7 @@ export function registerInIsDecorator(configuration?: RegisterInIsDecoratorInter
         throw new Error(`Not found customMethod with name: ${configuration.customMethod}`);
       }
     } else {
-      value = (targetValue) => {
+      value = (targetValue: unknown) => {
         return InstanceofMethod(targetValue, constructor);
       };
     }

@@ -2,7 +2,15 @@ import { ArrayMethod } from './array.method';
 import { BigIntMethod } from './number/bigInt.method';
 import { BooleanMethod } from './boolean/boolean.method';
 import { SameMethod } from './same.method';
-import { EmptyMethod } from './empty.method';
+import {
+  ArrayEmptyMethod,
+  ArrayEmptyMethodExecute,
+  EmptyMethod,
+  ObjectEmptyMethod,
+  ObjectEmptyMethodExecute,
+  StringEmptyMethod,
+  StringEmptyMethodExecute,
+} from './empty.method';
 import { FalseMethod } from './boolean/false.method';
 import { FalsyMethod } from './boolean/falsy.method';
 import { InstanceofMethod } from './instanceof.method';
@@ -159,11 +167,31 @@ export const predefinedMethods = {
   promise: PromiseMethod,
   symbol: SymbolMethod,
   undefined: UndefinedMethod,
+
+  // Predefined combinations of methods
+  object_not_empty<T>(target: unknown): target is T {
+    return ObjectMethod(target) && !ObjectEmptyMethodExecute(target);
+  },
+  object_empty<T>(target: unknown): target is T {
+    return ObjectEmptyMethod(target);
+  },
+  string_not_empty<T>(target: unknown): target is T {
+    return StringMethod(target) && !StringEmptyMethodExecute(target);
+  },
+  string_empty<T>(target: unknown): target is T {
+    return StringEmptyMethod(target);
+  },
+  array_not_empty<T>(target: unknown): target is T {
+    return ArrayMethod(target) && !ArrayEmptyMethodExecute(target);
+  },
+  array_empty<T>(target: unknown): target is T {
+    return ArrayEmptyMethod(target);
+  },
 };
 
 type DefaultType = <RETURN_TYPE>(target?: unknown, ...args: unknown[]) => target is RETURN_TYPE;
-
-type AggregateType = ConvertTypeToGenericMixTypes<typeof predefinedMethods> &
+type PredefinedMethodsType = typeof predefinedMethods;
+type AggregateType = PredefinedMethodsType &
   ConvertTypeToGenericInstanceOf<ExternalMethodsInterface> &
   ConvertTypeToGenericInstanceOf<HTMLElementsMethodsInterface> & {
     Function: instanceofType;
@@ -191,6 +219,14 @@ type AggregateKeys = keyof AggregateType;
 
 export type AllMethodsInterface = AggregateType & {
   [key in `not_${AggregateKeys}`]: DefaultType;
+} & {
+  [key in `${keyof PredefinedMethodsType}_${AggregateKeys}`]: DefaultType;
+} & {
+  [key in `${keyof PredefinedMethodsType}_${keyof PredefinedMethodsType}`]: DefaultType;
+} & {
+  [key in `${keyof PredefinedMethodsType}_or_${keyof PredefinedMethodsType}`]: DefaultType;
+} & {
+  [key in `${keyof PredefinedMethodsType}_not_${keyof PredefinedMethodsType}`]: DefaultType;
 } & {
   [key: string]: DefaultType;
 };

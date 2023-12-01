@@ -1,7 +1,7 @@
-import { InstanceofMethod } from './methods/instanceof.method';
-import { CommandType } from './types/commands.type';
-import { predefinedMethods } from './methods';
-import { isConfig } from './config';
+import {InstanceofMethod} from './methods/instanceof.method';
+import {CommandType} from './types/commands.type';
+import {predefinedMethods} from './methods';
+import {isConfig} from './config';
 
 function findInGlobalContext(command: string): CommandType {
   if (isConfig.useGlobalContext) {
@@ -39,7 +39,7 @@ function notFoundMethodCase(target: typeof predefinedMethods, name: string) {
   const [commandNamesStr, commandNamesUnderNot] =
     indexOfNot > -1 ? [methodsName.slice(0, indexOfNot), methodsName.slice(indexOfNot)] : [methodsName, []];
 
-  const listOfCommands = () => {
+  return (target[name] = (() => {
     const commandByLogic: {
       every: CommandType[];
       some: CommandType[];
@@ -95,7 +95,5 @@ function notFoundMethodCase(target: typeof predefinedMethods, name: string) {
     return (...args: unknown[]) => {
       return !commandByLogic.everyBad.some((command) => command(...args));
     };
-  };
-
-  return (target[name] = listOfCommands());
+  })());
 }

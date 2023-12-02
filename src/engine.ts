@@ -1,6 +1,6 @@
 import {InstanceofMethod} from './methods/instanceof.method';
 import {CommandType} from './types/commands.type';
-import {predefinedMethods} from './methods';
+import thiis from './methods';
 import {isConfig} from './config';
 
 function findInGlobalContext(command: string): CommandType {
@@ -18,10 +18,10 @@ function findInGlobalContext(command: string): CommandType {
 }
 
 export function getMethod(commandName: string): CommandType {
-    return predefinedMethods[commandName] || InstanceofMethod.bind({classRef: findInGlobalContext(commandName)});
+    return thiis[commandName] || InstanceofMethod.bind({classRef: findInGlobalContext(commandName)});
 }
 
-export function proxyGet(target: typeof predefinedMethods, name: string) {
+export function proxyGet(target: typeof thiis, name: string) {
     return target[name] || notFoundMethodCase(target, name);
 }
 
@@ -32,14 +32,14 @@ type CommandByLogicType = {
     underOr: boolean;
 };
 
-function notFoundMethodCase(target: typeof predefinedMethods, name: string) {
-    if (name[0] === 'l' && name[1] === 'e' && name[2] === 'n') {
-        // first 3 letters is "len"
-        return (targetValue: string) => {
-            // TODO push to predefinedMethods
-            return target.len(targetValue, name.split('_').slice(1));
-        };
-    }
+function notFoundMethodCase(target: typeof thiis, name: string) {
+    // if (name[0] === 'l' && name[1] === 'e' && name[2] === 'n') {
+    //     // first 3 letters is "len"
+    //     return (targetValue: string) => {
+    //         // TODO push to predefinedMethods
+    //         return target.len(targetValue, name.split('_').slice(1));
+    //     };
+    // }
 
     const methodsName = name.split('_');
     const indexOfNot = methodsName.indexOf('not');

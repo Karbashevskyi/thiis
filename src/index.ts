@@ -2,7 +2,7 @@ import {registerInIsDecorator} from './decorators/register-in-is.decorator';
 import {isConfig} from './config';
 import {proxyGet} from './engine';
 import {AllMethodsInterface} from './interfaces';
-import thiis from './methods';
+import thiis from './thiis';
 
 export const RegisterInIs = registerInIsDecorator;
 export const IsConfig = isConfig;

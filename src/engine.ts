@@ -1,6 +1,6 @@
-import {InstanceofMethod} from './methods/instanceof.method';
 import {CommandType} from './types/commands.type';
-import thiis from './methods';
+import methods from './methods';
+import {createMethod, default as thiis} from './thiis';
 import {isConfig} from './config';
 
 function findInGlobalContext(command: string): CommandType {
@@ -17,20 +17,14 @@ function findInGlobalContext(command: string): CommandType {
     };
 }
 
-export function getMethod(commandName: string): CommandType {
-    return thiis[commandName] || InstanceofMethod.bind({classRef: findInGlobalContext(commandName)});
+export function getMethod(commandName: string): string {
+    // TODO: InstanceofMethod.bind({classRef: findInGlobalContext(commandName)}) into string
+    return `(${methods[commandName]})`;
 }
 
 export function proxyGet(target: typeof thiis, name: string) {
     return target[name] || notFoundMethodCase(target, name);
 }
-
-type CommandByLogicType = {
-    every: CommandType[];
-    some: CommandType[];
-    everyBad: CommandType[];
-    underOr: boolean;
-};
 
 function notFoundMethodCase(target: typeof thiis, name: string) {
     // if (name[0] === 'l' && name[1] === 'e' && name[2] === 'n') {
@@ -41,60 +35,63 @@ function notFoundMethodCase(target: typeof thiis, name: string) {
     //     };
     // }
 
-    const methodsName = name.split('_');
-    const indexOfNot = methodsName.indexOf('not');
-    const [commandNamesStr, commandNamesUnderNot] =
-        indexOfNot > -1 ? [methodsName.slice(0, indexOfNot), methodsName.slice(indexOfNot)] : [methodsName, []];
+    const methodNames = name.split('_');
 
-    return (target[name] = ((commandByLogic: CommandByLogicType = {
-        every: [],
-        some: [],
-        everyBad: [],
-        underOr: false,
-    }) => {
+    return (target[name] = (() => {
 
-        if (commandNamesStr) {
-            commandNamesStr.forEach((commandName, index, array) => {
-                if (array[index + 1] === 'or') {
-                    commandByLogic.underOr = true;
+        // is.empty() <-
+        // (object, count of properties),
+        // (array, length),
+        // (string, length),
+        // (Map, size),
+        // (Set, size),
+        // (WeakMap, size),
+        // (WeakSet, size),
+        // (TypedArray, length),
+        // (ArrayBuffer, byteLength),
+        // (DataView, byteLength)
+
+        // is.array_empty() <-
+        // (array, length),
+
+        // is.string_empty() <-
+        // (string, length),
+
+        // is.object_empty() <-
+        // (object, count of properties),
+
+        // is.map_empty() <-
+        // (Map, size),
+
+        // is.set_empty() <-
+        // (Set, size),
+
+        const functionBody = methodNames.reduce(
+            (acc, methodName, currentIndex) => {
+                if (methodName === 'not') {
+                    return `${acc}!`;
                 }
-                if (commandName !== 'or') {
-                    if (commandByLogic.underOr) {
-                        commandByLogic.some.push(getMethod(commandName));
-                    } else {
-                        commandByLogic.every.push(getMethod(commandName));
-                    }
+                if (methodName === 'or') {
+                    return `(${acc})||`;
                 }
-            });
-
-            if (commandNamesUnderNot) {
-                const methodsUnderNot = commandNamesUnderNot.filter((method) => method !== 'not' && method !== 'or');
-                commandByLogic.everyBad = methodsUnderNot.map(getMethod);
-            }
-
-            return (...args: unknown[]) => {
-                if (commandByLogic.every.length) {
-                    if (!commandByLogic.every.every((command) => command(...args))) {
-                        return false;
-                    }
+                if (currentIndex === 0) {
+                    return methods[methodName];
                 }
-                if (commandByLogic.some.length) {
-                    if (!commandByLogic.some.some((command) => command(...args))) {
-                        return false;
-                    }
+                if (acc[acc.length - 1] === '|') {
+                    return `${acc} ${methods[methodName]}`;
                 }
-                // Empty array return false
-                return !commandByLogic.everyBad.some((command) => command(...args));
-            };
-        }
+                if (acc.length < 2) {
+                    return acc + getMethod(methodName);
+                }
+                if (acc[acc.length - 1] === '!') {
+                    return `(${acc.slice(0, acc.length - 1)}) && !${methods[methodName]}`;
+                }
+                return `(${acc}) && ${getMethod(methodName)}`;
+            },
+            ''
+        );
 
-        // Case: is.not_[comment]
-
-        const methodsUnderNot = commandNamesUnderNot.filter((method) => method !== 'not' && method !== 'or');
-        commandByLogic.everyBad = methodsUnderNot.map(getMethod);
-
-        return (...args: unknown[]) => {
-            return !commandByLogic.everyBad.some((command) => command(...args));
-        };
+        const method = createMethod(functionBody);
+        return method;
     })());
 }

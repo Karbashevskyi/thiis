@@ -17,7 +17,7 @@ type LengthMethodType = typeof LenMethod;
 
 type DefaultType = <RETURN_TYPE>(target?: unknown, ...args: unknown[]) => target is RETURN_TYPE;
 type PredefinedMethodsType = typeof thiis;
-type AggregateType = PredefinedMethodsType &
+type AggregateType =
     ConvertTypeToGenericInstanceOf<ExternalMethodsInterface> &
     ConvertTypeToGenericInstanceOf<HTMLElementsMethodsInterface> & {
     Function: instanceofType;
@@ -54,6 +54,8 @@ export type AllMethodsInterface = AggregateType & {
     [key in `${keyof PredefinedMethodsType}_or_${keyof PredefinedMethodsType}`]: DefaultType;
 } & {
     [key in `${keyof PredefinedMethodsType}_not_${keyof PredefinedMethodsType}`]: DefaultType;
+} & {
+    [key in keyof PredefinedMethodsType]: DefaultType;
 } & {
     [key: string]: DefaultType;
 };

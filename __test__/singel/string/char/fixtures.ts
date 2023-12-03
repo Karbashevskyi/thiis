@@ -71,6 +71,9 @@ export const dataForBadTesting: {value: any}[] = [
         value: () => {}
     },
     {
+        value: (argument) => argument
+    },
+    {
         value: BigInt
     },
     {

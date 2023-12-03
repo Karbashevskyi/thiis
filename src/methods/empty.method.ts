@@ -1,13 +1,13 @@
-import { StringMethod } from './string/string.method';
-import { ObjectMethod } from './object.method';
-import { ArrayMethod } from './array.method';
+import {ObjectMethod} from './object.method';
+import {ArrayMethod} from './array.method';
 
 export function EmptyMethod<T extends object>(target: unknown): boolean {
   return StringEmptyMethod(target) || ArrayEmptyMethod<T>(target) || ObjectEmptyMethod<T>(target);
 }
 
 export function StringEmptyMethod(target: unknown): boolean {
-  return StringMethod(target) && StringEmptyMethodExecute(target);
+  return false; // TODO
+  // return StringMethod(target) && StringEmptyMethodExecute(target);
 }
 
 export function StringEmptyMethodExecute(target: string): boolean {

@@ -1,6 +1,44 @@
 import regexp from './regexp';
 
-const globalContext = globalThis || self || window || global || {};
+const isNode = typeof process !== 'undefined' && process?.release?.name === 'node';
+const isBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';
+
+// globalThis || self || window || global ||
+let globalContext: any = {};
+
+if (typeof globalThis !== 'undefined') {
+  globalContext = globalThis;
+} else {
+  if (isNode) {
+    globalContext = global;
+  } else if (isBrowser) {
+    globalContext = window;
+  } else {
+    if (typeof self !== 'undefined') {
+      globalContext = self;
+    }
+  }
+}
+
+let vendor = '';
+if (globalContext.navigator?.vendor) {
+  vendor = globalContext.navigator.vendor;
+}
+
+let userAgent = '';
+if (globalContext.navigator?.userAgent) {
+  userAgent = globalContext.navigator.userAgent;
+}
+
+let platform = '';
+if (globalContext.navigator?.platform) {
+  platform = globalContext.navigator.platform;
+} else if (globalContext.navigator?.userAgentData?.platform) {
+  platform = globalContext.navigator.userAgentData.platform;
+} else if (process?.platform) {
+  platform = process.platform;
+}
+
 export const isConfig = {
   packageName: 'thiis',
   useGlobalContext: true,
@@ -12,15 +50,10 @@ export const isConfig = {
     phone: 768,
   },
   state: {
-    vendor: globalContext.navigator?.vendor ?? '',
+    vendor,
     navigator: globalContext.navigator,
-    userAgent: globalContext.navigator?.userAgent ?? '',
-    platform:
-      globalContext.navigator?.platform ??
-      // @ts-ignore
-      globalContext.navigator?.userAgentData?.platform ??
-      process?.platform ??
-      '',
+    userAgent,
+    platform,
     screen: {
       width: globalContext.screen?.width ?? 0,
     },

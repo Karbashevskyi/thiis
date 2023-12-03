@@ -25,6 +25,13 @@ export function proxyGet(target: typeof predefinedMethods, name: string) {
   return target[name] || notFoundMethodCase(target, name);
 }
 
+type CommandByLogicType = {
+  every: CommandType[];
+  some: CommandType[];
+  everyBad: CommandType[];
+  underOr: boolean;
+};
+
 function notFoundMethodCase(target: typeof predefinedMethods, name: string) {
   if (name[0] === 'l' && name[1] === 'e' && name[2] === 'n') {
     // first 3 letters is "len"
@@ -39,19 +46,14 @@ function notFoundMethodCase(target: typeof predefinedMethods, name: string) {
   const [commandNamesStr, commandNamesUnderNot] =
     indexOfNot > -1 ? [methodsName.slice(0, indexOfNot), methodsName.slice(indexOfNot)] : [methodsName, []];
 
-  const listOfCommands = () => {
-    const commandByLogic: {
-      every: CommandType[];
-      some: CommandType[];
-      everyBad: CommandType[];
-      underOr: boolean;
-    } = {
+  return (target[name] = ((
+    commandByLogic: CommandByLogicType = {
       every: [],
       some: [],
       everyBad: [],
       underOr: false,
-    };
-
+    },
+  ) => {
     if (commandNamesStr) {
       commandNamesStr.forEach((commandName, index, array) => {
         if (array[index + 1] === 'or') {
@@ -95,7 +97,5 @@ function notFoundMethodCase(target: typeof predefinedMethods, name: string) {
     return (...args: unknown[]) => {
       return !commandByLogic.everyBad.some((command) => command(...args));
     };
-  };
-
-  return (target[name] = listOfCommands());
+  })());
 }

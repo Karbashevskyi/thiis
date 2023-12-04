@@ -35,7 +35,7 @@ if (globalContext.navigator?.platform) {
   platform = globalContext.navigator.platform;
 } else if (globalContext.navigator?.userAgentData?.platform) {
   platform = globalContext.navigator.userAgentData.platform;
-} else if (process?.platform) {
+} else if (isNode && process?.platform) {
   platform = process.platform;
 }
 

@@ -1,6 +1,6 @@
 import {ExternalMethodsInterface} from './methods/external.methods.interface';
 import {HTMLElementsMethodsInterface} from './methods/HTML-elements.methods.interface';
-import thiis from '../methods';
+import thiis from '../thiis';
 import {LenMethod} from '../methods/len.method';
 
 

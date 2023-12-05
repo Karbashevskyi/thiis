@@ -1,12 +1,8 @@
-import methods from './methods';
+import {methods, depencies, dependecyToMethod} from './methods';
 
 export function createMethod<T extends (...args: any[]) => boolean>(functionBody: string): T {
     return new Function('target', `return ${functionBody}`) as T;
 }
-
-const _AND_ = (functionBodies: string[]): string => {
-    return functionBodies.join(' && ');
-};
 
 export default {
     // Browser
@@ -47,29 +43,29 @@ export default {
     // numeric: NumericMethod,
     // String
     string: createMethod(methods.string),
-    onlySpace: createMethod(_AND_([methods.string, methods.onlySpace])),
-    space: createMethod(_AND_([methods.string, methods.space])),
-    pascalCase: createMethod(_AND_([methods.string, methods.pascalCase])),
-    upperCase: createMethod(_AND_([methods.string, methods.upperCase])),
-    kebabCase: createMethod(_AND_([methods.string, methods.kebabCase])),
-    macAddress: createMethod(_AND_([methods.string, methods.macAddress])),
-    camelCase: createMethod(_AND_([methods.string, methods.camelCase])),
-    word: createMethod(_AND_([methods.string, methods.word])),
-    snakeCase: createMethod(_AND_([methods.string, methods.snakeCase])),
-    ipv4: createMethod(_AND_([methods.string, methods.ipv4])),
-    ipv6: createMethod(_AND_([methods.string, methods.ipv6])),
-    char: createMethod(_AND_([methods.string, methods.char])),
-    lowerCase: createMethod(_AND_([methods.string, methods.lowerCase])),
+    onlySpace: createMethod(dependecyToMethod(depencies.onlySpace) + methods.onlySpace),
+    space: createMethod(dependecyToMethod(depencies.space) + methods.space),
+    pascalCase: createMethod(dependecyToMethod(depencies.pascalCase) + methods.pascalCase),
+    upperCase: createMethod(dependecyToMethod(depencies.upperCase) + methods.upperCase),
+    kebabCase: createMethod(dependecyToMethod(depencies.kebabCase) + methods.kebabCase),
+    macAddress: createMethod(dependecyToMethod(depencies.macAddress) + methods.macAddress),
+    camelCase: createMethod(dependecyToMethod(depencies.camelCase) + methods.camelCase),
+    word: createMethod(dependecyToMethod(depencies.word) + methods.word),
+    snakeCase: createMethod(dependecyToMethod(depencies.snakeCase) + methods.snakeCase),
+    ipv4: createMethod(dependecyToMethod(depencies.ipv4) + methods.ipv4),
+    ipv6: createMethod(dependecyToMethod(depencies.ipv6) + methods.ipv6),
+    char: createMethod(dependecyToMethod(depencies.char) + methods.char),
+    lowerCase: createMethod(dependecyToMethod(depencies.lowerCase) + methods.lowerCase),
     // String:Date
-    iso: createMethod(_AND_([methods.string, methods.iso])),
-    isoFuture: createMethod(_AND_([methods.string, methods.iso, methods.isoFuture])),
-    isoPast: createMethod(_AND_([methods.string, methods.iso, methods.isoPast])),
-    isoToday: createMethod(_AND_([methods.string, methods.iso, methods.isoToday])),
-    isoTomorrow: createMethod(_AND_([methods.string, methods.iso, methods.isoTomorrow])),
-    isoYesterday: createMethod(_AND_([methods.string, methods.iso, methods.isoYesterday])),
-    today: createMethod(_AND_([methods.string, methods.iso, methods.today])),
-    tomorrow: createMethod(_AND_([methods.string, methods.iso, methods.tomorrow])),
-    yesterday: createMethod(_AND_([methods.string, methods.iso, methods.yesterday])),
+    iso: createMethod(dependecyToMethod(depencies.iso) + methods.iso),
+    isoFuture: createMethod(dependecyToMethod(depencies.isoFuture) + methods.isoFuture),
+    isoPast: createMethod(dependecyToMethod(depencies.isoPast) + methods.isoPast),
+    isoToday: createMethod(dependecyToMethod(depencies.isoToday) + methods.isoToday),
+    isoTomorrow: createMethod(dependecyToMethod(depencies.isoTomorrow) + methods.isoTomorrow),
+    isoYesterday: createMethod(dependecyToMethod(depencies.isoYesterday) + methods.isoYesterday),
+    today: createMethod(dependecyToMethod(depencies.today) + methods.today),
+    tomorrow: createMethod(dependecyToMethod(depencies.tomorrow) + methods.tomorrow),
+    yesterday: createMethod(dependecyToMethod(depencies.yesterday) + methods.yesterday),
     // // Other
     // len: LenMethod,
     array: createMethod(`Array.isArray(target)`),

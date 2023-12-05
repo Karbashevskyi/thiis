@@ -1,5 +1,5 @@
 import {CommandType} from './types/commands.type';
-import methods from './methods';
+import {methods, depencies, dependecyToMethod} from './methods';
 import {createMethod, default as thiis} from './thiis';
 import {isConfig} from './config';
 
@@ -19,7 +19,7 @@ function findInGlobalContext(command: string): CommandType {
 
 export function getMethod(commandName: string): string {
     // TODO: InstanceofMethod.bind({classRef: findInGlobalContext(commandName)}) into string
-    return `(${methods[commandName]})`;
+    return `(${dependecyToMethod(depencies[commandName])} ${methods[commandName]})`;
 }
 
 export function proxyGet(target: typeof thiis, name: string) {
@@ -38,33 +38,6 @@ function notFoundMethodCase(target: typeof thiis, name: string) {
     const methodNames = name.split('_');
 
     return (target[name] = (() => {
-
-        // is.empty() <-
-        // (object, count of properties),
-        // (array, length),
-        // (string, length),
-        // (Map, size),
-        // (Set, size),
-        // (WeakMap, size),
-        // (WeakSet, size),
-        // (TypedArray, length),
-        // (ArrayBuffer, byteLength),
-        // (DataView, byteLength)
-
-        // is.array_empty() <-
-        // (array, length),
-
-        // is.string_empty() <-
-        // (string, length),
-
-        // is.object_empty() <-
-        // (object, count of properties),
-
-        // is.map_empty() <-
-        // (Map, size),
-
-        // is.set_empty() <-
-        // (Set, size),
 
         const functionBody = methodNames.reduce(
             (acc, methodName, currentIndex) => {

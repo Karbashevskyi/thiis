@@ -1,10 +1,10 @@
-export default {
+export const stringMethods = {
     // String
     string: `typeof target === 'string'`, // Main method which is used in other methods in this file
     char: `target.length === 1`,
     word: `(/^[a-zA-Z]+$/).test(target)`,
     // Space
-    space:  `target.length > 0 && (/\\s/).test(target)`,
+    space: `target.length > 0 && (/\\s/).test(target)`,
     onlySpace: `target.length > 0 && (/^\\s*$/).test(target)`,
     // Address
     macAddress: `(/^(?:[0-9A-Fa-f]{2}[:-]){5}(?:[0-9A-Fa-f]{2})$/).test(target)`,
@@ -27,4 +27,32 @@ export default {
     today: `new Date(target).toDateString() === new Date().toDateString()`,
     tomorrow: `new Date(target).toDateString() === new Date(Date.now() + 86400000).toDateString()`,
     yesterday: `new Date(target).toDateString() === new Date(Date.now() - 86400000).toDateString()`,
-}
+};
+export const stringDepencies = {
+    char: 'string',
+    word: 'string',
+
+    space: 'string',
+    onlySpace: 'string',
+
+    macAddress: 'string',
+    ipv6: 'string',
+    ipv4: 'string',
+
+    upperCase: 'string',
+    lowerCase: 'string',
+    snakeCase: 'string',
+    pascalCase: 'string',
+    kebabCase: 'string',
+    camelCase: 'string',
+
+    iso: 'string',
+    isoFuture: 'string,iso',
+    isoPast: 'string,iso',
+    isoToday: 'string,iso',
+    isoTomorrow: 'string,iso',
+    isoYesterday: 'string,iso',
+    today: 'string,iso',
+    tomorrow: 'string,iso',
+    yesterday: 'string,iso',
+};

@@ -3,7 +3,7 @@ import {
   registerInIsConstructorDecoratorType,
 } from '../types/decorators/register-in-is.decorator.type';
 import {RegisterInIsDecoratorInterface} from '../interfaces/decorators/register-in-is.decorator.interface';
-import thiis from '../thiis';
+import {thiis} from '../thiis';
 import {InstanceofMethod} from '../methods/instanceof.method';
 
 export function registerInIsDecorator(configuration?: RegisterInIsDecoratorInterface): any {

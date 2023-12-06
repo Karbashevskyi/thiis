@@ -28,7 +28,8 @@ export const stringMethods = {
     tomorrow: `new Date(target).toDateString() === new Date(Date.now() + 86400000).toDateString()`,
     yesterday: `new Date(target).toDateString() === new Date(Date.now() - 86400000).toDateString()`,
 };
-export const stringDepencies = {
+
+export const stringDependencies = {
     char: 'string',
     word: 'string',
 
@@ -47,12 +48,12 @@ export const stringDepencies = {
     camelCase: 'string',
 
     iso: 'string',
-    isoFuture: 'string,iso',
-    isoPast: 'string,iso',
-    isoToday: 'string,iso',
-    isoTomorrow: 'string,iso',
-    isoYesterday: 'string,iso',
-    today: 'string,iso',
-    tomorrow: 'string,iso',
-    yesterday: 'string,iso',
+    isoFuture: 'iso',
+    isoPast: 'iso',
+    isoToday: 'iso',
+    isoTomorrow: 'iso',
+    isoYesterday: 'iso',
+    today: 'iso',
+    tomorrow: 'iso',
+    yesterday: 'iso',
 };

@@ -29,12 +29,7 @@ export default class Handler {
      * @private
      */
     private static findInGlobalContext(command: string): CommandType {
-        if (isConfig.useGlobalContext) {
-            return (
-                isConfig.globalContext[command] || (() => false)
-            );
-        }
-        return () => false;
+        return (isConfig.useGlobalContext && (isConfig.globalContext[command])) || (() => false);
     }
 
     /**
@@ -58,10 +53,9 @@ export default class Handler {
 
         if (methodsName[0] === 'len') {
             // first 3 letters is "len"
-            return (targetValue: string) => {
-                // TODO push to predefinedMethods
+            return (target[name] = (targetValue: string) => {
                 return target.len(targetValue, methodsName.slice(1));
-            };
+            });
         }
 
         return (target[name] = this.buildNewFunction(methodsName));

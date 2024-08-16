@@ -1,7 +1,7 @@
-import { registerInIsDecorator } from './decorators/register-in-is.decorator';
-import { AllMethodsInterface, predefinedMethods } from './methods';
-import { isConfig } from './config';
-import { proxyGet } from './engine';
+import {registerInIsDecorator} from './decorators/register-in-is.decorator';
+import {AllMethodsInterface, predefinedMethods} from './methods';
+import {isConfig} from './config';
+import Handler from './engine';
 
 export const RegisterInIs = registerInIsDecorator;
 export const IsConfig = isConfig;
@@ -23,6 +23,4 @@ export const IsConfig = isConfig;
  * is.len_gte_5('hello world'); // true; number 5 you can change
  * is.len_gt_3_lt_10('hello world'); // true; numbers 3 and 10 you can change
  */
-export const is: AllMethodsInterface = new Proxy<any>(predefinedMethods, {
-  get: proxyGet,
-});
+export const is: AllMethodsInterface = new Proxy<any>(predefinedMethods, Handler);

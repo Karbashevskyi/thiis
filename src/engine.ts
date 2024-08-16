@@ -1,101 +1,125 @@
-import { InstanceofMethod } from './methods/instanceof.method';
-import { CommandType } from './types/commands.type';
-import { predefinedMethods } from './methods';
-import { isConfig } from './config';
-
-function findInGlobalContext(command: string): CommandType {
-  if (isConfig.useGlobalContext) {
-    return (
-      isConfig.globalContext[command] ||
-      (() => {
-        return false;
-      })
-    );
-  }
-  return () => {
-    return false;
-  };
-}
-
-export function getMethod(commandName: string): CommandType {
-  return predefinedMethods[commandName] || InstanceofMethod.bind({ classRef: findInGlobalContext(commandName) });
-}
-
-export function proxyGet(target: typeof predefinedMethods, name: string) {
-  return target[name] || notFoundMethodCase(target, name);
-}
+import {InstanceofMethod} from './methods/instanceof.method';
+import {CommandType} from './types/commands.type';
+import {predefinedMethods} from './methods';
+import {isConfig} from './config';
 
 type CommandByLogicType = {
-  every: CommandType[];
-  some: CommandType[];
-  everyBad: CommandType[];
-  underOr: boolean;
+    every: CommandType[];
+    some: CommandType[];
+    everyBad: CommandType[];
 };
 
-function notFoundMethodCase(target: typeof predefinedMethods, name: string) {
-  if (name[0] === 'l' && name[1] === 'e' && name[2] === 'n') {
-    // first 3 letters is "len"
-    return (targetValue: string) => {
-      // TODO push to predefinedMethods
-      return target.len(targetValue, name.split('_').slice(1));
-    };
-  }
+/**
+ * @description 'is' is a proxy object that allows you to call methods from you global context
+ */
+export default class Handler {
 
-  const methodsName = name.split('_');
-  const indexOfNot = methodsName.indexOf('not');
-  const [commandNamesStr, commandNamesUnderNot] =
-    indexOfNot > -1 ? [methodsName.slice(0, indexOfNot), methodsName.slice(indexOfNot)] : [methodsName, []];
-
-  return (target[name] = ((
-    commandByLogic: CommandByLogicType = {
-      every: [],
-      some: [],
-      everyBad: [],
-      underOr: false,
-    },
-  ) => {
-    if (commandNamesStr) {
-      commandNamesStr.forEach((commandName, index, array) => {
-        if (array[index + 1] === 'or') {
-          commandByLogic.underOr = true;
-        }
-        if (commandName !== 'or') {
-          if (commandByLogic.underOr) {
-            commandByLogic.some.push(getMethod(commandName));
-          } else {
-            commandByLogic.every.push(getMethod(commandName));
-          }
-        }
-      });
-
-      if (commandNamesUnderNot) {
-        const methodsUnderNot = commandNamesUnderNot.filter((method) => method !== 'not' && method !== 'or');
-        commandByLogic.everyBad = methodsUnderNot.map(getMethod);
-      }
-
-      return (...args: unknown[]) => {
-        if (commandByLogic.every.length) {
-          if (!commandByLogic.every.every((command) => command(...args))) {
-            return false;
-          }
-        }
-        if (commandByLogic.some.length) {
-          if (!commandByLogic.some.some((command) => command(...args))) {
-            return false;
-          }
-        }
-        // Empty array return false
-        return !commandByLogic.everyBad.some((command) => command(...args));
-      };
+    /**
+     * @description This method is called when the object is called as a function
+     * @param target
+     * @param name
+     */
+    public static get(target: typeof predefinedMethods, name: string) {
+        return target[name] || this.notFoundMethodCase(target, name);
     }
 
-    // Case: is.not_[comment]
+    /**
+     * @description This method is called when the object is called as a function
+     * @param command
+     * @private
+     */
+    private static findInGlobalContext(command: string): CommandType {
+        if (isConfig.useGlobalContext) {
+            return (
+                isConfig.globalContext[command] || (() => false)
+            );
+        }
+        return () => false;
+    }
 
-    const methodsUnderNot = commandNamesUnderNot.filter((method) => method !== 'not' && method !== 'or');
-    commandByLogic.everyBad = methodsUnderNot.map(getMethod);
+    /**
+     * @description This method is called when the object is called as a function
+     * @param commandName
+     * @private
+     */
+    private static getMethod(commandName: string): CommandType {
+        return predefinedMethods[commandName] || InstanceofMethod.bind({classRef: this.findInGlobalContext(commandName)});
+    }
 
-    return (...args: unknown[]) => {
-      return !commandByLogic.everyBad.some((command) => command(...args));
-    };
-  })());
+    /**
+     * @description This method is called when the object is called as a function
+     * @param target
+     * @param name
+     * @private
+     */
+    private static notFoundMethodCase(target: typeof predefinedMethods, name: string) {
+
+        const methodsName = name.split('_');
+
+        if (methodsName[0] === 'len') {
+            // first 3 letters is "len"
+            return (targetValue: string) => {
+                // TODO push to predefinedMethods
+                return target.len(targetValue, methodsName.slice(1));
+            };
+        }
+
+        return (target[name] = this.buildNewFunction(methodsName));
+    }
+
+    /**
+     * @description This method is called when the object is called as a function
+     * @param methodsName
+     * @private
+     */
+    private static buildNewFunction(methodsName: string[]): CommandType {
+
+        let underOr = false;
+        let underNot = false;
+        const every: CommandByLogicType['every'] = [];
+        const some: CommandByLogicType['some'] = [];
+        const everyBad: CommandByLogicType['everyBad'] = [];
+
+        for (let index = 0; index < methodsName.length; index++) {
+
+            const commandName = methodsName[index];
+
+            // if next command is 'or' we need to set underOr to true to know that we need to push to some array
+            if (methodsName[index + 1] === 'or') {
+                underOr = true;
+                index++;
+            }
+
+            if (commandName === 'not') {
+                underNot = true;
+                continue;
+            }
+
+            if (underNot) {
+                everyBad.push(this.getMethod(commandName));
+            } else if (underOr) {
+                some.push(this.getMethod(commandName));
+            } else {
+                every.push(this.getMethod(commandName));
+            }
+
+        }
+
+        return (...args: unknown[]) => {
+            if (every.length) {
+                if (!every.every((command) => command(...args))) {
+                    return false;
+                }
+            }
+            if (some.length) {
+                if (!some.some((command) => command(...args))) {
+                    return false;
+                }
+            }
+            // Empty array return false
+            return !everyBad.some((command) => command(...args));
+        };
+
+    }
+
 }

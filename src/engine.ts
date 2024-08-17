@@ -80,7 +80,13 @@ export default class Handler {
                 return chainMethod;
             }
 
-            return this.buildChainMethod(chainMethod, this.getMethod(commandName), index, underOr, underNot);
+            const method = this.getMethod(commandName);
+
+            if (!index) {
+                return method;
+            }
+
+            return this.buildChainMethod(chainMethod, method, underOr, underNot);
         }, () => true);
     }
 
@@ -88,7 +94,6 @@ export default class Handler {
      * @description This method is called when the object is called as a function
      * @param prev
      * @param next
-     * @param index
      * @param underOr
      * @param underNot
      * @private
@@ -96,14 +101,9 @@ export default class Handler {
     private static buildChainMethod(
         prev: CommandType,
         next: CommandType,
-        index: number,
         underOr: boolean = false,
         underNot: boolean = false
     ): CommandType {
-
-        if (!index) {
-            return next;
-        }
 
         if (underNot) {
             return (...args: unknown[]) => prev(...args) ? !next(...args) : false;

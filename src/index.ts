@@ -1,6 +1,6 @@
-import {registerInIsDecorator} from './decorators/register-in-is.decorator';
-import {AllMethodsInterface, predefinedMethods} from './methods';
-import {isConfig} from './config';
+import { registerInIsDecorator } from './decorators/register-in-is.decorator';
+import { AllMethodsInterface, predefinedMethods } from './methods';
+import { isConfig } from './config';
 import Handler from './engine';
 
 export const RegisterInIs = registerInIsDecorator;

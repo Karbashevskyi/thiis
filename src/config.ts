@@ -1,5 +1,5 @@
 import regexp from './regexp';
-import {predefinedMethods} from './methods';
+import { predefinedMethods } from './methods';
 
 export default class Thiis {
   public isNode = false;

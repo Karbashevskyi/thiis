@@ -1,10 +1,11 @@
-import { registerInIsDecorator } from './decorators/register-in-is.decorator';
-import { AllMethodsInterface, predefinedMethods } from './methods';
-import { isConfig } from './config';
+import {registerInIsDecorator} from './decorators/register-in-is.decorator';
+import {AllMethodsInterface, predefinedMethods} from './methods';
+import {isConfig} from './config';
 import Handler from './engine';
 
 export const RegisterInIs = registerInIsDecorator;
 export const IsConfig = isConfig;
+export const PredefinedMethods = predefinedMethods;
 
 /**
  * @description 'is' is a proxy object that allows you to call methods from you global context

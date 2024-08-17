@@ -60,59 +60,28 @@ export default class Handler {
      * @param methodsName - array of methods name and there aren't situations when we have less than 2 elements
      * @private
      */
-    // private static buildNewFunction(methodsName: string[]): CommandType {
-    //
-    //     let underOr = false;
-    //     let underNot = false;
-    //
-    //     return methodsName.reduce((chainMethod, commandName, index) => {
-    //
-    //         if (!underOr) {
-    //             underOr = methodsName[index + 1] === 'or';
-    //         }
-    //
-    //         if (commandName === 'not') {
-    //             underNot = true;
-    //             return chainMethod;
-    //         }
-    //
-    //         if (commandName === 'or') {
-    //             return chainMethod;
-    //         }
-    //
-    //         return this.buildChainMethod(chainMethod, this.getMethod(commandName), index, underOr, underNot);
-    //     }, () => true);
-    // }
     private static buildNewFunction(methodsName: string[]): CommandType {
 
         let underOr = false;
         let underNot = false;
-        let chainMethod = () => true;
 
-        for (let index = 0; index < methodsName.length; index++) {
+        return methodsName.reduce((chainMethod, commandName, index) => {
 
-            const commandName = methodsName[index];
-
-            // if next command is 'or' we need to set underOr to true to know that we need to push to some array
             if (!underOr) {
                 underOr = methodsName[index + 1] === 'or';
             }
 
-            if (commandName === 'or') {
-                continue;
-            }
-
             if (commandName === 'not') {
                 underNot = true;
-                continue;
+                return chainMethod;
             }
 
-            chainMethod = this.buildChainMethod(chainMethod, this.getMethod(commandName), index, underOr, underNot);
+            if (commandName === 'or') {
+                return chainMethod;
+            }
 
-        }
-
-        return chainMethod;
-
+            return this.buildChainMethod(chainMethod, this.getMethod(commandName), index, underOr, underNot);
+        }, () => true);
     }
 
     /**

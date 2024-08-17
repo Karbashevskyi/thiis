@@ -1,4 +1,5 @@
 import regexp from './regexp';
+import {predefinedMethods} from './methods';
 
 export default class Thiis {
   public isNode = false;
@@ -30,6 +31,7 @@ export default class Thiis {
   };
 
   public regexp = regexp;
+  public predefinedMethods = predefinedMethods;
 
   public static create() {
     const instance = new Thiis();

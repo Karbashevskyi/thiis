@@ -1,7 +1,7 @@
 export function PrimitiveMethod(target: unknown): boolean {
-  if (target === null) {
+  if (null === target) {
     return true;
   }
 
-  return !(typeof target === 'object' || typeof target === 'function');
+  return !('object' === typeof target || 'function' === typeof target);
 }

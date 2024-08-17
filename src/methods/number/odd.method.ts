@@ -1,11 +1,14 @@
-import { NumberMethod } from './number.method';
-import { BigIntMethod } from './bigInt.method';
+import {NumberMethod} from './number.method';
+import {BigIntMethod} from './bigInt.method';
 
 export function OddMethod(target: unknown): target is number {
-  if (NumberMethod(target)) {
-    return target % 2 === 1 || target % 2 === -1;
-  } else if (BigIntMethod(target)) {
-    return target % BigInt(2) === BigInt(1) || target % BigInt(2) === BigInt(-1);
-  }
-  return false;
+    let result = false;
+    if (NumberMethod(target)) {
+        target = target % 2;
+        result = 1 === target || -1 === target;
+    } else if (BigIntMethod(target)) {
+        target = target % BigInt(2);
+        result = BigInt(1) === target || BigInt(-1) === target;
+    }
+    return result;
 }

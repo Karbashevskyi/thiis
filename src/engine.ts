@@ -3,12 +3,6 @@ import {CommandType} from './types/commands.type';
 import {predefinedMethods} from './methods';
 import {isConfig} from './config';
 
-type CommandByLogicType = {
-    every: CommandType[];
-    some: CommandType[];
-    everyBad: CommandType[];
-};
-
 /**
  * @description 'is' is a proxy object that allows you to call methods from you global context
  */
@@ -63,25 +57,49 @@ export default class Handler {
 
     /**
      * @description This method is called when the object is called as a function
-     * @param methodsName
+     * @param methodsName - array of methods name and there aren't situations when we have less than 2 elements
      * @private
      */
+    // private static buildNewFunction(methodsName: string[]): CommandType {
+    //
+    //     let underOr = false;
+    //     let underNot = false;
+    //
+    //     return methodsName.reduce((chainMethod, commandName, index) => {
+    //
+    //         if (!underOr) {
+    //             underOr = methodsName[index + 1] === 'or';
+    //         }
+    //
+    //         if (commandName === 'not') {
+    //             underNot = true;
+    //             return chainMethod;
+    //         }
+    //
+    //         if (commandName === 'or') {
+    //             return chainMethod;
+    //         }
+    //
+    //         return this.buildChainMethod(chainMethod, this.getMethod(commandName), index, underOr, underNot);
+    //     }, () => true);
+    // }
     private static buildNewFunction(methodsName: string[]): CommandType {
 
         let underOr = false;
         let underNot = false;
-        const every: CommandByLogicType['every'] = [];
-        const some: CommandByLogicType['some'] = [];
-        const everyBad: CommandByLogicType['everyBad'] = [];
+        let chainMethod = () => true;
 
         for (let index = 0; index < methodsName.length; index++) {
 
             const commandName = methodsName[index];
 
             // if next command is 'or' we need to set underOr to true to know that we need to push to some array
-            if (methodsName[index + 1] === 'or') {
-                underOr = true;
-                index++;
+            if (!underOr) {
+                underOr = methodsName[index + 1] === 'or';
+            }
+
+            if (commandName === 'or') {
+                continue;
             }
 
             if (commandName === 'not') {
@@ -89,30 +107,45 @@ export default class Handler {
                 continue;
             }
 
-            if (underNot) {
-                everyBad.push(this.getMethod(commandName));
-            } else if (underOr) {
-                some.push(this.getMethod(commandName));
-            } else {
-                every.push(this.getMethod(commandName));
-            }
+            chainMethod = this.buildChainMethod(chainMethod, this.getMethod(commandName), index, underOr, underNot);
 
         }
 
-        return (...args: unknown[]) => {
-            if (every.length) {
-                if (!every.every((command) => command(...args))) {
-                    return false;
-                }
-            }
-            if (some.length) {
-                if (!some.some((command) => command(...args))) {
-                    return false;
-                }
-            }
-            // Empty array return false
-            return !everyBad.some((command) => command(...args));
-        };
+        return chainMethod;
+
+    }
+
+    /**
+     * @description This method is called when the object is called as a function
+     * @param prev
+     * @param next
+     * @param index
+     * @param underOr
+     * @param underNot
+     * @private
+     */
+    private static buildChainMethod(
+        prev: CommandType,
+        next: CommandType,
+        index: number,
+        underOr: boolean = false,
+        underNot: boolean = false
+    ): CommandType {
+
+        if (!index) {
+            return next;
+        }
+
+        if (underNot) {
+            return (...args: unknown[]) => prev(...args) ? !next(...args) : false;
+        }
+
+        if (underOr) {
+            return (...args: unknown[]) => prev(...args) || next(...args);
+        }
+
+        return (...args: unknown[]) => prev(...args) ? next(...args) : false;
+
 
     }
 

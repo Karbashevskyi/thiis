@@ -1,63 +1,113 @@
 import regexp from './regexp';
 
-const isNode = typeof process !== 'undefined' && process?.release?.name === 'node';
-const isBrowser = typeof window !== 'undefined' && typeof window.document !== 'undefined';
+export default class Thiis {
 
-// globalThis || self || window || global ||
-let globalContext: any = {};
+    public isNode = false;
+    public isBrowser = false;
 
-if (typeof globalThis !== 'undefined') {
-    globalContext = globalThis;
-} else {
-    if (isNode) {
-        globalContext = global;
-    } else if (isBrowser) {
-        globalContext = window;
-    } else {
-        if (typeof self !== 'undefined') {
-            globalContext = self;
-        }
-    }
-}
+    // globalThis || self || window || global ||
+    public globalContext: any = {};
 
-let vendor = '';
-if (globalContext.navigator?.vendor) {
-    vendor = globalContext.navigator.vendor;
-}
+    public packageName = 'thiis';
+    public useGlobalContext = true;
 
-let userAgent = '';
-if (globalContext.navigator?.userAgent) {
-    userAgent = globalContext.navigator.userAgent;
-}
-
-let platform = '';
-if (globalContext.navigator?.platform) {
-    platform = globalContext.navigator.platform;
-} else if (globalContext.navigator?.userAgentData?.platform) {
-    platform = globalContext.navigator.userAgentData.platform;
-} else if (isNode && process?.platform) {
-    platform = process.platform;
-}
-
-export const isConfig = {
-    packageName: 'thiis',
-    useGlobalContext: true,
-    globalContext,
-    error: {
+    public error = {
         enabled: true,
-    },
-    definition: {
+    };
+
+    public definition = {
         phone: 768,
-    },
-    state: {
-        vendor,
-        navigator: globalContext.navigator,
-        userAgent,
-        platform,
+    };
+
+    public state = {
+        vendor: '',
+        navigator: this.globalContext.navigator,
+        userAgent: '',
+        platform: '',
         screen: {
-            width: globalContext.screen?.width ?? 0,
+            width: this.globalContext.screen?.width ?? 0,
         },
         toString: Object.prototype.toString,
-    },
-    regexp,
-};
+    };
+
+    public regexp = regexp;
+
+    public static create() {
+
+        const instance = new Thiis();
+        instance.isNode = 'undefined' !== typeof process  && 'node' === process?.release?.name;
+        instance.isBrowser = 'undefined' !== typeof window && 'undefined' !== typeof window.document;
+
+        instance.initGlobalContext().initVendor().initUserAgent().initPlatform();
+
+        return instance;
+
+    }
+
+    public initGlobalContext() {
+
+        if ('undefined' !== typeof globalThis) {
+            this.globalContext = globalThis;
+        } else {
+            if (this.isNode) {
+                this.globalContext = global;
+            } else if (this.isBrowser) {
+                this.globalContext = window;
+            } else {
+                if ('undefined' !== typeof self) {
+                    this.globalContext = self;
+                }
+            }
+        }
+
+        return this;
+
+    }
+
+    public initVendor() {
+
+        if (this.globalContext.navigator?.vendor) {
+
+            this.state.vendor = this.globalContext.navigator.vendor;
+
+        }
+
+        return this;
+
+    }
+
+    public initUserAgent() {
+
+        if (this.globalContext.navigator?.userAgent) {
+
+            this.state.userAgent = this.globalContext.navigator.userAgent;
+
+        }
+
+        return this;
+
+    }
+
+    public initPlatform() {
+
+        if (this.globalContext.navigator?.platform) {
+
+            this.state.platform = this.globalContext.navigator.platform;
+
+        } else if (this.globalContext.navigator?.userAgentData?.platform) {
+
+            this.state.platform = this.globalContext.navigator.userAgentData.platform;
+
+        } else if (this.isNode && process?.platform) {
+
+            this.state.platform = process.platform;
+
+        }
+
+        return this;
+
+    }
+
+}
+
+export const isConfig = Thiis.create();

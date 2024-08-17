@@ -9,7 +9,8 @@ import {isConfig} from './config';
 export default class Handler {
 
     /**
-     * @description This method is called when the object is called as a function
+     * @description This method is called when the object is called as a function and
+     * if there isn't a method then it will be created and returned
      * @param target
      * @param name
      */
